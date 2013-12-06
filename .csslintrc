@@ -3,5 +3,6 @@
   "unique-headings": true,
   "known-properties": false,
   "duplicate-properties": false,
-  "star-property-hack": false
+  "star-property-hack": false,
+  "compatible-vendor-prefixes": false
 }

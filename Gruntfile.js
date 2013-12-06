@@ -18,7 +18,7 @@
 module.exports = function(grunt) {
 
   require('time-grunt')(grunt);
-  
+
   // Project configuration.
   grunt.initConfig({
 
@@ -38,10 +38,6 @@ module.exports = function(grunt) {
       sass: {
         files: ['<%= config.cssSrc %>/{,*/}*.{scss,sass}'],
         tasks: ['sass:dev']
-      },
-      csslint: {
-        files: ['<%= config.cssDist %>/<%= config.fwFilename %>.css'],
-        tasks: ['csslint']
       },
 
       livereload: {
@@ -122,6 +118,21 @@ module.exports = function(grunt) {
     },
 
 
+    autoprefixer: {
+
+      options: {
+        // Task-specific options go here.
+      },
+
+      // just prefix the specified file
+      dist: {
+        src: '<%= config.cssDist %>/<%= config.fwFilename %>.css',
+        dest: '<%= config.cssDist %>/<%= config.fwFilename %>.css'
+      },
+    },
+
+
+
     // Before generating any new files,
     // remove any previously-created files.
     clean: [
@@ -149,11 +160,14 @@ module.exports = function(grunt) {
   grunt.registerTask('build', [
     'clean',
     'assemble',
-    'sass'
+    'sass',
+    'autoprefixer',
+    'csslint'
   ]);
 
   grunt.registerTask('default', [
-    'build'
+    'clean',
+    'watch'
   ]);
 
 };

@@ -5,4 +5,4 @@ body {
   zoom: 1;
   *display: inline;
   *vertical-align: auto;
-  zoom: 9999; }
+  transition: opacity 1s ease; }

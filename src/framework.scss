@@ -1,9 +1,8 @@
 @import "bourbon";
 
 
-
 body {
 	background: red;
 	@include inline-block;
-	zoom: 9999;
+	transition: opacity 1s ease;
 }
