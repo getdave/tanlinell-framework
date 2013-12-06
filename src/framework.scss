@@ -4,5 +4,6 @@
 
 body {
 	background: red;
-@include inline-block;
+	@include inline-block;
+	zoom: 9999;
 }

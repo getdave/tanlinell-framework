@@ -25,6 +25,7 @@ module.exports = function(grunt) {
     config: {
       cssSrc: './src',
       cssDist: './dist',
+      fwFilename: 'tanlinell-framework',
       docsSrc: './docs/src',
       docsDist: './docs/dist'
     },
@@ -38,13 +39,17 @@ module.exports = function(grunt) {
         files: ['<%= config.cssSrc %>/{,*/}*.{scss,sass}'],
         tasks: ['sass:dev']
       },
+      csslint: {
+        files: ['<%= config.cssDist %>/<%= config.fwFilename %>.css'],
+        tasks: ['csslint']
+      },
 
       livereload: {
         options: {
           livereload: '<%= connect.options.livereload %>'
         },
         files: [
-          '<%= config.cssDist %>/{,*/}*.css',
+          '<%= config.cssDist %>/<%= config.fwFilename %>.css',
           '<%= config.docsDist %>/{,*/}*.html',
           '<%= config.docsDist %>/assets/{,*/}*.css',
           '<%= config.docsDist %>/assets/{,*/}*.js',
@@ -89,8 +94,7 @@ module.exports = function(grunt) {
     sass: {
       options: {
         includePaths: require('node-bourbon').includePaths,
-        outputStyle: 'expanded',
-        
+        outputStyle: 'nested',
       },
       dist: {
         options: {
@@ -108,10 +112,22 @@ module.exports = function(grunt) {
     },
 
 
+    csslint: {
+      options: {
+        csslintrc: '.csslintrc' // https://github.com/gruntjs/grunt-contrib-csslint#options
+      },
+      dist: {
+        src: ['<%= config.cssDist %>/<%= config.fwFilename %>.css']
+      }
+    },
+
 
     // Before generating any new files,
     // remove any previously-created files.
-    clean: ['<%= config.docsDist %>/**/*.{html,xml}']
+    clean: [
+      '<%= config.docsDist %>/**/*.{html,xml}',
+      '<%= config.cssDist %>/**/*.{css}'
+    ]
 
   });
 
@@ -120,6 +136,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-sass');
+  grunt.loadNpmTasks('grunt-contrib-csslint');
+  grunt.loadNpmTasks('grunt-autoprefixer');
 
   grunt.registerTask('server', [
     'clean',
@@ -130,7 +148,8 @@ module.exports = function(grunt) {
 
   grunt.registerTask('build', [
     'clean',
-    'assemble'
+    'assemble',
+    'sass'
   ]);
 
   grunt.registerTask('default', [

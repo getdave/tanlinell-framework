@@ -4,4 +4,5 @@ body {
   vertical-align: baseline;
   zoom: 1;
   *display: inline;
-  *vertical-align: auto; }
+  *vertical-align: auto;
+  zoom: 9999; }
