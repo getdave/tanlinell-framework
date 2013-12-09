@@ -25,6 +25,7 @@ module.exports = function(grunt) {
     config: {
       cssSrc: './src',
       cssDist: './dist',
+      cssBanner: '/* Tanlinell CSS Framework */',
       fwFilename: 'tanlinell-framework',
       docsSrc: './docs/src',
       docsDist: './docs/dist'
@@ -120,7 +121,7 @@ module.exports = function(grunt) {
     // Minify CSS for dist
     cssmin: {
       options: {
-          banner: '/* Tanlinell CSS Framework */'
+          banner: '<%= config.cssBanner %>',
       },
       minify: {        
         files: {
@@ -133,11 +134,11 @@ module.exports = function(grunt) {
     concat: {
       options: {
         stripBanners: true,
-        banner: '/* Tanlinell CSS Framework */',
+        banner: '<%= config.cssBanner %>',
         separator: '/* Begin: Tanlinell CSS Framework */',
       },
       dist: {
-        src: ['<%= config.cssSrc %>/normalize.css', '<%= config.cssDist %>/<%= config.fwFilename %>.css'],
+        src: ['./bower_components/normalize-css/normalize.css', '<%= config.cssDist %>/<%= config.fwFilename %>.css'],
         dest: '<%= config.cssDist %>/<%= config.fwFilename %>.css',
       },
     },

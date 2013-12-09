@@ -1,0 +1,30 @@
+{
+  "name": "Tanlinell CSS Framework",
+  "version": "0.0.1",
+  "authors": [
+    "David Smith <getdavemail@gmail.com>"
+  ],
+  "description": "Modular, OOCSS, Atomic Design-based CSS Framework",
+  "main": "./dist/tanlinell-framework.css",
+  "keywords": [
+    "css",
+    "sass",
+    "scss",
+    "oocss",
+    "atomic",
+    "css",
+    "modular",
+    "framework"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "normalize-css": "2.1.*"
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
