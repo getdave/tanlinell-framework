@@ -21,12 +21,12 @@ module.exports = function(grunt) {
   
   // Project configuration.
   grunt.initConfig({
-
+    pkg: grunt.file.readJSON('package.json'),
     config: {
       cssSrc: './src',
       cssDist: './dist',
-      cssBanner: '/* Tanlinell CSS Framework */',
-      fwFilename: 'tanlinell-framework',
+      cssBanner: '/* Tanlinell CSS Framework - by <%= pkg.author.name %>  - v<%= pkg.version %> (<%= grunt.template.today("dd-mm-yyyy") %>) */',
+      fwFilename: '<%= pkg.name %>',
       docsSrc: './docs/src',
       docsDist: './docs/dist'
     },
@@ -94,7 +94,7 @@ module.exports = function(grunt) {
       },
       dist: {
         files: {
-            '<%= config.cssDist %>/tanlinell-framework.css': '<%= config.cssSrc %>/framework.scss'
+            '<%= config.cssDist %>/<%= config.fwFilename %>.css': '<%= config.cssSrc %>/framework.scss'
         }
       },
 
@@ -149,7 +149,17 @@ module.exports = function(grunt) {
     clean: [
       '<%= config.cssDist %>/*.css',
       '<%= config.docsDist %>/**/*.{html,xml}',
-    ]
+    ],
+
+    bump: {
+      options: {
+        files: ['package.json', 'bower.json'],
+        updateConfigs: ['pkg'], // update the config property, so that even tasks running in the same grunt process see the updated value
+        commit: false,
+        createTag: false,
+        push: false
+      }
+    }
 
   });
 
@@ -162,6 +172,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-sass');
   grunt.loadNpmTasks('grunt-autoprefixer');
+  grunt.loadNpmTasks('grunt-bump');
 
   grunt.registerTask('server', [
     'clean',
