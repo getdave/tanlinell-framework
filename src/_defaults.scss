@@ -1,0 +1,53 @@
+// ==========================================================================
+// FRAMEWORK VARIABLES
+//
+// The following variables are utilities to provide defaults for the framework.
+// Do not alter these values.
+//
+// Instead override as required in your Projects `_config` file.
+//
+// ==========================================================================
+
+
+
+// ==========================================================================
+// HACKS & OVERIDES
+// ==========================================================================
+
+// This is a flag which is set to "true" by master-ie.scss
+// This allows us to target specifically IE within Sass files
+$is-oldie: 						false !default;
+
+// Highlights any potential markup/accessibility problems
+$debug-mode:					false !default;
+
+
+// ==========================================================================
+// TYPOGRAPHY
+// ==========================================================================
+
+// CONSTANTS
+// ==========================================================================
+
+$base-font-size:          		16px !default;
+$base-line-height: 				1.666em !default;
+
+
+// LINKS
+// ==========================================================================
+
+$link-color: 					#08c !default;
+$link-hover-color:        		darken($link-color, 15%) !default;
+
+
+// ==========================================================================
+// GRID SYSTEM
+// ==========================================================================
+
+// Grid configurations required
+$grids: 						2 3 4 5 6 7 8 !default;
+
+// Gutters
+$gutter: 						3em !default;
+$gutter--large: 				$gutter*2 !default;
+$gutter--small: 				$gutter/2 !default;

@@ -1,0 +1,74 @@
+// ==========================================================================
+// UTILS
+//
+// General utility mixins
+// ==========================================================================
+
+// ==========================================================================
+// MATHS
+// ==========================================================================
+
+// GREATEST COMMON FACTOR
+// Finds the greatest common factor of two integers
+// ==========================================================================
+@function gcf($a, $b) {
+    @if $b == 0 { @return $a; }
+    @else { @return gcf($b, $a % $b) }
+}
+
+
+// ==========================================================================
+// INTEROGRATION
+// ==========================================================================
+
+// CONTAINS
+// Check if a list contains a value
+// ==========================================================================
+@function contains($list, $value) {
+    @if type-of($list) == list { @return not not index($list, $value); }
+    @else { @return $list == $value; }
+}
+
+
+
+// ==========================================================================
+// TYPOGRAPHY
+// ==========================================================================
+
+// REM
+// output rem values with px fallback for oldie
+// ==========================================================================
+@mixin rem($property, $values) {
+  $px : (); /* 3 */
+  $rem: (); /* 3 */
+
+  @each $value in $values { /* 4 */
+
+    @if $value == 0 or $value == auto { /* 5 */
+      $px : append($px , $value);
+      $rem: append($rem, $value);
+    }
+
+    @else {
+      $unit: unit($value);    /* 6 */
+      $val: parseInt($value); /* 6 */
+
+      @if $unit == "px" {  /* 7 */
+        $px : append($px,  $value);
+        $rem: append($rem, ($val / 16 + rem));
+      }
+
+      @if $unit == "rem" { /* 7 */
+        $px : append($px,  ($val * 16 + px));
+        $rem: append($rem, $value);
+      }
+    }
+  }
+
+  @if $px == $rem {     /* 8 */
+    #{$property}: $px;  /* 9 */
+  } @else {
+    #{$property}: $px;  /* 9 */
+    #{$property}: $rem; /* 9 */
+  }
+}

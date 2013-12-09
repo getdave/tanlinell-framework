@@ -91,7 +91,7 @@ module.exports = function(grunt) {
     sass: {
       options: {
         includePaths: require('node-bourbon').includePaths,
-        outputStyle: 'nested', // minification via Grunt CSS Min is prefered
+        outputStyle: 'expanded', // minification via Grunt CSS Min is prefered
       },
       dist: {
         files: {

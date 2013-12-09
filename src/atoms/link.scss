@@ -1,0 +1,57 @@
+// ==========================================================================
+// LINK
+//
+//
+// ==========================================================================
+
+// ==========================================================================
+// BASE
+// ==========================================================================
+
+a {
+    color: $link-hover-color;
+}
+
+a:hover,
+a:focus {
+    color: $link-hover-color;
+}
+
+a:focus {
+    outline: thin dotted;
+}
+
+
+
+// ==========================================================================
+// MODIFIERS
+// ==========================================================================
+
+// COMPLEX
+// ==========================================================================
+
+.link-complex,
+.link-complex:hover,
+.link-complex:focus {
+    text-decoration: none;
+
+    .link-complex__target {
+        text-decoration: underline;
+    }
+}
+
+// BLOCKY
+// ==========================================================================
+
+.link-blocky {
+    @include inline-block;
+    margin:0;
+    padding: 0 1em;
+    border:none;
+    line-height:3;
+    vertical-align:middle;
+    white-space:nowrap;
+    font-family:inherit;
+    font-size:100%;
+    cursor:pointer;
+}

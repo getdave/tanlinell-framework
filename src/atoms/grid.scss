@@ -1,0 +1,164 @@
+// ==========================================================================
+// GRID
+//
+// Fluid, mobile-first grid framework based on Griddle by @necolas
+// ==========================================================================
+
+
+// ==========================================================================
+// GRID WRAP
+// unit which wraps a grid "row"
+// ==========================================================================
+
+.grid,
+.grid-wrap {
+	list-style:none;
+    margin:0;
+    padding:0;
+    margin-left: -$gutter;
+    clear: both;
+	text-rendering: optimizespeed; // Protect against WebKit bug with optimizelegibility.
+    @include clearfix;
+}
+
+
+
+
+// ==========================================================================
+// GRID COLUMN/UNIT
+// ==========================================================================
+
+.gc {
+    width: 100%;
+    padding-left: $gutter;
+    float: left;
+    text-rendering: auto; // Reset text defaults.
+    box-sizing: border-box;
+    *behavior: url(/boxsizing.htc);
+}
+
+// OLDIE FIX
+// If we're in IE and JS is disabled then the .htc box-sizing hack won't
+// run therefore we need to linearise our layout to ensure it doesn't 
+// break in older IE
+// ==========================================================================
+
+@if ($is-oldie == true) {
+    .no-js {
+        .gc {
+            float: none !important;
+            width: 100% !important;
+        }
+    }
+}
+
+
+// ==========================================================================
+// MODIFIERS
+// ==========================================================================
+
+
+// DOUBLE GUTTER
+// ==========================================================================
+
+.grid--double-gutter {
+	margin-left: -$gutter--large;
+
+	.gc {
+		padding-left: $gutter--large;
+	}
+}
+
+// HALF GUTTER
+// ==========================================================================
+
+.grid--half-gutter {
+	margin-left: -$gutter--small;
+
+   	.gc {
+        padding-left: $gutter--small;
+    }
+}
+
+// NO GUTTER
+// ==========================================================================
+
+.grid--no-gutter {
+	margin-left: 0;
+
+    .gc {
+        padding-left: 0;
+    }
+}
+
+
+// INLINE BLOCK
+// ==========================================================================
+
+.grid--ib,
+.grid-ib {
+    letter-spacing: -0.31em; // Remove inter-unit whitespace that appears between `inline-block` child
+    word-spacing: -0.43em; //  Remove inter-unit whitespace that appears between `inline-block` child
+
+    .gc {
+		@include inline-block;
+		vertical-align: top;
+        float: none;
+		letter-spacing: normal; // Reset text defaults.
+		word-spacing: normal; // Reset text defaults.
+    }
+}
+
+// CENTERED
+// ==========================================================================
+
+.grid--center {
+	@extend .grid--ib;
+	text-align: center;
+}
+
+// LEFT
+// ==========================================================================
+
+.grid--left {
+	@extend .grid--ib;
+	text-align: left;
+}
+
+
+// RIGHT
+// ==========================================================================
+
+.grid--right {
+	@extend .grid--ib;
+	text-align: right;
+}
+
+
+// DIVIDED
+// ==========================================================================
+
+.grid--divided {
+	.gc {
+        margin-bottom: $gutter;
+    }
+}
+
+
+// VERITCAL ALIGN: MIDDLE
+// ==========================================================================
+
+.grid--vmiddle {
+	.gc {
+		vertical-align: middle;
+	}
+}
+
+// VERITCAL ALIGN: BOTTOM
+// ==========================================================================
+
+.grid--vbottom {
+	.gc {
+		vertical-align: bottom;
+	}
+}

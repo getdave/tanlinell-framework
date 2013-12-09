@@ -4,4 +4,36 @@
 // Scut - a collection of Sass utilities to ease and improve our implementations of common style-code patterns.
 @import "bower_components/scut/dist/_scut.scss";
 
+// Framework Defaults
+@import "_defaults.scss";
 
+// ==========================================================================
+// Mixins
+// Frameworks and configuration
+// ==========================================================================
+
+// Utils
+@import "mixins/utils.scss";
+
+// [Tanlinell] Griddle
+@import "mixins/tanlinell-griddle.scss";
+
+
+/* ==========================================================================
+	ATOMS
+	Base styles/objects. Mostly global, tag-based selector rules.
+============================================================================= */
+
+@import "atoms/shared.scss";
+
+@import "atoms/link.scss";
+
+@import "atoms/list.scss";
+
+@import "atoms/heading.scss";
+
+@import "atoms/grid.scss";
+
+@import "atoms/image.scss";
+
+@import "atoms/spacing.scss";
