@@ -3,7 +3,7 @@
  * generator-assemble v0.4.3
  * https://github.com/assemble/generator-assemble
  *
- * Copyright (c) 2013 Hariadi Hinta
+ * Copyright (c) 2013 David Smith
  * Licensed under the MIT license.
  */
 
@@ -33,12 +33,12 @@ module.exports = function(grunt) {
 
     watch: {
       assemble: {
-        files: ['<%= config.docsSrc %>/{content,data,templates}/{,*/}*.{md,hbs,yml}'],
+        files: ['<%= config.docsSrc %>/{content,data,templates}/**/*.{md,hbs,yml}'],
         tasks: ['assemble']
       },
       css: {
         files: ['<%= config.cssSrc %>/{,*/}*.{scss,sass}'],
-        tasks: ['sass', 'csslint', 'concat'] // run sass, then lint then combine with normalize
+        tasks: ['sass', 'csslint', 'concat', 'copy:docs'] // run sass, then lint then combine with normalize
       },
       livereload: {
         options: {
@@ -72,16 +72,17 @@ module.exports = function(grunt) {
     },
 
     assemble: {
-      pages: {
-        options: {
-          flatten: true,
-          assets: '<%= config.docsDist %>/assets',
-          layout: '<%= config.docsSrc %>/templates/layouts/default.hbs',
-          data: '<%= config.docsSrc %>/data/*.{json,yml}',
-          partials: '<%= config.docsSrc %>/templates/partials/*.hbs'
-        },
+      options: {
+        flatten: true,
+        assets: '<%= config.docsDist %>/assets',
+        layoutdir: '<%= config.docsSrc %>/templates/layouts/',
+        layout: 'default.hbs',
+        data: '<%= config.docsSrc %>/data/{,*/}*.{json,yml}',
+        partials: '<%= config.docsSrc %>/templates/partials/{,*/}*.hbs'
+      },
+      pages: {        
         files: {
-          '<%= config.docsDist %>/': ['<%= config.docsSrc %>/templates/pages/*.hbs']
+          '<%= config.docsDist %>/': ['<%= config.docsSrc %>/templates/pages/{,*/}*.hbs']
         }
       }
     },
@@ -136,6 +137,7 @@ module.exports = function(grunt) {
         stripBanners: true,
         banner: '<%= config.cssBanner %>',
         separator: '/* Begin: Tanlinell CSS Framework */',
+        nonull: true
       },
       dist: {
         src: ['./bower_components/normalize-css/normalize.css', '<%= config.cssDist %>/<%= config.fwFilename %>.css'],
@@ -159,7 +161,15 @@ module.exports = function(grunt) {
         createTag: false,
         push: false
       }
-    }
+    },
+
+    copy: {
+		docs: {
+			src: '<%= config.cssDist %>/*.css',
+    		dest: '<%= config.docsDist %>/assets/',
+    		flatten: true
+		}
+	}
 
   });
 
@@ -170,6 +180,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-csslint');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-concat');
+  grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-sass');
   grunt.loadNpmTasks('grunt-autoprefixer');
   grunt.loadNpmTasks('grunt-bump');
@@ -188,7 +199,8 @@ module.exports = function(grunt) {
     'autoprefixer',
     'csslint',
     'concat',
-    'cssmin'
+    'cssmin',
+    'copy:docs'
   ]);
 
   grunt.registerTask('default', [

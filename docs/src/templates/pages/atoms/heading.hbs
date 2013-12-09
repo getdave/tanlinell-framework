@@ -1,0 +1,15 @@
+---
+title: Heading
+section: atoms
+layout: object.hbs
+---
+
+{{#each heading}}
+<section id="{{@key}}-{{../title}}">
+  {{> heading . }}
+</section>
+{{/each}}
+
+
+
+

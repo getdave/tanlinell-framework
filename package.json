@@ -35,7 +35,8 @@
     "grunt-contrib-cssmin": "~0.7.0",
     "grunt-contrib-concat": "~0.3.0",
     "grunt-bump": "0.0.13",
-    "grunt-readme": "~0.4.2"
+    "grunt-readme": "~0.4.2",
+    "grunt-contrib-copy": "~0.4.1"
   },
   "licenses": [
     {

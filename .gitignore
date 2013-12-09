@@ -18,3 +18,4 @@ node_modules
 *.sublime-*
 
 bower_components/
+_ignored/

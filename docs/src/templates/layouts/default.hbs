@@ -1,36 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <title>{{title}} | {{site.title}}</title>
-    <link rel="stylesheet" href="{{assets}}/assemble.css">
-    <link rel="stylesheet" href="{{assets}}/github.css">
-  </head>
-  <body>
+	<head>
+		<meta charset="UTF-8">
+		<title>{{title}} | {{site.title}}</title>
+		<link rel="stylesheet" href="{{assets}}/dist/tanlinell-css.css">
+		<link rel="stylesheet" href="{{assets}}/github.css">
+	</head>
 
-    <!-- Navbar 
-    ================================================== -->
-    {{> nav-primary }}
+	<body>
+
+		<!-- Navbar
+		================================================== -->
+		{{> nav-primary }}
 
 
-    <!-- Subhead
-    ================================================== -->
-    <header class="masthead subhead">
-      <div class="container">
-        <div class="row">
-          <div class="col col-lg-12">
-            <h1> {{ uppercase site.title}} </h1>
-          </div>
-        </div>
-      </div>
-    </header>
+		<!-- Subhead
+		================================================== -->
+		<header class="banner">
+			<div class="container">
+				<h1> {{ uppercase site.title}} (logo)</h1>
+			</div>
+		</header>
 
-    <!-- Page content
-    ================================================== -->
-    <div class="container">
-      {{> body }}
-    </div>
+		<!-- Page content
+		================================================== -->
+		<div class="container">
+			{{> body }}
+		</div>
 
-    <script src="{{assets}}/js/highlight.js"></script>
-  </body>
+		<script src="{{assets}}/highlight.js"></script>
+	</body>
 </html>
