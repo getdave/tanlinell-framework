@@ -1,4 +1,36 @@
-/* Tanlinell CSS Framework - by David Smith  - v0.1.0 (09-12-2013) *//*! normalize.css v2.1.3 | MIT License | git.io/normalize */
+/**
+ * Tanlinell CSS Framework
+ * Version: 0.1.0 (09-12-2013)
+ * URL: git://github.com/getdave/tanlinell-css.git
+ * : 
+ * Author: David Smith (@get_dave)
+ */
+
+/**
+ * Modular, OOCSS, Atomic Design-based CSS Framework
+ *
+ * Provided as a stand-alone packaged collection of SASS files. The _framework.scss file
+ * should be @import'd into your projects' master SASS/SCSS file and utilised as required.
+ *
+ * You should *never* modify the files of the framework directly.
+ *
+ * If you find something you cannot work around it is
+ * a bug and should be raised as an issue on Github at:
+ *
+ * https://github.com/getdave/tanlinell-css/issues
+ *
+ * This framework borrows heavily and draws inspiration from the great work of the following projects/authors:
+
+ * OOCSS 					- https://github.com/stubbornella/oocss
+ * Inuit.css 				- https://raw.github.com/csswizardry/inuit.css/
+ * SMACSS guidelines 		- http://smacss.com/
+ * Twitter Bootstrap		- http://twitter.github.com/bootstrap/
+ * ZURB Foundation			- http://foundation.zurb.com/
+ *
+ */
+
+
+/*! normalize.css v2.1.3 | MIT License | git.io/normalize */
 
 /* ==========================================================================
    HTML5 display definitions
@@ -404,21 +436,4 @@ table {
     border-collapse: collapse;
     border-spacing: 0;
 }
-/* Begin: Tanlinell CSS Framework */body {
-  background: red;
-  display: inline-block;
-  vertical-align: baseline;
-  zoom: 1;
-  *display: inline;
-  *vertical-align: auto;
-  transition: opacity 1s ease; }
-
-div {
-  border: 0;
-  clip: rect(0 0 0 0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  width: 1px; }
+/* Begin: Tanlinell CSS Framework */

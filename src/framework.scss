@@ -5,12 +5,3 @@
 @import "bower_components/scut/dist/_scut.scss";
 
 
-body {
-	background: red;
-	@include inline-block;
-	transition: opacity 1s ease;
-}
-
-div {
-	@include scut-hide-visually;
-}

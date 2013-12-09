@@ -25,7 +25,7 @@ module.exports = function(grunt) {
     config: {
       cssSrc: './src',
       cssDist: './dist',
-      cssBanner: '/* Tanlinell CSS Framework - by <%= pkg.author.name %>  - v<%= pkg.version %> (<%= grunt.template.today("dd-mm-yyyy") %>) */',
+      cssBanner: grunt.file.read('banner.txt'),
       fwFilename: '<%= pkg.name %>',
       docsSrc: './docs/src',
       docsDist: './docs/dist'

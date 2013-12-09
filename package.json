@@ -1,6 +1,6 @@
 {
   "name": "tanlinell-css",
-  "description": "Assemble a website from templates and data.",
+  "description": "Modular, OOCSS, Atomic Design-based CSS Framework",
   "version": "0.1.0",
   "homepage": "http://assemble.io",
   "author": {
