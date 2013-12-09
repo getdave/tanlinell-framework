@@ -18,7 +18,7 @@
 module.exports = function(grunt) {
 
   require('time-grunt')(grunt);
-
+  
   // Project configuration.
   grunt.initConfig({
 
@@ -35,11 +35,10 @@ module.exports = function(grunt) {
         files: ['<%= config.docsSrc %>/{content,data,templates}/{,*/}*.{md,hbs,yml}'],
         tasks: ['assemble']
       },
-      sass: {
+      css: {
         files: ['<%= config.cssSrc %>/{,*/}*.{scss,sass}'],
-        tasks: ['sass:dev']
+        tasks: ['sass', 'csslint', 'concat'] // run sass, then lint then combine with normalize
       },
-
       livereload: {
         options: {
           livereload: '<%= connect.options.livereload %>'
@@ -90,24 +89,17 @@ module.exports = function(grunt) {
     sass: {
       options: {
         includePaths: require('node-bourbon').includePaths,
-        outputStyle: 'nested',
+        outputStyle: 'nested', // minification via Grunt CSS Min is prefered
       },
       dist: {
-        options: {
-          outputStyle: 'compressed',
-        },
         files: {
             '<%= config.cssDist %>/tanlinell-framework.css': '<%= config.cssSrc %>/framework.scss'
         }
       },
-      dev: {
-        files: {
-            '<%= config.cssDist %>/tanlinell-framework.css': '<%= config.cssSrc %>/framework.scss'
-        }
-      },
+
     },
 
-
+    // Lint CSS
     csslint: {
       options: {
         csslintrc: '.csslintrc' // https://github.com/gruntjs/grunt-contrib-csslint#options
@@ -117,27 +109,45 @@ module.exports = function(grunt) {
       }
     },
 
-
+    // Apply CSS Prefixs
     autoprefixer: {
-
-      options: {
-        // Task-specific options go here.
-      },
-
-      // just prefix the specified file
       dist: {
         src: '<%= config.cssDist %>/<%= config.fwFilename %>.css',
         dest: '<%= config.cssDist %>/<%= config.fwFilename %>.css'
       },
     },
 
+    // Minify CSS for dist
+    cssmin: {
+      options: {
+          banner: '/* Tanlinell CSS Framework */'
+      },
+      minify: {        
+        files: {
+          '<%= config.cssDist %>/<%= config.fwFilename %>.min.css': ['<%= config.cssDist %>/<%= config.fwFilename %>.css', '!*.min.css']
+        }
+      },
+    },
+
+    // Combine normalize with CSS framework (runs post CSSLint to avoid overzealous linting!)
+    concat: {
+      options: {
+        stripBanners: true,
+        banner: '/* Tanlinell CSS Framework */',
+        separator: '/* Begin: Tanlinell CSS Framework */',
+      },
+      dist: {
+        src: ['<%= config.cssSrc %>/normalize.css', '<%= config.cssDist %>/<%= config.fwFilename %>.css'],
+        dest: '<%= config.cssDist %>/<%= config.fwFilename %>.css',
+      },
+    },
 
 
     // Before generating any new files,
     // remove any previously-created files.
     clean: [
+      '<%= config.cssDist %>/*.css',
       '<%= config.docsDist %>/**/*.{html,xml}',
-      '<%= config.cssDist %>/**/*.{css}'
     ]
 
   });
@@ -146,8 +156,10 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks('grunt-sass');
   grunt.loadNpmTasks('grunt-contrib-csslint');
+  grunt.loadNpmTasks('grunt-contrib-cssmin');
+  grunt.loadNpmTasks('grunt-contrib-concat');
+  grunt.loadNpmTasks('grunt-sass');
   grunt.loadNpmTasks('grunt-autoprefixer');
 
   grunt.registerTask('server', [
@@ -162,7 +174,9 @@ module.exports = function(grunt) {
     'assemble',
     'sass',
     'autoprefixer',
-    'csslint'
+    'csslint',
+    'concat',
+    'cssmin'
   ]);
 
   grunt.registerTask('default', [
