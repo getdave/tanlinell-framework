@@ -12,15 +12,3 @@ body {
 }
 
 
-a {
-    color: $link-hover-color;
-}
-
-a:hover,
-a:focus {
-    color: $link-hover-color;
-}
-
-a:focus {
-    outline: thin dotted;
-}

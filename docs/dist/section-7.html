@@ -21,7 +21,7 @@
             <h1 class="kss-doc-title"><a href="./">Tanlinell CSS Framework</a></h1>
           </header>
           <nav class="kss-nav">
-            <ul class="kss-menu" data-kss-ref="3">
+            <ul class="kss-menu" data-kss-ref="7">
               <li class="kss-menu-item"><a href="./"><span class="kss-ref">0</span><span class="kss-name">Overview</span></a></li>
               
               <li class="kss-menu-item"><a href="section-1.html"><span class="kss-ref">1</span><span class="kss-name">LINK</span></a></li>
@@ -46,19 +46,7 @@
               
               
               
-              <li class="kss-menu-item"><a href="#section-3.1"><span class="kss-ref">3.1</span><span class="kss-name">Base</span></a></li>
-              
-              
-              
-              <li class="kss-menu-item"><a href="#section-3.2"><span class="kss-ref">3.2</span><span class="kss-name">Rounded</span></a></li>
-              
-              
-              
-              <li class="kss-menu-item"><a href="#section-3.3"><span class="kss-ref">3.3</span><span class="kss-name">Polaroid</span></a></li>
-              
-              
-              
-              <li class="kss-menu-item"><a href="#section-3.4"><span class="kss-ref">3.4</span><span class="kss-name">Circle</span></a></li>
+              <li class="kss-menu-item"><a href="#section-7.1"><span class="kss-ref">7.1</span><span class="kss-name">Base</span></a></li>
               
               
             </ul>
@@ -70,105 +58,85 @@
         <article class="kss-article">
           
           
-          <section id="section-3" class="kss-section kss-depth-1">
-            <h1 class="kss-title"><span class="kss-ref">3</span> IMAGE</h1>
+          <section id="section-7" class="kss-section kss-depth-1">
+            <h1 class="kss-title"><span class="kss-ref">7</span> ALERTS</h1>
             
             
             <div class="kss-description">
-              <p>Base styles/objects. Mostly global, tag-based selector rules.</p>
+              <p>Standard alert styles with variations</p>
 
             </div>
             
             
           </section>
           
-          <section id="section-3.1" class="kss-section kss-depth-2">
-            <h2 class="kss-title"><span class="kss-ref">3.1</span> Base</h2>
+          <section id="section-7.1" class="kss-section kss-depth-2">
+            <h2 class="kss-title"><span class="kss-ref">7.1</span> Base</h2>
             
             
             <div class="kss-description">
-              <p>Default styling of images</p>
+              <p>Default styling for all types of Alert</p>
 
             </div>
             
             <div class="kss-modifier-block">
               <div class="kss-modifier kss-modifier-original">
                 <div class="kss-modifier-example">
-                  <img src="http://www.placehold.it/160x120"  />
+                  <p class="alert {$modifiers}">
+  I'm warning you son, get off my land
+</p>
                 </div>
               </div>
               
-              <div class="kss-markup">
-                <pre><code data-language="html">&lt;img src=&quot;http://www.placehold.it/160x120&quot;  /&gt;</code></pre>
-              </div>
-            </div>
-            
-          </section>
-          
-          <section id="section-3.2" class="kss-section kss-depth-2">
-            <h2 class="kss-title"><span class="kss-ref">3.2</span> Rounded</h2>
-            
-            
-            <div class="kss-description">
-              <p>Applies slightly rounded edges to element.</p>
+              <div class="kss-modifier">
+                <div class="kss-modifier-head">
+                  <div class="kss-modifier-name">.alert--success</div>
+                  <div class="kss-modifier-description">
+                    <p>&quot;success&quot; style</p>
 
-            </div>
-            
-            <div class="kss-modifier-block">
-              <div class="kss-modifier kss-modifier-original">
+                  </div>
+                </div>
                 <div class="kss-modifier-example">
-                  <img src="http://www.placehold.it/160x120" class="img-rounded" />
+                  <p class="alert alert--success">
+  I'm warning you son, get off my land
+</p>
                 </div>
               </div>
               
-              <div class="kss-markup">
-                <pre><code data-language="html">&lt;img src=&quot;http://www.placehold.it/160x120&quot; class=&quot;img-rounded&quot; /&gt;</code></pre>
-              </div>
-            </div>
-            
-          </section>
-          
-          <section id="section-3.3" class="kss-section kss-depth-2">
-            <h2 class="kss-title"><span class="kss-ref">3.3</span> Polaroid</h2>
-            
-            
-            <div class="kss-description">
-              <p>Applies subtle default styling to define the image on the page. Use sparingly.</p>
+              <div class="kss-modifier">
+                <div class="kss-modifier-head">
+                  <div class="kss-modifier-name">.alert--error</div>
+                  <div class="kss-modifier-description">
+                    <p>&quot;error&quot; style</p>
 
-            </div>
-            
-            <div class="kss-modifier-block">
-              <div class="kss-modifier kss-modifier-original">
+                  </div>
+                </div>
                 <div class="kss-modifier-example">
-                  <img src="http://www.placehold.it/160x120" class="img-polaroid" />
+                  <p class="alert alert--error">
+  I'm warning you son, get off my land
+</p>
                 </div>
               </div>
               
-              <div class="kss-markup">
-                <pre><code data-language="html">&lt;img src=&quot;http://www.placehold.it/160x120&quot; class=&quot;img-polaroid&quot; /&gt;</code></pre>
-              </div>
-            </div>
-            
-          </section>
-          
-          <section id="section-3.4" class="kss-section kss-depth-2">
-            <h2 class="kss-title"><span class="kss-ref">3.4</span> Circle</h2>
-            
-            
-            <div class="kss-description">
-              <p>Creates an entirely circular image. Works on images where width === height.</p>
+              <div class="kss-modifier">
+                <div class="kss-modifier-head">
+                  <div class="kss-modifier-name">.alert--info</div>
+                  <div class="kss-modifier-description">
+                    <p>&quot;info&quot; style</p>
 
-            </div>
-            
-            <div class="kss-modifier-block">
-              <div class="kss-modifier kss-modifier-original">
+                  </div>
+                </div>
                 <div class="kss-modifier-example">
-                  <img src="http://www.placehold.it/160x160" class="img-circle" />
+                  <p class="alert alert--info">
+  I'm warning you son, get off my land
+</p>
                 </div>
               </div>
               
               <div class="kss-markup">
-                <pre><code data-language="html">&lt;img src=&quot;http://www.placehold.it/160x160&quot; class=&quot;img-circle&quot; /&gt;</code></pre>
+                <pre><code data-language="html">&lt;p class=&quot;alert {$modifiers}&quot;&gt;
+  I&#x27;m warning you son, get off my land
+&lt;/p&gt;</code></pre>
               </div>
             </div>
             

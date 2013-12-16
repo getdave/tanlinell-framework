@@ -1,84 +1,73 @@
-// ==========================================================================
 // HEADING
 //
+// Default Heading sizes based on the ancient [Typographic scale](http://www.markboulton.co.uk/journal/comments/five-simple-steps-to-better-typography-part-4)
 //
-// ==========================================================================
+// Styleguide 5.
 
-// ==========================================================================
-// LANDMARK
-// ==========================================================================
 
-.landmark {
-    margin-bottom: $base-line-height*2;
+// Base
+//
+// Note that all heading sizes are aliased via the `.hN` classes. So if you would like your `<h6>` to look like an `<h1>` then simply add the class `.h1`
+//
+// Markup:
+// <h1>Heading Level 1</h1>
+// <h2>Heading Level 2</h2>
+// <h3>Heading Level 3</h3>
+// <h4>Heading Level 4</h4>
+// <h5>Heading Level 5</h5>
+// <h6>Heading Level 6</h6>
+// 
+// Styleguide 5.1
+
+
+h1,.h1 {
+	@include rem(font-size, $headingLevel1);
+	color: #111;
+	margin: 0 0 .5em 0;
+  	text-rendering: optimizelegibility; 
 }
 
-.landmark--small {
-    margin-bottom: $base-line-height;
+/* 
+	<h2>Heading 2</h2> 
+*/
+h2,.h2 {
+	@include rem(font-size, $headingLevel2);
+	color: #222;
+	margin: 0 0 .35em 0;
 }
 
-.landmark--large {
-    margin-bottom: $base-line-height*4;
+/* 
+	<h3>Heading 3</h3> 
+*/
+h3,.h3 {
+	@include rem(font-size, $headingLevel3);
+	color:#333;
+	margin: 0 0 .5em 0;
 }
 
-// ==========================================================================
-// VERTICAL SPACE
-// ==========================================================================
-
-.vspace {
-    padding-top: $base-line-height;
-    padding-bottom: $base-line-height;
+/* 
+	<h4>Heading 4</h4> 
+*/
+h4,.h4 {
+	@include rem(font-size, $headingLevel4);
+	color:#333;
+	margin: 0 0 .5em 0;
 }
 
-.vspace--flush {
-    padding-top: 0;
-    padding-bottom: 0;
+/* 
+	<h5>Heading 5</h5> 
+*/
+h5,.h5 {
+	@include rem(font-size, $headingLevel5);
+	color:#444;
+	margin: 0 0 .5em 0;
 }
 
-.vspace--gap {
-    padding-top: $base-line-height/2;
-    padding-bottom: $base-line-height/2;
+/* 
+	<h6>Heading 6</h6> 
+*/
+h6,.h6 {
+	@include rem(font-size, $headingLevel6);
+	color:#444;
+	margin: 0 0 .5em 0;
 }
-
-.vspace--void {
-    padding-top: $base-line-height*2;
-    padding-bottom: $base-line-height*2;
-}
-
-
-
-// ==========================================================================
-// OVERIDES
-// ==========================================================================
-
-.ptn,.pvn,.pan{padding-top:0 !important}
-.pts,.pvs,.pas{padding-top:$base-line-height/4 !important}
-.ptm,.pvm,.pam{padding-top:$base-line-height/2 !important}
-.ptl,.pvl,.pal{padding-top:$base-line-height !important}
-.prn,.phn,.pan{padding-right:0 !important}
-.prs,.phs,.pas{padding-right:$base-line-height/4 !important}
-.prm,.phm,.pam{padding-right:$base-line-height/2 !important}
-.prl,.phl,.pal{padding-right:$base-line-height !important}
-.pbn,.pvn,.pan{padding-bottom:0 !important}
-.pbs,.pvs,.pas{padding-bottom:$base-line-height/4 !important}
-.pbm,.pvm,.pam{padding-bottom:$base-line-height/2 !important}
-.pbl,.pvl,.pal{padding-bottom:$base-line-height !important}
-.pln,.phn,.pan{padding-left:0 !important}
-.pls,.phs,.pas{padding-left:$base-line-height/4 !important}
-.plm,.phm,.pam{padding-left:$base-line-height/2 !important}
-.pll,.phl,.pal{padding-left:$base-line-height !important}
-.mtn,.mvn,.man{margin-top:0 !important}
-.mts,.mvs,.mas{margin-top:$base-line-height/4 !important}
-.mtm,.mvm,.mam{margin-top:$base-line-height/2 !important}
-.mtl,.mvl,.mal{margin-top:$base-line-height !important}
-.mrn,.mhn,.man{margin-right:0 !important}
-.mrs,.mhs,.mas{margin-right:$base-line-height/4 !important}
-.mrm,.mhm,.mam{margin-right:$base-line-height/2 !important}
-.mrl,.mhl,.mal{margin-right:$base-line-height !important}
-.mbn,.mvn,.man{margin-bottom:0 !important}
-.mbs,.mvs,.mas{margin-bottom:$base-line-height/4 !important}
-.mbm,.mvm,.mam{margin-bottom:$base-line-height/2 !important}
-.mbl,.mvl,.mal{margin-bottom:$base-line-height !important}
-.mln,.mhn,.man{margin-left:0 !important}
-.mls,.mhs,.mas{margin-left:$base-line-height/4 !important}
-.mlm,.mhm,.mam{margin-left:$base-line-height/2 !important}
-.mll,.mhl,.mal{margin-left:$base-line-height !important}

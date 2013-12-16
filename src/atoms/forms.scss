@@ -1,0 +1,343 @@
+// FORMS
+//
+// Styling and basic layout of base HTML Web Form elements.
+//
+// Styleguide 6.
+
+
+// ==========================================================================
+// SILENT
+// ==========================================================================
+
+%form-input {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    margin: 0;
+    text-align: left;
+    width: 100%;
+    @include rem(padding, 8px 10px);
+    box-sizing: border-box;
+    // Leaving out Helvetica Neue, to not throw off size="..."
+    // on inputs. Arial is more reliable, on Windows and OS X.
+    font-family: Arial, sans-serif;
+    font-size: 100%;
+    vertical-align: top;
+}
+
+
+// ==========================================================================
+// ELEMENTS
+// ==========================================================================
+
+// Elements
+//
+// Default styling for all common elements.
+//
+// Styleguide 6.1
+
+// LABEL
+// ==========================================================================
+
+label {
+    display: block;
+    font-weight: bold;
+    font-size: 100%;
+}
+
+// TEXT
+// ==========================================================================
+
+
+// Text Inputs
+//
+// Default styling for all types of Text Input
+// 
+// .disabled        - disabled form elements
+//
+// Markup:
+// <input type="text" class="{$modifiers}" />
+//
+// Styleguide 6.1.1
+
+input[type="date"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="email"],
+input[type="month"],
+input[type="number"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="text"],
+input[type="time"],
+input[type="url"],
+input[type="week"] {
+    @extend %form-input;
+
+    &[disabled],
+    &.disabled {
+        cursor: not-allowed;
+        background-color: #EEE;
+    }
+}
+
+
+
+
+
+// SELECT
+// ==========================================================================
+
+// Select Elements
+//
+// Default styling for all types of Select Element
+//
+// Markup:
+// <select>
+// <option>Option</option>
+// <option>Option</option>
+// <option>Option</option>
+// <option>Option</option>
+// </select>
+//
+// Styleguide 6.1.2
+
+select {
+    @extend %form-input;
+    cursor: pointer;
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAGBAMAAAAibuNaAAAAFVBMVEVlZWVkZGRlZWVlZWVVVVUAAABmZmbvGGvZAAAABnRSTlOosfY/BgBsLvnmAAAAL0lEQVQI12NwTAOCJNNQCGAIEQNylUNh3FBHJEkgFygNlwRyQx0RkiBuCDOcFwoAx+4a46mIDLkAAAAASUVORK5CYII=);
+    border-radius: 0;
+    -webkit-appearance: none;
+    appearance: none;
+
+    &:hover,
+    &:focus {
+        background-color: #fefefe;
+    }
+}
+
+optgroup {
+    font-style: normal;
+    font-weight: normal;
+    // Font family repeated, for Firefox.
+    font-family: Arial, "Liberation Sans", FreeSans, sans-serif;
+    
+    // Kill phantom spacing and dotted
+    // border that appears in Firefox.
+    &::-moz-focus-inner {
+        border: 0;
+        padding: 0; 
+    }
+}
+
+
+// BOOLEAN
+// ==========================================================================
+
+// Boolean Elements
+//
+// Default styling for all types of Boolean Element
+//
+// Markup:
+// <div class="f-block f-block--boolean">
+//   <input class="fe-boolean" type="checkbox" name="checkbox_example" value="1" />
+//   <label for="checkbox_example">Checkbox example</label>
+// </div>
+// <div class="f-block f-block--boolean">
+//   <input class="fe-boolean" type="radio" name="radio_example" value="1" />
+//   <label for="radio_example">Radio example</label>
+// </div>
+//
+// Styleguide 6.1.3
+
+.f-block--boolean {
+
+    label {
+        margin-right: $base-line-height/3;
+        margin-left: $base-line-height/3;
+    }
+
+    label,
+    .fe-boolean {
+        @include inline-block;
+        vertical-align: middle;
+    }
+}
+
+
+// TEXTAREA
+// ==========================================================================
+
+// Textarea Elements
+//
+// Default styling for Textarea elements
+//
+// Markup:
+// <div class="f-block f-block--textarea">
+//   <label>Textarea example</label>
+//   <textarea rows="20"></textarea>
+// </div>
+//
+// Styleguide 6.1.4
+
+textarea {
+    @extend %form-input;
+    height: auto;
+    @include rem(padding,16px 15px);
+}
+
+
+
+// HELP TEXT
+// ==========================================================================
+
+// Help Text
+//
+// Block level help text for form controls.
+//
+// Markup:
+// <div class="f-block f-block--textarea">
+//   <label>Help text example</label>
+//   <input type="text" />
+//   <span class="help-block">A block of help text that breaks onto a new line and may extend beyond one line.</span>
+// </div>
+//
+// Styleguide 6.1.5
+
+.help-block {
+    display: block;
+    @include rem(margin-top,5px);
+    @include rem(margin-bottom,10px);
+    color: #737373;
+    font-size: 0.9em;
+}
+
+
+// ==========================================================================
+// STRUCTURE & LAYOUTS
+// ==========================================================================
+
+// Structure & Layout
+//
+// Layout and arrangement of form controls.
+//
+// Styleguide 6.2
+
+
+// STRUCTURAL
+// ==========================================================================
+
+// Form Block
+//
+// Provides clearing and spacing for individual form elements.
+//
+// Markup:
+// <div class="f-block">
+//   <label class="fe-label" for="inline_example">First Block</label>
+//   <input class="fe-control" name="for="inline_example" id="inline_example" type="text" />
+// </div>
+// <div class="f-block">
+//   <label class="fe-label" for="inline_example">Second Block</label>
+//   <input class="fe-control" name="for="inline_example" id="inline_example" type="text" />
+// </div>
+// <div class="f-block">
+//   <label class="fe-label" for="inline_example">Third Block</label>
+//   <input class="fe-control" name="for="inline_example" id="inline_example" type="text" />
+// </div>
+//
+// Styleguide 6.2.1
+
+.f-block {
+    display: block;
+    @include clearfix;
+    margin-bottom: $base-line-height;
+}
+
+
+// INLINE FORM
+// ==========================================================================
+
+// Inline Form
+//
+// Throws a block into a horiztonal arrangement with control and lable on one line
+//
+// Markup:
+// <div class="f-block f-block--inline">
+//   <label class="fe-label" for="inline_example">Username</label>
+//   <input class="fe-control" name="for="inline_example" id="inline_example" type="text" />
+// </div>
+// <div class="f-block f-block--inline">
+//   <label class="fe-label" for="inline_example">Password</label>
+//   <input class="fe-control" name="for="inline_example" id="inline_example" type="text" />
+// </div>
+//
+// Styleguide 6.2.2
+
+.f-block--inline {
+    @include inline-block;
+    margin-right: $base-line-height/3;
+
+    .fe-label,
+    .fe-control {
+        @include inline-block;
+    }
+
+    .fe-label {
+        margin-right: $base-line-height/3;
+    }
+
+    .fe-control {
+        width: auto;
+    }
+}
+
+
+// PREPEND & APPEND
+// ==========================================================================
+
+// Prepend & Append
+//
+// Prepends an element onto a form control
+//
+// Markup:
+// <div class="f-block">
+//   <label class="fe-label" for="inline_example">Prepend</label>
+//   <span class="fe-group">
+//     <span class="fe-prepend">
+//      <button class="btn" type="button">Go!</button>
+//     </span>
+//     <input class="fe-control" name="for="inline_example" id="inline_example" type="text" />
+//   </span>
+// </div>
+// <div class="f-block">
+//   <label class="fe-label" for="inline_example">Append</label>
+//   <span class="fe-group">
+//     <input class="fe-control" name="for="inline_example" id="inline_example" type="text" />
+//     <span class="fe-append">
+//      <button class="btn" type="button">Go!</button>
+//     </span>
+//   </span>
+// </div>
+//
+// Styleguide 6.2.3
+
+.fe-group {
+    position: relative;
+    white-space: nowrap;
+    display: table;
+    border-collapse: separate;
+    
+    .fe-control,
+    .fe-prepend,
+    .fe-append {
+        display: table-cell;
+        vertical-align: middle;
+    }
+
+    .fe-prepend,
+    .fe-append {
+        width: 1%;
+    }
+}

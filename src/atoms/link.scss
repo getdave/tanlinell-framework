@@ -6,6 +6,31 @@
 
 
 
+// Base
+//
+// Default styling for all types of list.
+//
+// Markup:
+// <a href="#">Link</a>
+//
+// Styleguide 1.1
+
+
+a {
+    color: $link-hover-color;
+}
+
+a:hover,
+a:focus {
+    color: $link-hover-color;
+}
+
+a:focus {
+    outline: thin dotted;
+}
+
+
+
 // Link Complex
 //
 // Separation of components within a standard hyperlink.
@@ -13,7 +38,7 @@
 // Markup:
 // <a href="#" class="link-complex"><span class="link-complex__target">Complex Link</span> ></a>
 // 
-// Styleguide 1.1
+// Styleguide 1.2
 
 .link-complex,
 .link-complex:hover,
@@ -32,7 +57,7 @@
 // Markup:
 // <a href="#" class="link-blocky">Blocky Link</a>
 // 
-// Styleguide 1.2
+// Styleguide 1.3
 
 .link-blocky {
     @include inline-block;

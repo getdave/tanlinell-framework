@@ -7,5 +7,6 @@
   "compatible-vendor-prefixes": false,
   "box-sizing": false,
   "display-property-grouping": false,
-  "important": false
+  "important": false,
+  "font-sizes": false
 }

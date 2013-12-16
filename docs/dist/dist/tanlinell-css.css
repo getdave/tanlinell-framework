@@ -442,18 +442,113 @@ table {
 ============================================================================= */
 body {
   font-family: sans-serif;
-  /* 3 */
-  /* 3 */
-  /* 4 */
-  /* 6 */
-  /* 6 */
-  /* 7 */
   font-size: 16px;
-  /* 9 */
-  font-size: parseInt(16px)/16rem;
-  /* 9 */
+  font-size: 1rem;
   line-height: 1.666em;
   color: #444444; }
+
+input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="email"], input[type="month"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="time"], input[type="url"], input[type="week"], select, textarea {
+  background-color: white;
+  border: 1px solid #cccccc;
+  margin: 0;
+  text-align: left;
+  width: 100%;
+  padding: 8px 10px;
+  padding: 0.5rem 0.625rem;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+  font-size: 100%;
+  vertical-align: top; }
+
+label {
+  display: block;
+  font-weight: bold;
+  font-size: 100%; }
+
+input[type="date"][disabled], input[type="date"].disabled, input[type="datetime"][disabled], input[type="datetime"].disabled, input[type="datetime-local"][disabled], input[type="datetime-local"].disabled, input[type="email"][disabled], input[type="email"].disabled, input[type="month"][disabled], input[type="month"].disabled, input[type="number"][disabled], input[type="number"].disabled, input[type="password"][disabled], input[type="password"].disabled, input[type="search"][disabled], input[type="search"].disabled, input[type="tel"][disabled], input[type="tel"].disabled, input[type="text"][disabled], input[type="text"].disabled, input[type="time"][disabled], input[type="time"].disabled, input[type="url"][disabled], input[type="url"].disabled, input[type="week"][disabled], input[type="week"].disabled {
+  cursor: not-allowed;
+  background-color: #eeeeee; }
+
+select {
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-position: right center;
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAGBAMAAAAibuNaAAAAFVBMVEVlZWVkZGRlZWVlZWVVVVUAAABmZmbvGGvZAAAABnRSTlOosfY/BgBsLvnmAAAAL0lEQVQI12NwTAOCJNNQCGAIEQNylUNh3FBHJEkgFygNlwRyQx0RkiBuCDOcFwoAx+4a46mIDLkAAAAASUVORK5CYII=);
+  border-radius: 0;
+  -webkit-appearance: none;
+  appearance: none; }
+  select:hover, select:focus {
+    background-color: #fefefe; }
+
+optgroup {
+  font-style: normal;
+  font-weight: normal;
+  font-family: Arial, "Liberation Sans", FreeSans, sans-serif; }
+  optgroup::-moz-focus-inner {
+    border: 0;
+    padding: 0; }
+
+.f-block--boolean label {
+  margin-right: 0.55533em;
+  margin-left: 0.55533em; }
+.f-block--boolean label, .f-block--boolean .fe-boolean {
+  display: inline-block;
+  vertical-align: baseline;
+  zoom: 1;
+  *display: inline;
+  *vertical-align: auto;
+  vertical-align: middle; }
+
+textarea {
+  height: auto;
+  padding: 16px 15px;
+  padding: 1rem 0.9375rem; }
+
+.help-block {
+  display: block;
+  margin-top: 5px;
+  margin-top: 0.3125rem;
+  margin-bottom: 10px;
+  margin-bottom: 0.625rem;
+  color: #737373;
+  font-size: 0.9em; }
+
+.f-block {
+  display: block;
+  margin-bottom: 1.666em; }
+  .f-block:after {
+    content: "";
+    display: table;
+    clear: both; }
+
+.f-block--inline {
+  display: inline-block;
+  vertical-align: baseline;
+  zoom: 1;
+  *display: inline;
+  *vertical-align: auto;
+  margin-right: 0.55533em; }
+  .f-block--inline .fe-label, .f-block--inline .fe-control {
+    display: inline-block;
+    vertical-align: baseline;
+    zoom: 1;
+    *display: inline;
+    *vertical-align: auto; }
+  .f-block--inline .fe-label {
+    margin-right: 0.55533em; }
+  .f-block--inline .fe-control {
+    width: auto; }
+
+.fe-group {
+  position: relative;
+  white-space: nowrap;
+  display: table;
+  border-collapse: separate; }
+  .fe-group .fe-control, .fe-group .fe-prepend, .fe-group .fe-append {
+    display: table-cell;
+    vertical-align: middle; }
+  .fe-group .fe-prepend, .fe-group .fe-append {
+    width: 1%; }
 
 a {
   color: #005580; }
@@ -519,126 +614,57 @@ dd {
   display: block;
   padding: 0.833em; }
 
-.landmark {
-  margin-bottom: 3.332em; }
+h1, .h1 {
+  font-size: 36px;
+  font-size: 2.25rem;
+  color: #111111;
+  margin: 0 0 0.5em 0;
+  text-rendering: optimizelegibility; }
 
-.landmark--small {
-  margin-bottom: 1.666em; }
+/* 
+	<h2>Heading 2</h2> 
+*/
+h2, .h2 {
+  font-size: 30px;
+  font-size: 1.875rem;
+  color: #222222;
+  margin: 0 0 0.35em 0; }
 
-.landmark--large {
-  margin-bottom: 6.664em; }
+/* 
+	<h3>Heading 3</h3> 
+*/
+h3, .h3 {
+  font-size: 24px;
+  font-size: 1.5rem;
+  color: #333333;
+  margin: 0 0 0.5em 0; }
 
-.vspace {
-  padding-top: 1.666em;
-  padding-bottom: 1.666em; }
+/* 
+	<h4>Heading 4</h4> 
+*/
+h4, .h4 {
+  font-size: 20px;
+  font-size: 1.25rem;
+  color: #333333;
+  margin: 0 0 0.5em 0; }
 
-.vspace--flush {
-  padding-top: 0;
-  padding-bottom: 0; }
+/* 
+	<h5>Heading 5</h5> 
+*/
+h5, .h5 {
+  font-size: 18px;
+  font-size: 1.125rem;
+  color: #444444;
+  margin: 0 0 0.5em 0; }
 
-.vspace--gap {
-  padding-top: 0.833em;
-  padding-bottom: 0.833em; }
-
-.vspace--void {
-  padding-top: 3.332em;
-  padding-bottom: 3.332em; }
-
-.ptn, .pvn, .pan {
-  padding-top: 0 !important; }
-
-.pts, .pvs, .pas {
-  padding-top: 0.4165em !important; }
-
-.ptm, .pvm, .pam {
-  padding-top: 0.833em !important; }
-
-.ptl, .pvl, .pal {
-  padding-top: 1.666em !important; }
-
-.prn, .phn, .pan {
-  padding-right: 0 !important; }
-
-.prs, .phs, .pas {
-  padding-right: 0.4165em !important; }
-
-.prm, .phm, .pam {
-  padding-right: 0.833em !important; }
-
-.prl, .phl, .pal {
-  padding-right: 1.666em !important; }
-
-.pbn, .pvn, .pan {
-  padding-bottom: 0 !important; }
-
-.pbs, .pvs, .pas {
-  padding-bottom: 0.4165em !important; }
-
-.pbm, .pvm, .pam {
-  padding-bottom: 0.833em !important; }
-
-.pbl, .pvl, .pal {
-  padding-bottom: 1.666em !important; }
-
-.pln, .phn, .pan {
-  padding-left: 0 !important; }
-
-.pls, .phs, .pas {
-  padding-left: 0.4165em !important; }
-
-.plm, .phm, .pam {
-  padding-left: 0.833em !important; }
-
-.pll, .phl, .pal {
-  padding-left: 1.666em !important; }
-
-.mtn, .mvn, .man {
-  margin-top: 0 !important; }
-
-.mts, .mvs, .mas {
-  margin-top: 0.4165em !important; }
-
-.mtm, .mvm, .mam {
-  margin-top: 0.833em !important; }
-
-.mtl, .mvl, .mal {
-  margin-top: 1.666em !important; }
-
-.mrn, .mhn, .man {
-  margin-right: 0 !important; }
-
-.mrs, .mhs, .mas {
-  margin-right: 0.4165em !important; }
-
-.mrm, .mhm, .mam {
-  margin-right: 0.833em !important; }
-
-.mrl, .mhl, .mal {
-  margin-right: 1.666em !important; }
-
-.mbn, .mvn, .man {
-  margin-bottom: 0 !important; }
-
-.mbs, .mvs, .mas {
-  margin-bottom: 0.4165em !important; }
-
-.mbm, .mvm, .mam {
-  margin-bottom: 0.833em !important; }
-
-.mbl, .mvl, .mal {
-  margin-bottom: 1.666em !important; }
-
-.mln, .mhn, .man {
-  margin-left: 0 !important; }
-
-.mls, .mhs, .mas {
-  margin-left: 0.4165em !important; }
-
-.mlm, .mhm, .mam {
-  margin-left: 0.833em !important; }
-
-.mll, .mhl, .mal {
-  margin-left: 1.666em !important; }
+/* 
+	<h6>Heading 6</h6> 
+*/
+h6, .h6 {
+  font-size: 16px;
+  font-size: 1rem;
+  color: #444444;
+  margin: 0 0 0.5em 0; }
 
 .grid, .grid-wrap {
   list-style: none;
@@ -738,6 +764,77 @@ img {
 
 .img-circle {
   border-radius: 300px; }
+
+.alert {
+  padding: 0.5em 0.875em;
+  margin-bottom: 1.666em;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+  background-color: #fcf8e3;
+  border: 1px solid #fbeed5;
+  border-radius: 4px;
+  color: #c09853; }
+
+.alert-heading {
+  color: inherit; }
+
+.alert :last-child {
+  margin-bottom: 0; }
+
+.alert .close {
+  position: relative;
+  top: -2px;
+  right: -21px;
+  line-height: 1.666em; }
+
+/* ##Alert Success */
+/* 
+    <div class="alert alert-success">
+        <strong>Success</strong> Looking good!
+    </div>
+*/
+.alert--success {
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+  color: #468847; }
+
+/* ##Alert Danger/Error */
+/* 
+    <div class="alert alert-danger">
+        <strong>Danger!</strong> Best check yo self, you're not looking too good.
+    </div>
+*/
+.alert--danger, .alert--error {
+  background-color: #f2dede;
+  border-color: #eed3d7;
+  color: #b94a48; }
+
+/* ##Alert Info */
+/* 
+    <div class="alert alert-info">
+        <strong>Notice</strong> Everything isn't what it seems...
+    </div>
+*/
+.alert--info {
+  background-color: #d9edf7;
+  border-color: #bceaf1;
+  color: #3a87ad; }
+
+/* ##Alert Blocks */
+/* 
+    <div class="alert alert-block">
+        <h4>Warning!</h4>
+        Best check yo self, you're not...
+    </div>
+*/
+.alert-block {
+  padding-top: 0.875em;
+  padding-bottom: 0.875em; }
+
+.alert-block > p, .alert-block > ul {
+  margin-bottom: 0; }
+
+.alert-block p + p {
+  margin-top: 0.3125em; }
 
 .landmark {
   margin-bottom: 3.332em; }
