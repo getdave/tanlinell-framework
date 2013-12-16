@@ -1,14 +1,44 @@
-// ==========================================================================
 // LIST
 //
-// base and modified list styles
-// ==========================================================================
+// Base styles/objects. Mostly global, tag-based selector rules.
+//
+// Styleguide 2.
 
 // ==========================================================================
 // BASE
 // ==========================================================================
 
-ul, ol, dd {
+// Base
+//
+// Default styling for all types of list.
+// 
+// Markup:
+// <ul>
+//  <li>List item</li>
+//  <li>List item
+//      <ul>
+//          <li>List item</li>
+//          <li>List item</li>
+//          <li>List item</li>
+//      </ul>
+//  </li>
+//  <li>List item</li>
+// </ul>
+// <ol>
+//  <li>List item</li>
+//  <li>List item</li>
+//  <li>List item</li>
+// </ol>
+// <dl>
+//  <dt>Def term</dt>
+//  <dd>Def description</dd>
+//  <dt>Def term</dt>
+//  <dd>Def description</dd>
+// </dl>
+//
+// Styleguide 2.1
+
+ul, ol {
     padding: 0;
     margin: 0 0 $base-line-height $base-line-height;
 }
@@ -41,13 +71,29 @@ ol {
     list-style: decimal;
 }
 
+// DEFINITION
+// ==========================================================================
+
+dd {
+    margin-left: 0;
+}
 
 // ==========================================================================
 // MODIFIERS
 // ==========================================================================
 
-// UNSTYLED
-// ==========================================================================
+// Unstyled
+//
+// Removes bullet points and default left spacing.
+// 
+// Markup:
+// <ul class="list-unstyled">
+//  <li>List item</li>
+//  <li>List item</li>
+//  <li>List item</li>
+// </ul>
+//
+// Styleguide 2.2
 
 .list-unstyled {
     margin-left: 0;
@@ -57,6 +103,19 @@ ol {
 // NUMBERED
 // ==========================================================================
 
+// Numbered
+//
+// Adds numerical index to each item in the list. Should only be applied to `<ol>` lists.
+// 
+// Markup:
+// <ol class="list-numbered">
+//  <li>List item</li>
+//  <li>List item</li>
+//  <li>List item</li>
+// </ol>
+//
+// Styleguide 2.3
+
 .list-numbered {
     list-style-type:decimal;
 }
@@ -65,12 +124,26 @@ ol {
 // BLOCK
 // ==========================================================================
 
-.list-block {
+// Blocky
+//
+// Creates standard "blocky" navigation. Useful for sub navigation lists and such like.
+// 
+// Markup:
+// <ul class="list-blocky">
+//  <li><a href="/" class="list-blocky__link">Block List Item</a></li>
+//  <li><a href="/" class="list-blocky__link">Block List Item</a></li>
+//  <li><a href="/" class="list-blocky__link">Block List Item</a></li>
+//  <li><a href="/" class="list-blocky__link">Block List Item</a></li>
+// </ul>
+//
+// Styleguide 2.4
+
+.list-blocky {
     margin-left: 0;
     list-style: none;
 }
 
-.list-block__link {
+.list-blocky__link {
     display: block;
     padding: $base-line-height/2;
 }

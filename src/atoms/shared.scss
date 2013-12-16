@@ -1,16 +1,26 @@
-// ==========================================================================
-// SHARED
+// Shared
 //
-//
-// ==========================================================================
-
-// ==========================================================================
-// TYPO
-// ==========================================================================
+// A majority of buttons in the site are built from the same base class.
+// 
+// No styleguide reference.
 
 body {
     font-family: sans-serif;
     @include rem(font-size, $base-font-size);
     line-height: $base-line-height;
     color: #444;
+}
+
+
+a {
+    color: $link-hover-color;
+}
+
+a:hover,
+a:focus {
+    color: $link-hover-color;
+}
+
+a:focus {
+    outline: thin dotted;
 }

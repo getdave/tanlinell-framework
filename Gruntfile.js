@@ -32,13 +32,9 @@ module.exports = function(grunt) {
     },
 
     watch: {
-      assemble: {
-        files: ['<%= config.docsSrc %>/{content,data,templates}/**/*.{md,hbs,yml}'],
-        tasks: ['assemble']
-      },
       css: {
         files: ['<%= config.cssSrc %>/{,*/}*.{scss,sass}'],
-        tasks: ['sass', 'csslint', 'concat', 'copy:docs'] // run sass, then lint then combine with normalize
+        tasks: ['sass', 'csslint', 'concat', 'copy:docs', 'styleguide'] // run sass, then lint then combine with normalize
       },
       livereload: {
         options: {
@@ -164,12 +160,35 @@ module.exports = function(grunt) {
     },
 
     copy: {
-		docs: {
-			src: '<%= config.cssDist %>/*.css',
-    		dest: '<%= config.docsDist %>/assets/',
-    		flatten: true
-		}
-	}
+      docs: {
+        src: '<%= config.cssDist %>/*.css',
+        dest: '<%= config.docsDist %>/',
+        flatten: true
+      }
+    },
+
+    styleguide: {
+      options: {
+          name: 'Style Guide',
+
+          framework: {
+              name: 'kss'
+          },
+
+          template: {
+              src: './src/kss-node-template/template',
+              include: ['<%= config.cssDist %>/<%= config.fwFilename %>.css']
+          }
+
+
+
+      },
+      all: {
+        files: [{
+          '<%= config.docsDist %>': '<%= config.cssSrc %>/framework.scss'
+        }]
+      }
+    },
 
   });
 
@@ -184,6 +203,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-sass');
   grunt.loadNpmTasks('grunt-autoprefixer');
   grunt.loadNpmTasks('grunt-bump');
+  grunt.loadNpmTasks('grunt-styleguide');
 
   grunt.registerTask('server', [
     'clean',

@@ -1,34 +1,19 @@
-// ==========================================================================
 // LINK
 //
+// Base styles/objects. Mostly global, tag-based selector rules.
 //
-// ==========================================================================
-
-// ==========================================================================
-// BASE
-// ==========================================================================
-
-a {
-    color: $link-hover-color;
-}
-
-a:hover,
-a:focus {
-    color: $link-hover-color;
-}
-
-a:focus {
-    outline: thin dotted;
-}
+// Styleguide 1.
 
 
 
-// ==========================================================================
-// MODIFIERS
-// ==========================================================================
-
-// COMPLEX
-// ==========================================================================
+// Link Complex
+//
+// Separation of components within a standard hyperlink.
+// 
+// Markup:
+// <a href="#" class="link-complex"><span class="link-complex__target">Complex Link</span> ></a>
+// 
+// Styleguide 1.1
 
 .link-complex,
 .link-complex:hover,
@@ -40,8 +25,14 @@ a:focus {
     }
 }
 
-// BLOCKY
-// ==========================================================================
+// Link Blocky
+//
+// Links with button-like blockyness but without the button UI styles
+// 
+// Markup:
+// <a href="#" class="link-blocky">Blocky Link</a>
+// 
+// Styleguide 1.2
 
 .link-blocky {
     @include inline-block;

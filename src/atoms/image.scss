@@ -1,12 +1,21 @@
-// ==========================================================================
 // IMAGE
 //
+// Base styles/objects. Mostly global, tag-based selector rules.
 //
-// ==========================================================================
+// Styleguide 3.
 
 // ==========================================================================
 // BASE
 // ==========================================================================
+
+// Base
+//
+// Default styling of images
+//
+// Markup:
+// <img src="http://www.placehold.it/160x120"  />
+//
+// Styleguide 3.1
 
 img {
     max-width: 100%;
@@ -37,14 +46,33 @@ embed {
 // ROUNDED
 // ==========================================================================
 
-.img--rounded {
+// Rounded
+//
+// Applies slightly rounded edges to element.
+//
+// Markup:
+// <img src="http://www.placehold.it/160x120" class="img-rounded" />
+//
+// Styleguide 3.2
+
+
+.img-rounded {
     border-radius: 6px;
 }
 
 // POLAROID
 // ==========================================================================
 
-.img--polaroid {
+// Polaroid
+//
+// Applies subtle default styling to define the image on the page. Use sparingly.
+//
+// Markup:
+// <img src="http://www.placehold.it/160x120" class="img-polaroid" />
+//
+// Styleguide 3.3
+
+.img-polaroid {
     padding: 4px;
     background-color: #fff;
     border: 1px solid #ccc;
@@ -55,6 +83,15 @@ embed {
 // CIRCLE
 // ==========================================================================
 
-.img--circle {
+// Circle
+//
+// Creates an entirely circular image. Works on images where width === height.
+//
+// Markup:
+// <img src="http://www.placehold.it/160x160" class="img-circle" />
+//
+// Styleguide 3.4
+
+.img-circle {
     border-radius: 300px;
 }

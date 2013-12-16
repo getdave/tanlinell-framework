@@ -1,14 +1,33 @@
-// ==========================================================================
 // GRID
 //
 // Fluid, mobile-first grid framework based on Griddle by @necolas
-// ==========================================================================
+//
+// Styleguide 4.
+
 
 
 // ==========================================================================
 // GRID WRAP
 // unit which wraps a grid "row"
 // ==========================================================================
+
+// Grid
+//
+// Wrapper element required for each "row" of grid items. Avoids requirement to have `.first` or `.last` classes. Apply modifier classes here to control various properties of nested grid units.
+// 
+// .grid--double-gutter         - doubles the default gutter size
+// .grid--half-gutter           - halves the default gutter size
+// .grid--no-gutter             - removes all gutters
+// .grid--ib                    - throws grid into `inline-block` mode. Useful for fixing nasty clearing problems
+// .grid--divided               - applies bottom vertical spacing to each grid unit
+//
+// Markup:
+// <div class="grid {$modifiers}">
+//  <div class="gc d1-2">I am a grid unit within a {$modifiers} modifier</div>
+//  <div class="gc d1-2">I am a grid unit within a {$modifiers} modifier</div>
+// </div>
+//
+// Styleguide 4.1
 
 .grid,
 .grid-wrap {
@@ -27,6 +46,19 @@
 // ==========================================================================
 // GRID COLUMN/UNIT
 // ==========================================================================
+
+// Grid Column/Unit
+//
+// Base grid unit. Defaults to "stacked", "mobile first" styles.
+// 
+// Markup:
+// <div class="grid">
+//  <div class="gc">I am a grid unit</div>
+//  <div class="gc">So am I!</div>
+//  <div class="gc">And me...</div>
+// </div>
+//
+// Styleguide 4.2
 
 .gc {
     width: 100%;
@@ -109,31 +141,6 @@
     }
 }
 
-// CENTERED
-// ==========================================================================
-
-.grid--center {
-	@extend .grid--ib;
-	text-align: center;
-}
-
-// LEFT
-// ==========================================================================
-
-.grid--left {
-	@extend .grid--ib;
-	text-align: left;
-}
-
-
-// RIGHT
-// ==========================================================================
-
-.grid--right {
-	@extend .grid--ib;
-	text-align: right;
-}
-
 
 // DIVIDED
 // ==========================================================================
@@ -145,8 +152,121 @@
 }
 
 
+// ==========================================================================
+// HORIZONTAL ALIGNMENT
+// ==========================================================================
+
+// Horiztonal Alignment
+//
+// Modifiers to control the horizontal alignment of the grid.
+//
+// Styleguide 4.3
+
+// CENTERED
+// ==========================================================================
+
+// Centered
+//
+// Aligns the grid centrally.
+// 
+// Markup:
+// <div class="grid grid--center">
+//  <div class="gc">I am a grid unit</div>
+//  <div class="gc">So am I!</div>
+//  <div class="gc">And me...</div>
+// </div>
+//
+// Styleguide 4.3.1
+
+.grid--center {
+    @extend .grid--ib;
+    text-align: center;
+
+    .gc {
+        letter-spacing: normal;
+        word-spacing: normal;
+    }
+}
+
+// LEFT
+// ==========================================================================
+
+// Left
+//
+// Aligns the grid to the left.
+// 
+// Markup:
+// <div class="grid grid--left">
+//  <div class="gc">I am a grid unit</div>
+//  <div class="gc">So am I!</div>
+//  <div class="gc">And me...</div>
+// </div>
+//
+// Styleguide 4.3.2
+
+.grid--left {
+    @extend .grid--ib;
+    text-align: left;
+
+    .gc {
+        letter-spacing: normal;
+        word-spacing: normal;
+    }
+}
+
+
+// RIGHT
+// ==========================================================================
+
+// Right
+//
+// Aligns the grid to the right.
+// 
+// Markup:
+// <div class="grid grid--right">
+//  <div class="gc">I am a grid unit</div>
+//  <div class="gc">So am I!</div>
+//  <div class="gc">And me...</div>
+// </div>
+//
+// Styleguide 4.3.3
+
+.grid--right {
+    @extend .grid--ib;
+    text-align: right;
+
+    .gc {
+        letter-spacing: normal;
+        word-spacing: normal;
+    }
+}
+
+
+// ==========================================================================
+// VERITCAL ALIGNMENT
+// ==========================================================================
+
+// Vertical Alignment
+//
+// Modifiers to control the vertical alignment of the grid.
+//
+// Styleguide 4.4
+
 // VERITCAL ALIGN: MIDDLE
 // ==========================================================================
+
+// Middle
+//
+// Aligns the grid to the vertical center
+// 
+// Markup:
+// <div class="grid grid--vmiddle">
+//  <div class="gc">I am a grid unit</div>
+//  <div class="gc">So am I!</div>
+//  <div class="gc">And me...</div>
+// </div>
+//
+// Styleguide 4.4.1
 
 .grid--vmiddle {
 	.gc {
@@ -156,6 +276,19 @@
 
 // VERITCAL ALIGN: BOTTOM
 // ==========================================================================
+
+// Bottom
+//
+// Aligns the grid to the vertical bottom.
+// 
+// Markup:
+// <div class="grid grid--vbottom">
+//  <div class="gc">I am a grid unit</div>
+//  <div class="gc">So am I!</div>
+//  <div class="gc">And me...</div>
+// </div>
+//
+// Styleguide 4.4.2
 
 .grid--vbottom {
 	.gc {

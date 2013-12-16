@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>Tanlinell CSS Framework Documentation</title>
+    <meta name="description" content="" />
+    <meta name="generator" content="kss-node" />
+    <link rel="stylesheet" href="public/kss.css" />
+    <link rel="stylesheet" href="dist/tanlinell-css.css" />
+    <!--[if lt IE 9]>
+    <script src="public/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+  <body id="kss-node">
+    <div class="kss-wrapper">
+      <div class="kss-sidebar">
+        <div class="kss-sidebar-inner">
+          <header class="kss-header">
+            <h1 class="kss-doc-title"><a href="./">Tanlinell CSS Framework</a></h1>
+          </header>
+          <nav class="kss-nav">
+            <ul class="kss-menu" data-kss-ref="4">
+              <li class="kss-menu-item"><a href="./"><span class="kss-ref">0</span><span class="kss-name">Overview</span></a></li>
+              
+              <li class="kss-menu-item"><a href="section-1.html"><span class="kss-ref">1</span><span class="kss-name">LINK</span></a></li>
+              
+              <li class="kss-menu-item"><a href="section-2.html"><span class="kss-ref">2</span><span class="kss-name">LIST</span></a></li>
+              
+              <li class="kss-menu-item"><a href="section-3.html"><span class="kss-ref">3</span><span class="kss-name">IMAGE</span></a></li>
+              
+              <li class="kss-menu-item"><a href="section-4.html"><span class="kss-ref">4</span><span class="kss-name">GRID</span></a></li>
+              
+            </ul>
+            
+            <ul class="kss-menu-child">
+              
+              
+              
+              
+              
+              <li class="kss-menu-item"><a href="#section-4.1"><span class="kss-ref">4.1</span><span class="kss-name">Grid</span></a></li>
+              
+              
+              
+              <li class="kss-menu-item"><a href="#section-4.2"><span class="kss-ref">4.2</span><span class="kss-name">Grid Column/Unit</span></a></li>
+              
+              
+              
+              <li class="kss-menu-item"><a href="#section-4.3"><span class="kss-ref">4.3</span><span class="kss-name">Horiztonal Alignment</span></a></li>
+              
+              
+              
+              <li class="kss-menu-item"><a href="#section-4.3.1"><span class="kss-ref">4.3.1</span><span class="kss-name">Centered</span></a></li>
+              
+              
+              
+              <li class="kss-menu-item"><a href="#section-4.3.2"><span class="kss-ref">4.3.2</span><span class="kss-name">Left</span></a></li>
+              
+              
+              
+              <li class="kss-menu-item"><a href="#section-4.3.3"><span class="kss-ref">4.3.3</span><span class="kss-name">Right</span></a></li>
+              
+              
+              
+              <li class="kss-menu-item"><a href="#section-4.4"><span class="kss-ref">4.4</span><span class="kss-name">Vertical Alignment</span></a></li>
+              
+              
+              
+              <li class="kss-menu-item"><a href="#section-4.4.1"><span class="kss-ref">4.4.1</span><span class="kss-name">Middle</span></a></li>
+              
+              
+              
+              <li class="kss-menu-item"><a href="#section-4.4.2"><span class="kss-ref">4.4.2</span><span class="kss-name">Bottom</span></a></li>
+              
+              
+            </ul>
+            
+          </nav>
+        </div>
+      </div>
+      <div class="kss-content">
+        <article class="kss-article">
+          
+          
+          <section id="section-4" class="kss-section kss-depth-1">
+            <h1 class="kss-title"><span class="kss-ref">4</span> GRID</h1>
+            
+            
+            <div class="kss-description">
+              <p>Fluid, mobile-first grid framework based on Griddle by @necolas</p>
+
+            </div>
+            
+            
+          </section>
+          
+          <section id="section-4.1" class="kss-section kss-depth-2">
+            <h2 class="kss-title"><span class="kss-ref">4.1</span> Grid</h2>
+            
+            
+            <div class="kss-description">
+              <p>Wrapper element required for each &quot;row&quot; of grid items. Avoids requirement to have <code>.first</code> or <code>.last</code> classes. Apply modifier classes here to control various properties of nested grid units.</p>
+
+            </div>
+            
+            <div class="kss-modifier-block">
+              <div class="kss-modifier kss-modifier-original">
+                <div class="kss-modifier-example">
+                  <div class="grid {$modifiers}">
+ <div class="gc d1-2">I am a grid unit within a {$modifiers} modifier</div>
+ <div class="gc d1-2">I am a grid unit within a {$modifiers} modifier</div>
+</div>
+                </div>
+              </div>
+              
+              <div class="kss-modifier">
+                <div class="kss-modifier-head">
+                  <div class="kss-modifier-name">.grid--double-gutter</div>
+                  <div class="kss-modifier-description">
+                    <p>doubles the default gutter size</p>
+
+                  </div>
+                </div>
+                <div class="kss-modifier-example">
+                  <div class="grid grid--double-gutter">
+ <div class="gc d1-2">I am a grid unit within a grid--double-gutter modifier</div>
+ <div class="gc d1-2">I am a grid unit within a grid--double-gutter modifier</div>
+</div>
+                </div>
+              </div>
+              
+              <div class="kss-modifier">
+                <div class="kss-modifier-head">
+                  <div class="kss-modifier-name">.grid--half-gutter</div>
+                  <div class="kss-modifier-description">
+                    <p>halves the default gutter size</p>
+
+                  </div>
+                </div>
+                <div class="kss-modifier-example">
+                  <div class="grid grid--half-gutter">
+ <div class="gc d1-2">I am a grid unit within a grid--half-gutter modifier</div>
+ <div class="gc d1-2">I am a grid unit within a grid--half-gutter modifier</div>
+</div>
+                </div>
+              </div>
+              
+              <div class="kss-modifier">
+                <div class="kss-modifier-head">
+                  <div class="kss-modifier-name">.grid--no-gutter</div>
+                  <div class="kss-modifier-description">
+                    <p>removes all gutters</p>
+
+                  </div>
+                </div>
+                <div class="kss-modifier-example">
+                  <div class="grid grid--no-gutter">
+ <div class="gc d1-2">I am a grid unit within a grid--no-gutter modifier</div>
+ <div class="gc d1-2">I am a grid unit within a grid--no-gutter modifier</div>
+</div>
+                </div>
+              </div>
+              
+              <div class="kss-modifier">
+                <div class="kss-modifier-head">
+                  <div class="kss-modifier-name">.grid--ib</div>
+                  <div class="kss-modifier-description">
+                    <p>throws grid into <code>inline-block</code> mode. Useful for fixing nasty clearing problems</p>
+
+                  </div>
+                </div>
+                <div class="kss-modifier-example">
+                  <div class="grid grid--ib">
+ <div class="gc d1-2">I am a grid unit within a grid--ib modifier</div>
+ <div class="gc d1-2">I am a grid unit within a grid--ib modifier</div>
+</div>
+                </div>
+              </div>
+              
+              <div class="kss-modifier">
+                <div class="kss-modifier-head">
+                  <div class="kss-modifier-name">.grid--divided</div>
+                  <div class="kss-modifier-description">
+                    <p>applies bottom vertical spacing to each grid unit</p>
+
+                  </div>
+                </div>
+                <div class="kss-modifier-example">
+                  <div class="grid grid--divided">
+ <div class="gc d1-2">I am a grid unit within a grid--divided modifier</div>
+ <div class="gc d1-2">I am a grid unit within a grid--divided modifier</div>
+</div>
+                </div>
+              </div>
+              
+              <div class="kss-markup">
+                <pre><code data-language="html">&lt;div class=&quot;grid {$modifiers}&quot;&gt;
+ &lt;div class=&quot;gc d1-2&quot;&gt;I am a grid unit within a {$modifiers} modifier&lt;/div&gt;
+ &lt;div class=&quot;gc d1-2&quot;&gt;I am a grid unit within a {$modifiers} modifier&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+              </div>
+            </div>
+            
+          </section>
+          
+          <section id="section-4.2" class="kss-section kss-depth-2">
+            <h2 class="kss-title"><span class="kss-ref">4.2</span> Grid Column/Unit</h2>
+            
+            
+            <div class="kss-description">
+              <p>Base grid unit. Defaults to &quot;stacked&quot;, &quot;mobile first&quot; styles.</p>
+
+            </div>
+            
+            <div class="kss-modifier-block">
+              <div class="kss-modifier kss-modifier-original">
+                <div class="kss-modifier-example">
+                  <div class="grid">
+ <div class="gc">I am a grid unit</div>
+ <div class="gc">So am I!</div>
+ <div class="gc">And me...</div>
+</div>
+                </div>
+              </div>
+              
+              <div class="kss-markup">
+                <pre><code data-language="html">&lt;div class=&quot;grid&quot;&gt;
+ &lt;div class=&quot;gc&quot;&gt;I am a grid unit&lt;/div&gt;
+ &lt;div class=&quot;gc&quot;&gt;So am I!&lt;/div&gt;
+ &lt;div class=&quot;gc&quot;&gt;And me...&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+              </div>
+            </div>
+            
+          </section>
+          
+          <section id="section-4.3" class="kss-section kss-depth-2">
+            <h2 class="kss-title"><span class="kss-ref">4.3</span> Horiztonal Alignment</h2>
+            
+            
+            <div class="kss-description">
+              <p>Modifiers to control the horizontal alignment of the grid.</p>
+
+            </div>
+            
+            
+          </section>
+          
+          <section id="section-4.3.1" class="kss-section kss-depth-3">
+            <h3 class="kss-title"><span class="kss-ref">4.3.1</span> Centered</h3>
+            
+            
+            <div class="kss-description">
+              <p>Aligns the grid centrally.</p>
+
+            </div>
+            
+            <div class="kss-modifier-block">
+              <div class="kss-modifier kss-modifier-original">
+                <div class="kss-modifier-example">
+                  <div class="grid grid--center">
+ <div class="gc">I am a grid unit</div>
+ <div class="gc">So am I!</div>
+ <div class="gc">And me...</div>
+</div>
+                </div>
+              </div>
+              
+              <div class="kss-markup">
+                <pre><code data-language="html">&lt;div class=&quot;grid grid--center&quot;&gt;
+ &lt;div class=&quot;gc&quot;&gt;I am a grid unit&lt;/div&gt;
+ &lt;div class=&quot;gc&quot;&gt;So am I!&lt;/div&gt;
+ &lt;div class=&quot;gc&quot;&gt;And me...&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+              </div>
+            </div>
+            
+          </section>
+          
+          <section id="section-4.3.2" class="kss-section kss-depth-3">
+            <h3 class="kss-title"><span class="kss-ref">4.3.2</span> Left</h3>
+            
+            
+            <div class="kss-description">
+              <p>Aligns the grid to the left.</p>
+
+            </div>
+            
+            <div class="kss-modifier-block">
+              <div class="kss-modifier kss-modifier-original">
+                <div class="kss-modifier-example">
+                  <div class="grid grid--left">
+ <div class="gc">I am a grid unit</div>
+ <div class="gc">So am I!</div>
+ <div class="gc">And me...</div>
+</div>
+                </div>
+              </div>
+              
+              <div class="kss-markup">
+                <pre><code data-language="html">&lt;div class=&quot;grid grid--left&quot;&gt;
+ &lt;div class=&quot;gc&quot;&gt;I am a grid unit&lt;/div&gt;
+ &lt;div class=&quot;gc&quot;&gt;So am I!&lt;/div&gt;
+ &lt;div class=&quot;gc&quot;&gt;And me...&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+              </div>
+            </div>
+            
+          </section>
+          
+          <section id="section-4.3.3" class="kss-section kss-depth-3">
+            <h3 class="kss-title"><span class="kss-ref">4.3.3</span> Right</h3>
+            
+            
+            <div class="kss-description">
+              <p>Aligns the grid to the right.</p>
+
+            </div>
+            
+            <div class="kss-modifier-block">
+              <div class="kss-modifier kss-modifier-original">
+                <div class="kss-modifier-example">
+                  <div class="grid grid--right">
+ <div class="gc">I am a grid unit</div>
+ <div class="gc">So am I!</div>
+ <div class="gc">And me...</div>
+</div>
+                </div>
+              </div>
+              
+              <div class="kss-markup">
+                <pre><code data-language="html">&lt;div class=&quot;grid grid--right&quot;&gt;
+ &lt;div class=&quot;gc&quot;&gt;I am a grid unit&lt;/div&gt;
+ &lt;div class=&quot;gc&quot;&gt;So am I!&lt;/div&gt;
+ &lt;div class=&quot;gc&quot;&gt;And me...&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+              </div>
+            </div>
+            
+          </section>
+          
+          <section id="section-4.4" class="kss-section kss-depth-2">
+            <h2 class="kss-title"><span class="kss-ref">4.4</span> Vertical Alignment</h2>
+            
+            
+            <div class="kss-description">
+              <p>Modifiers to control the vertical alignment of the grid.</p>
+
+            </div>
+            
+            
+          </section>
+          
+          <section id="section-4.4.1" class="kss-section kss-depth-3">
+            <h3 class="kss-title"><span class="kss-ref">4.4.1</span> Middle</h3>
+            
+            
+            <div class="kss-description">
+              <p>Aligns the grid to the vertical center</p>
+
+            </div>
+            
+            <div class="kss-modifier-block">
+              <div class="kss-modifier kss-modifier-original">
+                <div class="kss-modifier-example">
+                  <div class="grid grid--vmiddle">
+ <div class="gc">I am a grid unit</div>
+ <div class="gc">So am I!</div>
+ <div class="gc">And me...</div>
+</div>
+                </div>
+              </div>
+              
+              <div class="kss-markup">
+                <pre><code data-language="html">&lt;div class=&quot;grid grid--vmiddle&quot;&gt;
+ &lt;div class=&quot;gc&quot;&gt;I am a grid unit&lt;/div&gt;
+ &lt;div class=&quot;gc&quot;&gt;So am I!&lt;/div&gt;
+ &lt;div class=&quot;gc&quot;&gt;And me...&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+              </div>
+            </div>
+            
+          </section>
+          
+          <section id="section-4.4.2" class="kss-section kss-depth-3">
+            <h3 class="kss-title"><span class="kss-ref">4.4.2</span> Bottom</h3>
+            
+            
+            <div class="kss-description">
+              <p>Aligns the grid to the vertical bottom.</p>
+
+            </div>
+            
+            <div class="kss-modifier-block">
+              <div class="kss-modifier kss-modifier-original">
+                <div class="kss-modifier-example">
+                  <div class="grid grid--vbottom">
+ <div class="gc">I am a grid unit</div>
+ <div class="gc">So am I!</div>
+ <div class="gc">And me...</div>
+</div>
+                </div>
+              </div>
+              
+              <div class="kss-markup">
+                <pre><code data-language="html">&lt;div class=&quot;grid grid--vbottom&quot;&gt;
+ &lt;div class=&quot;gc&quot;&gt;I am a grid unit&lt;/div&gt;
+ &lt;div class=&quot;gc&quot;&gt;So am I!&lt;/div&gt;
+ &lt;div class=&quot;gc&quot;&gt;And me...&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+              </div>
+            </div>
+            
+          </section>
+          
+          
+        </article>
+        <footer class="kss-footer">
+          <div>Created using <a href="https://github.com/hughsk/kss-node">kss-node</a> and <a href="https://github.com/htanjo/kss-node-template">kss-node-template</a>.</div>
+        </footer>
+      </div>
+    </div>
+    <script src="public/kss.js"></script>
+    <script src="public/jquery-1.9.1.min.js"></script>
+    <!--[if gt IE 8]><!-->
+    <script src="public/rainbow.min.js"></script>
+    <!--<![endif]-->
+    <script src="public/main.js"></script>
+  </body>
+</html>

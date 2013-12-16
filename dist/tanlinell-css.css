@@ -1,6 +1,6 @@
 /**
  * Tanlinell CSS Framework
- * Version: 0.1.0 (09-12-2013)
+ * Version: 0.1.0 (16-12-2013)
  * URL: git://github.com/getdave/tanlinell-css.git
  * : 
  * Author: David Smith (@get_dave)
@@ -485,7 +485,7 @@ a:focus {
   font-size: 100%;
   cursor: pointer; }
 
-ul, ol, dd {
+ul, ol {
   padding: 0;
   margin: 0 0 1.666em 1.666em; }
 
@@ -501,15 +501,21 @@ ul {
 ol {
   list-style: decimal; }
 
-.list-unstyled, .list-block {
+dd {
+  margin-left: 0; }
+
+.list-unstyled {
   margin-left: 0;
   list-style: none; }
 
 .list-numbered {
   list-style-type: decimal; }
 
+.list-blocky {
+  margin-left: 0;
+  list-style: none; }
 
-.list-block__link {
+.list-blocky__link {
   display: block;
   padding: 0.833em; }
 
@@ -683,17 +689,26 @@ ol {
     letter-spacing: normal;
     word-spacing: normal; }
 
+.grid--divided .gc {
+  margin-bottom: 3em; }
+
 .grid--center {
   text-align: center; }
+  .grid--center .gc {
+    letter-spacing: normal;
+    word-spacing: normal; }
 
 .grid--left {
   text-align: left; }
+  .grid--left .gc {
+    letter-spacing: normal;
+    word-spacing: normal; }
 
 .grid--right {
   text-align: right; }
-
-.grid--divided .gc {
-  margin-bottom: 3em; }
+  .grid--right .gc {
+    letter-spacing: normal;
+    word-spacing: normal; }
 
 .grid--vmiddle .gc {
   vertical-align: middle; }
@@ -711,17 +726,17 @@ img {
 .googlemap img, .map_canvas embed, .map_canvas img, .map_canvas object, .anystretch img, object, embed {
   max-width: none; }
 
-.img--rounded {
+.img-rounded {
   border-radius: 6px; }
 
-.img--polaroid {
+.img-polaroid {
   padding: 4px;
   background-color: white;
   border: 1px solid #cccccc;
   border: 1px solid rgba(0, 0, 0, 0.2);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); }
 
-.img--circle {
+.img-circle {
   border-radius: 300px; }
 
 .landmark {
