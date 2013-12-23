@@ -19,6 +19,8 @@
 @import "mixins/tanlinell-griddle.scss";
 
 
+@import "icons/_icons.scss";
+
 /* ==========================================================================
 	ATOMS
 	Base styles/objects. Mostly global, tag-based selector rules.
@@ -45,3 +47,16 @@
 @import "atoms/sprite.scss";
 
 @import "atoms/spacing.scss";
+
+
+
+/* ==========================================================================
+	MOLECULES
+	ss
+============================================================================= */
+
+@import "molecules/island.scss";
+
+@import "molecules/media-block.scss";
+
+@import "molecules/buttons.scss";

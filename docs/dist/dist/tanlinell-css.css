@@ -436,7 +436,164 @@ table {
     border-collapse: collapse;
     border-spacing: 0;
 }
-/* Begin: Tanlinell CSS Framework *//* ==========================================================================
+/* Begin: Tanlinell CSS Framework */@font-face {
+  font-family: 'icons';
+  src: url('../font/icons.eot?86168962');
+  src: url('../font/icons.eot?86168962#iefix') format('embedded-opentype'), url('../font/icons.woff?86168962') format('woff'), url('../font/icons.ttf?86168962') format('truetype'), url('../font/icons.svg?86168962#icons') format('svg');
+  font-weight: normal;
+  font-style: normal; }
+
+/* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
+/* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
+/*
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: 'icons';
+    src: url('../font/icons.svg?86168962#icons') format('svg');
+  }
+}
+*/
+[class^="icon-"]:before, [class*=" icon-"]:before {
+  font-family: "icons";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: 0.2em;
+  text-align: center;
+  /* opacity: .8; */
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: 0.2em;
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */ }
+
+.icon-comment:before {
+  content: '\e80f'; }
+
+/* '' */
+.icon-search:before {
+  content: '\e805'; }
+
+/* '' */
+.icon-heart:before {
+  content: '\e80d'; }
+
+/* '' */
+.icon-videocam:before {
+  content: '\e80c'; }
+
+/* '' */
+.icon-camera:before {
+  content: '\e80b'; }
+
+/* '' */
+.icon-tag:before {
+  content: '\e813'; }
+
+/* '' */
+.icon-print:before {
+  content: '\e809'; }
+
+/* '' */
+.icon-trash:before {
+  content: '\e819'; }
+
+/* '' */
+.icon-phone:before {
+  content: '\e807'; }
+
+/* '' */
+.icon-play:before {
+  content: '\e811'; }
+
+/* '' */
+.icon-twitter:before {
+  content: '\e81a'; }
+
+/* '' */
+.icon-find:before {
+  content: '\e806'; }
+
+/* '' */
+.icon-user:before {
+  content: '\e816'; }
+
+/* '' */
+.icon-download:before {
+  content: '\e801'; }
+
+/* '' */
+.icon-dropmenu:before {
+  content: '\e814'; }
+
+/* '' */
+.icon-share:before {
+  content: '\e815'; }
+
+/* '' */
+.icon-logout:before {
+  content: '\e817'; }
+
+/* '' */
+.icon-mobile:before {
+  content: '\e800'; }
+
+/* '' */
+.icon-mail:before {
+  content: '\e808'; }
+
+/* '' */
+.icon-eye:before {
+  content: '\e80e'; }
+
+/* '' */
+.icon-link:before {
+  content: '\e802'; }
+
+/* '' */
+.icon-resize-full:before {
+  content: '\e810'; }
+
+/* '' */
+.icon-list:before {
+  content: '\e803'; }
+
+/* '' */
+.icon-menu:before {
+  content: '\e804'; }
+
+/* '' */
+.icon-location:before {
+  content: '\e80a'; }
+
+/* '' */
+.icon-youtube:before {
+  content: '\e81c'; }
+
+/* '' */
+.icon-vimeo:before {
+  content: '\e81b'; }
+
+/* '' */
+.icon-instagram:before {
+  content: '\e812'; }
+
+/* '' */
+.icon-pencil:before {
+  content: '\e818'; }
+
+/* '' */
+/* ==========================================================================
 	ATOMS
 	Base styles/objects. Mostly global, tag-based selector rules.
 ============================================================================= */
@@ -869,19 +1026,6 @@ thead tr:last-child th {
     height: 100%; }
 
 /**
- * Set up icon font
- */
-.icon {
-  font-size: 16px;
-  /**
-     * Place the icon in a box the exact same dimensions as the icon itself.
-     */
-  width: 1em;
-  height: 1em; }
-  .icon:before {
-    content: attr(data-icon); }
-
-/**
  * Icon size modifiers.
  */
 .icon--large {
@@ -1013,3 +1157,137 @@ thead tr:last-child th {
 
 .mll, .mhl, .mal {
   margin-left: 1.666em !important; }
+
+/* ==========================================================================
+	MOLECULES
+	ss
+============================================================================= */
+.island, .islet, .islet {
+  display: block; }
+
+.island, .islet {
+  padding: 1.666em; }
+
+.island > :last-child {
+  margin-bottom: 0; }
+
+.islet {
+  padding: 0.833em; }
+
+.m-block, .m-block .m-content {
+  overflow: hidden;
+  *overflow: visible;
+  zoom: 1; }
+
+.m-img {
+  float: left;
+  margin-right: 1.666em; }
+  .m-img img {
+    display: block; }
+
+.m-block--alt .m-img {
+  float: right;
+  margin-left: 1.666em;
+  margin-right: 0; }
+
+.m-block--ib {
+  letter-spacing: rsize(-4px); }
+  .m-block--ib .m-img, .m-block--ib .m-content {
+    float: none;
+    letter-spacing: normal;
+    display: inline-block;
+    vertical-align: baseline;
+    zoom: 1;
+    *display: inline;
+    *vertical-align: auto; }
+
+.btn {
+  display: inline-block;
+  vertical-align: middle;
+  white-space: nowrap;
+  font-family: inherit;
+  font-size: 100%;
+  cursor: pointer;
+  border: none;
+  margin: 0;
+  padding: 0 1.5em;
+  line-height: 3;
+  height: 3em;
+  background-color: #2c77ba;
+  border-radius: 4px;
+  overflow: visible; }
+
+.btn, .btn:hover, .btn:active, .btn:focus, .btn:visited {
+  text-decoration: none;
+  color: white; }
+
+.btn:hover {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5); }
+
+.btn:active, .btn:focus {
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5) inset; }
+
+.btn::-moz-focus-inner {
+  border: 0;
+  padding: 0; }
+
+.btn--small {
+  font-size: 0.9em;
+  padding-right: 0.5em;
+  padding-left: 0.5em;
+  line-height: 2;
+  height: 2em; }
+
+.btn--large {
+  padding-right: 1.5em;
+  padding-left: 1.5em;
+  line-height: 4;
+  height: 4em; }
+
+.btn--huge {
+  padding-right: 2em;
+  padding-left: 2em;
+  line-height: 5;
+  height: 5em; }
+
+.btn--full {
+  width: 100%;
+  padding-right: 0;
+  padding-left: 0;
+  text-align: center; }
+
+.btn--alpha {
+  font-size: 3rem; }
+
+.btn--beta {
+  font-size: 2rem; }
+
+.btn--gamma {
+  font-size: 1rem; }
+
+/**
+ * Make the button inherit sizing from its parent.
+ */
+.btn--natural {
+  vertical-align: baseline;
+  font-size: inherit;
+  line-height: inherit;
+  height: auto;
+  padding-right: 0.5em;
+  padding-left: 0.5em; }
+
+.btn--positive {
+  background-color: #4a993e;
+  color: white; }
+
+.btn--negative {
+  background-color: #b33630;
+  color: white; }
+
+.btn--soft {
+  border-radius: 5em;
+  /* [1] */ }
+
+.btn--hard {
+  border-radius: 0; }

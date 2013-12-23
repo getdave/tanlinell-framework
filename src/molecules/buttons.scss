@@ -1,0 +1,204 @@
+// BUTTONS
+//
+// A simple button toolkit based on [Beautons](http://csswizardry.com/beautons/) by Harry Roberts.
+// 
+// Styleguide 12.
+
+// ==========================================================================
+// BASE
+// ==========================================================================
+
+// Base
+//
+// Default styling for all types of button.
+//
+// Markup:
+// <a href="#" class="btn {$modifiers}">Click me</a>
+//
+// Styleguide 12.1
+
+.btn{
+    display:inline-block;
+    vertical-align:middle;
+    white-space:nowrap;
+    font-family:inherit;
+    font-size:100%;
+    cursor:pointer;
+    border:none;
+    margin:0;
+    padding: 0 1.5em;
+    line-height:3;
+    height:     3em;
+    background-color:#2c77ba;
+    border-radius:4px;
+    overflow:visible;
+}
+
+.btn,
+    .btn:hover,
+    .btn:active,
+    .btn:focus,
+    .btn:visited{
+        text-decoration:none;
+        color:#fff;
+    }
+
+    .btn:hover{
+        box-shadow:0 0 5px rgba(0, 0, 0, 0.5);
+    }
+
+    .btn:active,
+    .btn:focus{
+        outline:none;
+        box-shadow:0 0 5px rgba(0, 0, 0, 0.5) inset;
+    }
+
+    .btn::-moz-focus-inner {
+        border: 0;
+        padding: 0;
+    }
+
+
+// ==========================================================================
+// DIMENSIONS
+// ==========================================================================
+
+// Dimensions
+//
+// Default styling for all types of button.
+// 
+// .btn--small          - small size button
+// .btn--large          - large size button
+// .btn--huge           - huge size button
+// .btn--full           - will fill the entirety of their container.
+//
+// Markup:
+// <a href="#" class="btn {$modifiers}">Size Me Up</a>
+//
+// Styleguide 12.2
+.btn--small{
+    font-size: 0.9em;
+    padding-right:0.5em;
+    padding-left: 0.5em;
+    line-height:2;
+    height:     2em;
+}
+
+.btn--large{
+    padding-right:1.5em;
+    padding-left: 1.5em;
+    line-height:4;
+    height:     4em;
+}
+
+.btn--huge{
+    padding-right:2em;
+    padding-left: 2em;
+    line-height:5;
+    height:     5em;
+}
+
+.btn--full {
+    width:100%;
+    padding-right:0;
+    padding-left: 0;
+    text-align:center;
+}
+
+
+
+
+
+// ==========================================================================
+// FONT SIZE
+// ==========================================================================
+
+// Font Size
+//
+// Styling for buttons representing specific actions states.
+// 
+// .btn--alpha       - positive actions; e.g. sign in, purchase, submit, etc.
+// .btn--beta        - negative actions; e.g. close account, delete photo, remove friend, etc.
+// .btn--gamma       - negative actions; e.g. close account, delete photo, remove friend, etc.
+//
+// Markup:
+// <a href="#" class="btn {$modifiers}">Take Action!</a>
+//
+// Styleguide 12.3
+
+.btn--alpha {
+    font-size:3rem;
+}
+
+.btn--beta{
+    font-size:2rem;
+}
+
+.btn--gamma{
+    font-size:1rem;
+}
+
+/**
+ * Make the button inherit sizing from its parent.
+ */
+.btn--natural{
+    vertical-align:baseline;
+    font-size:inherit;
+    line-height:inherit;
+    height:auto;
+    padding-right:0.5em;
+    padding-left: 0.5em;
+}
+
+
+
+// ==========================================================================
+// ACTIONS
+// ==========================================================================
+
+// Actions
+//
+// Styling for buttons representing specific actions states.
+// 
+// .btn--positive       - positive actions; e.g. sign in, purchase, submit, etc.
+// .btn--negative       - negative actions; e.g. close account, delete photo, remove friend, etc.
+// 
+// Markup:
+// <a href="#" class="btn {$modifiers}">Take Action!</a>
+//
+// Styleguide 12.4
+
+.btn--positive{
+    background-color:#4A993E;
+    color:#fff;
+}
+
+.btn--negative{
+    background-color:#b33630;
+    color:#fff;
+}
+
+
+// ==========================================================================
+// STYLES
+// ==========================================================================
+
+// Styles
+//
+// Styling for buttons representing specific actions states.
+// 
+// .btn--soft       - use an overly-large number to ensure completely rounded, pill-like ends
+// .btn--hard       - remove rounded ends
+// 
+// Markup:
+// <a href="#" class="btn {$modifiers}">Take Action!</a>
+//
+// Styleguide 12.5
+
+.btn--soft{
+    border-radius:5em;          /* [1] */
+}
+
+.btn--hard{
+    border-radius:0;
+}

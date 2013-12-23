@@ -21,7 +21,7 @@
             <h1 class="kss-doc-title"><a href="./">Tanlinell CSS Framework</a></h1>
           </header>
           <nav class="kss-nav">
-            <ul class="kss-menu" data-kss-ref="9">
+            <ul class="kss-menu" data-kss-ref="11">
               <li class="kss-menu-item"><a href="./"><span class="kss-ref">0</span><span class="kss-name">Overview</span></a></li>
               
               <li class="kss-menu-item"><a href="section-1.html"><span class="kss-ref">1</span><span class="kss-name">LINK</span></a></li>
@@ -55,14 +55,6 @@
               
               
               
-              
-              <li class="kss-menu-item"><a href="#section-9.1"><span class="kss-ref">9.1</span><span class="kss-name">Sprite</span></a></li>
-              
-              
-              
-              <li class="kss-menu-item"><a href="#section-9.2"><span class="kss-ref">9.2</span><span class="kss-name">Icon</span></a></li>
-              
-              
             </ul>
             
           </nav>
@@ -72,61 +64,73 @@
         <article class="kss-article">
           
           
-          <section id="section-9" class="kss-section kss-depth-1">
-            <h1 class="kss-title"><span class="kss-ref">9</span> SPRITES &amp; ICONS</h1>
+          <section id="section-11" class="kss-section kss-depth-1">
+            <h1 class="kss-title"><span class="kss-ref">11</span> MEDIA BLOCK</h1>
             
             
             <div class="kss-description">
-              <p>Utility classes to create image replaced &quot;Sprites&quot; and icon font based &quot;Icons&quot;.</p>
-
-            </div>
-            
-            
-          </section>
-          
-          <section id="section-9.1" class="kss-section kss-depth-2">
-            <h2 class="kss-title"><span class="kss-ref">9.1</span> Sprite</h2>
-            
-            
-            <div class="kss-description">
-              <p>Uses &quot;sprited&quot; images to create icon-like elements. Typically the image should reference a sprite
-generated using Grunt SpriteSmith. A dataUri is used here for example purposes only.</p>
+              <p>The media object is a &quot;media&quot; element to the left, with descriptive content to the right.
+The content area on the right can contain any other objects. This is modified slightly from
+<a href="http://www.stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code/">the original</a>
+by Nicole Sullivan.</p>
 
             </div>
             
             <div class="kss-modifier-block">
               <div class="kss-modifier kss-modifier-original">
                 <div class="kss-modifier-example">
-                  <span class="sprite" style="background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAQAAAC1+jfqAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAE3SURBVCjPhZFfK4NxGIZ/R458Dz7B7wv4Go5WpJW8819mSw3bos202DsTNpT3FTbCRs0YkYPFasvKJhw5kpVEu5y8W0uZ7sPnup+e+34EorH+HIRZQsXfLtKkOSPJCXEOiLGNxgarpPniGW9WnPPN5y+9E3p5I4+n6DaLFHmeuOSRFEUSFNgjj04WDVcbQiCOuWBfnrIlE0RkjKDU8ck1VBytCIE45JYkD8QpECOHTpYIGVzYmo0UO5Q5IiyjqFLDKyNMyUVs1GJq1mvuiZJjkzvCZAhyw3ClrocVQiwwhwc3E4xjZ5f+SoOihpr66Hk1gOWWYGAeHzM4cWBnlEF6QZjLBqBaEbPKdMmpVP0WpbtkVjo/DMBv9aJzxTo2RhjAQoA0fkyFuhsmGWestqFL6cDEP9+s6gcdbFPqiEGjeAAAAABJRU5ErkJggg==);">I'm sprited</span>
+                  <div class="m-block {$modifiers}">
+	<img class="m-img" src="http://www.placehold.it/138x151" />
+	<div class="m-content">
+	  <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+	</div>
+</div>
                 </div>
               </div>
               
-              <div class="kss-markup">
-                <pre><code data-language="html">&lt;span class=&quot;sprite&quot; style=&quot;background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAQAAAC1+jfqAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAE3SURBVCjPhZFfK4NxGIZ/R458Dz7B7wv4Go5WpJW8819mSw3bos202DsTNpT3FTbCRs0YkYPFasvKJhw5kpVEu5y8W0uZ7sPnup+e+34EorH+HIRZQsXfLtKkOSPJCXEOiLGNxgarpPniGW9WnPPN5y+9E3p5I4+n6DaLFHmeuOSRFEUSFNgjj04WDVcbQiCOuWBfnrIlE0RkjKDU8ck1VBytCIE45JYkD8QpECOHTpYIGVzYmo0UO5Q5IiyjqFLDKyNMyUVs1GJq1mvuiZJjkzvCZAhyw3ClrocVQiwwhwc3E4xjZ5f+SoOihpr66Hk1gOWWYGAeHzM4cWBnlEF6QZjLBqBaEbPKdMmpVP0WpbtkVjo/DMBv9aJzxTo2RhjAQoA0fkyFuhsmGWestqFL6cDEP9+s6gcdbFPqiEGjeAAAAABJRU5ErkJggg==);&quot;&gt;I&#x27;m sprited&lt;/span&gt;</code></pre>
-              </div>
-            </div>
-            
-          </section>
-          
-          <section id="section-9.2" class="kss-section kss-depth-2">
-            <h2 class="kss-title"><span class="kss-ref">9.2</span> Icon</h2>
-            
-            
-            <div class="kss-description">
-              <p>Uses icon fonts to create icons. To utilise the built in Grunt task first create a 
-<code>config.json</code> file at Fontello.com. Then run <code>grunt fontello</code> to auto generate fonts</p>
+              <div class="kss-modifier">
+                <div class="kss-modifier-head">
+                  <div class="kss-modifier-name">.m-block--alt</div>
+                  <div class="kss-modifier-description">
+                    <p>reversed with &quot;media&quot; on the right and content on the left</p>
 
-            </div>
-            
-            <div class="kss-modifier-block">
-              <div class="kss-modifier kss-modifier-original">
+                  </div>
+                </div>
                 <div class="kss-modifier-example">
-                  <i class="icon {modifiers} icon-download"></i>
+                  <div class="m-block m-block--alt">
+	<img class="m-img" src="http://www.placehold.it/138x151" />
+	<div class="m-content">
+	  <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+	</div>
+</div>
+                </div>
+              </div>
+              
+              <div class="kss-modifier">
+                <div class="kss-modifier-head">
+                  <div class="kss-modifier-name">.m-block--ib</div>
+                  <div class="kss-modifier-description">
+                    <p>vertically align to the middle of the blocks. Will only work with small amounts of <code>m-content</code> content.</p>
+
+                  </div>
+                </div>
+                <div class="kss-modifier-example">
+                  <div class="m-block m-block--ib">
+	<img class="m-img" src="http://www.placehold.it/138x151" />
+	<div class="m-content">
+	  <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+	</div>
+</div>
                 </div>
               </div>
               
               <div class="kss-markup">
-                <pre><code data-language="html">&lt;i class=&quot;icon {modifiers} icon-download&quot;&gt;&lt;/i&gt;</code></pre>
+                <pre><code data-language="html">&lt;div class=&quot;m-block {$modifiers}&quot;&gt;
+	&lt;img class=&quot;m-img&quot; src=&quot;http://www.placehold.it/138x151&quot; /&gt;
+	&lt;div class=&quot;m-content&quot;&gt;
+	  &lt;p&gt;Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.&lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;</code></pre>
               </div>
             </div>
             

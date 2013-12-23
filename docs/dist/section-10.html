@@ -21,7 +21,7 @@
             <h1 class="kss-doc-title"><a href="./">Tanlinell CSS Framework</a></h1>
           </header>
           <nav class="kss-nav">
-            <ul class="kss-menu" data-kss-ref="9">
+            <ul class="kss-menu" data-kss-ref="10">
               <li class="kss-menu-item"><a href="./"><span class="kss-ref">0</span><span class="kss-name">Overview</span></a></li>
               
               <li class="kss-menu-item"><a href="section-1.html"><span class="kss-ref">1</span><span class="kss-name">LINK</span></a></li>
@@ -56,11 +56,11 @@
               
               
               
-              <li class="kss-menu-item"><a href="#section-9.1"><span class="kss-ref">9.1</span><span class="kss-name">Sprite</span></a></li>
+              <li class="kss-menu-item"><a href="#section-10.1"><span class="kss-ref">10.1</span><span class="kss-name">Island</span></a></li>
               
               
               
-              <li class="kss-menu-item"><a href="#section-9.2"><span class="kss-ref">9.2</span><span class="kss-name">Icon</span></a></li>
+              <li class="kss-menu-item"><a href="#section-10.2"><span class="kss-ref">10.2</span><span class="kss-name">Islet</span></a></li>
               
               
             </ul>
@@ -72,61 +72,67 @@
         <article class="kss-article">
           
           
-          <section id="section-9" class="kss-section kss-depth-1">
-            <h1 class="kss-title"><span class="kss-ref">9</span> SPRITES &amp; ICONS</h1>
+          <section id="section-10" class="kss-section kss-depth-1">
+            <h1 class="kss-title"><span class="kss-ref">10</span> ISLAND &amp; ISLET</h1>
             
             
             <div class="kss-description">
-              <p>Utility classes to create image replaced &quot;Sprites&quot; and icon font based &quot;Icons&quot;.</p>
+              <p>Simple, boxed off content, as per: csswizardry.com/2011/10/the-island-object.</p>
 
             </div>
             
             
           </section>
           
-          <section id="section-9.1" class="kss-section kss-depth-2">
-            <h2 class="kss-title"><span class="kss-ref">9.1</span> Sprite</h2>
+          <section id="section-10.1" class="kss-section kss-depth-2">
+            <h2 class="kss-title"><span class="kss-ref">10.1</span> Island</h2>
             
             
             <div class="kss-description">
-              <p>Uses &quot;sprited&quot; images to create icon-like elements. Typically the image should reference a sprite
-generated using Grunt SpriteSmith. A dataUri is used here for example purposes only.</p>
+              <p>Default padded box sans-styles. Background-color applied for documentation purposes.</p>
 
             </div>
             
             <div class="kss-modifier-block">
               <div class="kss-modifier kss-modifier-original">
                 <div class="kss-modifier-example">
-                  <span class="sprite" style="background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAQAAAC1+jfqAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAE3SURBVCjPhZFfK4NxGIZ/R458Dz7B7wv4Go5WpJW8819mSw3bos202DsTNpT3FTbCRs0YkYPFasvKJhw5kpVEu5y8W0uZ7sPnup+e+34EorH+HIRZQsXfLtKkOSPJCXEOiLGNxgarpPniGW9WnPPN5y+9E3p5I4+n6DaLFHmeuOSRFEUSFNgjj04WDVcbQiCOuWBfnrIlE0RkjKDU8ck1VBytCIE45JYkD8QpECOHTpYIGVzYmo0UO5Q5IiyjqFLDKyNMyUVs1GJq1mvuiZJjkzvCZAhyw3ClrocVQiwwhwc3E4xjZ5f+SoOihpr66Hk1gOWWYGAeHzM4cWBnlEF6QZjLBqBaEbPKdMmpVP0WpbtkVjo/DMBv9aJzxTo2RhjAQoA0fkyFuhsmGWestqFL6cDEP9+s6gcdbFPqiEGjeAAAAABJRU5ErkJggg==);">I'm sprited</span>
+                  <div class="island" style="background-color: #f1f1f1">
+  I am boxed off.
+</div>
                 </div>
               </div>
               
               <div class="kss-markup">
-                <pre><code data-language="html">&lt;span class=&quot;sprite&quot; style=&quot;background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAQAAAC1+jfqAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAE3SURBVCjPhZFfK4NxGIZ/R458Dz7B7wv4Go5WpJW8819mSw3bos202DsTNpT3FTbCRs0YkYPFasvKJhw5kpVEu5y8W0uZ7sPnup+e+34EorH+HIRZQsXfLtKkOSPJCXEOiLGNxgarpPniGW9WnPPN5y+9E3p5I4+n6DaLFHmeuOSRFEUSFNgjj04WDVcbQiCOuWBfnrIlE0RkjKDU8ck1VBytCIE45JYkD8QpECOHTpYIGVzYmo0UO5Q5IiyjqFLDKyNMyUVs1GJq1mvuiZJjkzvCZAhyw3ClrocVQiwwhwc3E4xjZ5f+SoOihpr66Hk1gOWWYGAeHzM4cWBnlEF6QZjLBqBaEbPKdMmpVP0WpbtkVjo/DMBv9aJzxTo2RhjAQoA0fkyFuhsmGWestqFL6cDEP9+s6gcdbFPqiEGjeAAAAABJRU5ErkJggg==);&quot;&gt;I&#x27;m sprited&lt;/span&gt;</code></pre>
+                <pre><code data-language="html">&lt;div class=&quot;island&quot; style=&quot;background-color: #f1f1f1&quot;&gt;
+  I am boxed off.
+&lt;/div&gt;</code></pre>
               </div>
             </div>
             
           </section>
           
-          <section id="section-9.2" class="kss-section kss-depth-2">
-            <h2 class="kss-title"><span class="kss-ref">9.2</span> Icon</h2>
+          <section id="section-10.2" class="kss-section kss-depth-2">
+            <h2 class="kss-title"><span class="kss-ref">10.2</span> Islet</h2>
             
             
             <div class="kss-description">
-              <p>Uses icon fonts to create icons. To utilise the built in Grunt task first create a 
-<code>config.json</code> file at Fontello.com. Then run <code>grunt fontello</code> to auto generate fonts</p>
+              <p>Reduced size padded box. <code>@extend</code>&apos;s <code>.island</code>. Background-color applied for documentation purposes.</p>
 
             </div>
             
             <div class="kss-modifier-block">
               <div class="kss-modifier kss-modifier-original">
                 <div class="kss-modifier-example">
-                  <i class="icon {modifiers} icon-download"></i>
+                  <div class="islet" style="background-color: #f1f1f1">
+  I am boxed off.
+</div>
                 </div>
               </div>
               
               <div class="kss-markup">
-                <pre><code data-language="html">&lt;i class=&quot;icon {modifiers} icon-download&quot;&gt;&lt;/i&gt;</code></pre>
+                <pre><code data-language="html">&lt;div class=&quot;islet&quot; style=&quot;background-color: #f1f1f1&quot;&gt;
+  I am boxed off.
+&lt;/div&gt;</code></pre>
               </div>
             </div>
             

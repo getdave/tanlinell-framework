@@ -28,7 +28,8 @@
 
 // Sprite
 //
-// Uses "sprited" images to create icon-like elements
+// Uses "sprited" images to create icon-like elements. Typically the image should reference a sprite
+// generated using Grunt SpriteSmith. A dataUri is used here for example purposes only.
 //
 // Markup:
 // <span class="sprite" style="background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAQAAAC1+jfqAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAE3SURBVCjPhZFfK4NxGIZ/R458Dz7B7wv4Go5WpJW8819mSw3bos202DsTNpT3FTbCRs0YkYPFasvKJhw5kpVEu5y8W0uZ7sPnup+e+34EorH+HIRZQsXfLtKkOSPJCXEOiLGNxgarpPniGW9WnPPN5y+9E3p5I4+n6DaLFHmeuOSRFEUSFNgjj04WDVcbQiCOuWBfnrIlE0RkjKDU8ck1VBytCIE45JYkD8QpECOHTpYIGVzYmo0UO5Q5IiyjqFLDKyNMyUVs1GJq1mvuiZJjkzvCZAhyw3ClrocVQiwwhwc3E4xjZ5f+SoOihpr66Hk1gOWWYGAeHzM4cWBnlEF6QZjLBqBaEbPKdMmpVP0WpbtkVjo/DMBv9aJzxTo2RhjAQoA0fkyFuhsmGWestqFL6cDEP9+s6gcdbFPqiEGjeAAAAABJRU5ErkJggg==);">I'm sprited</span>
@@ -61,29 +62,13 @@
 
 // Icon
 //
-// Uses icon fonts to create icons
+// Uses icon fonts to create icons. To utilise the built in Grunt task first create a 
+// `config.json` file at Fontello.com. Then run `grunt fontello` to auto generate fonts
 //
 // Markup:
-// <i class="icon {modifiers} icon-zoom"></i>
+// <i class="icon {modifiers} icon-download"></i>
 //
 // Styleguide 9.2
-
-
-/**
- * Set up icon font
- */
-.icon{
-    font-size:16px;
-    /**
-     * Place the icon in a box the exact same dimensions as the icon itself.
-     */
-    width:1em;
-    height:1em;
-
-    &:before{
-        content:attr(data-icon);
-    }
-}
 
 /**
  * Icon size modifiers.

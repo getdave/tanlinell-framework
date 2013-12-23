@@ -190,6 +190,20 @@ module.exports = function(grunt) {
       }
     },
 
+
+
+    fontello: {
+      dist: {
+        options: {
+            config  : 'icons/config.json',
+            fonts   : 'icons',
+            styles  : '<%= config.cssSrc %>/icons',
+            sass    : true
+        }
+      }
+    },
+
+
   });
 
   grunt.loadNpmTasks('assemble');
@@ -204,6 +218,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-autoprefixer');
   grunt.loadNpmTasks('grunt-bump');
   grunt.loadNpmTasks('grunt-styleguide');
+  grunt.loadNpmTasks('grunt-fontello');
 
   grunt.registerTask('server', [
     'clean',

@@ -1,0 +1,50 @@
+// ISLAND & ISLET
+//
+// Simple, boxed off content, as per: csswizardry.com/2011/10/the-island-object.
+// 
+// Styleguide 10.
+
+.island,
+.islet{
+    display: block;
+    @extend .clearfix;
+}
+
+
+// Island
+// 
+// Default padded box sans-styles. Background-color applied for documentation purposes.
+//
+// Markup:
+// <div class="island" style="background-color: #f1f1f1">
+//   I am boxed off.
+// </div>
+// 
+// Styleguide 10.1
+
+
+.island {
+    padding: $base-line-height;
+}
+
+.island > :last-child {
+    margin-bottom: 0;
+}
+
+
+// Islet
+// 
+// Reduced size padded box. `@extend`'s `.island`. Background-color applied for documentation purposes.
+//
+// Markup:
+// <div class="islet" style="background-color: #f1f1f1">
+//   I am boxed off.
+// </div>
+// 
+// Styleguide 10.2
+
+.islet {
+    @extend .island;
+    padding: $base-line-height/2;
+}
+

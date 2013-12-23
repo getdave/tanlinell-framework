@@ -8,5 +8,7 @@
   "box-sizing": false,
   "display-property-grouping": false,
   "important": false,
-  "font-sizes": false
+  "font-sizes": false,
+  "regex-selectors": false,
+  "unqualified-attributes": false
 }

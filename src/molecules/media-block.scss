@@ -1,0 +1,68 @@
+// MEDIA BLOCK
+//
+// The media object is a "media" element to the left, with descriptive content to the right.
+// The content area on the right can contain any other objects. This is modified slightly from
+// [the original](http://www.stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code/)
+// by Nicole Sullivan.
+//
+// .m-block--alt 		- reversed with "media" on the right and content on the left
+// .m-block--ib 		- vertically align to the middle of the blocks. Will only work with small amounts of `m-content` content.
+//
+// Markup:
+// <div class="m-block {$modifiers}">
+// 	<img class="m-img" src="http://www.placehold.it/138x151" />
+// 	<div class="m-content">
+// 	  <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+// 	</div>
+// </div>
+//
+// Styleguide 11.
+
+
+.m-block,
+.m-block .m-content {
+	overflow:hidden;
+	*overflow:visible;
+	zoom:1;
+}
+
+.m-img {
+	float:left;
+	margin-right: $base-line-height;
+
+	img {
+		display: block;
+	}
+}
+
+
+// ==========================================================================
+// MODIFIERS
+// ==========================================================================
+
+
+// ALT
+// ==========================================================================
+
+.m-block--alt {
+	.m-img {
+		float:right;
+		margin-left: $base-line-height;
+		margin-right: 0;
+	}
+}
+
+
+// INLINE BLOCK
+// ==========================================================================
+
+.m-block--ib {
+	letter-spacing: rsize(-4px);
+
+	.m-img,
+	.m-content {
+		float: none;
+		letter-spacing: normal;
+		@include inline-block;
+	}
+}
