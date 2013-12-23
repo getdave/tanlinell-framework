@@ -1,0 +1,97 @@
+// SPRITES & ICONS
+//
+// Utility classes to create image replaced "Sprites" and icon font based "Icons".
+//
+// Styleguide 9.
+
+
+
+.sprite,
+.icon{
+    display:inline-block;
+    line-height:1;
+    position:relative;
+    vertical-align:middle;
+    zoom:1;
+    /**
+     * So using `.icon` on certain elements doesn’t make a visual difference.
+     */
+    font-style:normal;
+    font-weight:normal;
+    /**
+     * So icons added using `.icon` sit in the centre of the element.
+     */
+    text-align:center;
+}
+
+
+
+// Sprite
+//
+// Uses "sprited" images to create icon-like elements
+//
+// Markup:
+// <span class="sprite" style="background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAQAAAC1+jfqAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAE3SURBVCjPhZFfK4NxGIZ/R458Dz7B7wv4Go5WpJW8819mSw3bos202DsTNpT3FTbCRs0YkYPFasvKJhw5kpVEu5y8W0uZ7sPnup+e+34EorH+HIRZQsXfLtKkOSPJCXEOiLGNxgarpPniGW9WnPPN5y+9E3p5I4+n6DaLFHmeuOSRFEUSFNgjj04WDVcbQiCOuWBfnrIlE0RkjKDU8ck1VBytCIE45JYkD8QpECOHTpYIGVzYmo0UO5Q5IiyjqFLDKyNMyUVs1GJq1mvuiZJjkzvCZAhyw3ClrocVQiwwhwc3E4xjZ5f+SoOihpr66Hk1gOWWYGAeHzM4cWBnlEF6QZjLBqBaEbPKdMmpVP0WpbtkVjo/DMBv9aJzxTo2RhjAQoA0fkyFuhsmGWestqFL6cDEP9+s6gcdbFPqiEGjeAAAAABJRU5ErkJggg==);">I'm sprited</span>
+//
+// Styleguide 9.1
+.sprite {
+    /**
+     * The typical size of most icons. Override in your theme stylesheet.
+     */
+    width: 16px;
+    height:16px;
+    top:-1px;
+
+    /*
+     * H5BP method image replacement:
+     * github.com/h5bp/html5-boilerplate/commit/adecc5da035d6d76b77e3fa95c6abde841073da2
+     */
+    overflow:hidden;
+   *text-indent:-9999px;
+
+    &:before{
+        content:"";
+        display:block;
+        width:0;
+        height:100%;
+    }
+}
+
+
+
+// Icon
+//
+// Uses icon fonts to create icons
+//
+// Markup:
+// <i class="icon {modifiers} icon-zoom"></i>
+//
+// Styleguide 9.2
+
+
+/**
+ * Set up icon font
+ */
+.icon{
+    font-size:16px;
+    /**
+     * Place the icon in a box the exact same dimensions as the icon itself.
+     */
+    width:1em;
+    height:1em;
+
+    &:before{
+        content:attr(data-icon);
+    }
+}
+
+/**
+ * Icon size modifiers.
+ */
+.icon--large   { font-size:32px; }
+.icon--huge    { font-size:64px; }
+.icon--natural { font-size:inherit; }
+
+
+
+

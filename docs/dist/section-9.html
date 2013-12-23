@@ -21,7 +21,7 @@
             <h1 class="kss-doc-title"><a href="./">Tanlinell CSS Framework</a></h1>
           </header>
           <nav class="kss-nav">
-            <ul class="kss-menu" data-kss-ref="7">
+            <ul class="kss-menu" data-kss-ref="9">
               <li class="kss-menu-item"><a href="./"><span class="kss-ref">0</span><span class="kss-name">Overview</span></a></li>
               
               <li class="kss-menu-item"><a href="section-1.html"><span class="kss-ref">1</span><span class="kss-name">LINK</span></a></li>
@@ -50,11 +50,11 @@
               
               
               
-              <li class="kss-menu-item"><a href="#section-7.1"><span class="kss-ref">7.1</span><span class="kss-name">Base</span></a></li>
+              <li class="kss-menu-item"><a href="#section-9.1"><span class="kss-ref">9.1</span><span class="kss-name">Sprite</span></a></li>
               
               
               
-              <li class="kss-menu-item"><a href="#section-7.2"><span class="kss-ref">7.2</span><span class="kss-name">Alert Block</span></a></li>
+              <li class="kss-menu-item"><a href="#section-9.2"><span class="kss-ref">9.2</span><span class="kss-name">Icon</span></a></li>
               
               
             </ul>
@@ -66,122 +66,59 @@
         <article class="kss-article">
           
           
-          <section id="section-7" class="kss-section kss-depth-1">
-            <h1 class="kss-title"><span class="kss-ref">7</span> ALERTS</h1>
+          <section id="section-9" class="kss-section kss-depth-1">
+            <h1 class="kss-title"><span class="kss-ref">9</span> SPRITES &amp; ICONS</h1>
             
             
             <div class="kss-description">
-              <p>Standard alert styles with variations</p>
+              <p>Utility classes to create image replaced &quot;Sprites&quot; and icon font based &quot;Icons&quot;.</p>
 
             </div>
             
             
           </section>
           
-          <section id="section-7.1" class="kss-section kss-depth-2">
-            <h2 class="kss-title"><span class="kss-ref">7.1</span> Base</h2>
+          <section id="section-9.1" class="kss-section kss-depth-2">
+            <h2 class="kss-title"><span class="kss-ref">9.1</span> Sprite</h2>
             
             
             <div class="kss-description">
-              <p>Default styling for all types of Alert</p>
+              <p>Uses &quot;sprited&quot; images to create icon-like elements</p>
 
             </div>
             
             <div class="kss-modifier-block">
               <div class="kss-modifier kss-modifier-original">
                 <div class="kss-modifier-example">
-                  <p class="alert {$modifiers}">
-  I'm warning you son, get off my land
-</p>
-                </div>
-              </div>
-              
-              <div class="kss-modifier">
-                <div class="kss-modifier-head">
-                  <div class="kss-modifier-name">.alert--success</div>
-                  <div class="kss-modifier-description">
-                    <p>&quot;success&quot; style</p>
-
-                  </div>
-                </div>
-                <div class="kss-modifier-example">
-                  <p class="alert alert--success">
-  I'm warning you son, get off my land
-</p>
-                </div>
-              </div>
-              
-              <div class="kss-modifier">
-                <div class="kss-modifier-head">
-                  <div class="kss-modifier-name">.alert--error</div>
-                  <div class="kss-modifier-description">
-                    <p>&quot;error&quot; style</p>
-
-                  </div>
-                </div>
-                <div class="kss-modifier-example">
-                  <p class="alert alert--error">
-  I'm warning you son, get off my land
-</p>
-                </div>
-              </div>
-              
-              <div class="kss-modifier">
-                <div class="kss-modifier-head">
-                  <div class="kss-modifier-name">.alert--info</div>
-                  <div class="kss-modifier-description">
-                    <p>&quot;info&quot; style</p>
-
-                  </div>
-                </div>
-                <div class="kss-modifier-example">
-                  <p class="alert alert--info">
-  I'm warning you son, get off my land
-</p>
+                  <span class="sprite" style="background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAQAAAC1+jfqAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAE3SURBVCjPhZFfK4NxGIZ/R458Dz7B7wv4Go5WpJW8819mSw3bos202DsTNpT3FTbCRs0YkYPFasvKJhw5kpVEu5y8W0uZ7sPnup+e+34EorH+HIRZQsXfLtKkOSPJCXEOiLGNxgarpPniGW9WnPPN5y+9E3p5I4+n6DaLFHmeuOSRFEUSFNgjj04WDVcbQiCOuWBfnrIlE0RkjKDU8ck1VBytCIE45JYkD8QpECOHTpYIGVzYmo0UO5Q5IiyjqFLDKyNMyUVs1GJq1mvuiZJjkzvCZAhyw3ClrocVQiwwhwc3E4xjZ5f+SoOihpr66Hk1gOWWYGAeHzM4cWBnlEF6QZjLBqBaEbPKdMmpVP0WpbtkVjo/DMBv9aJzxTo2RhjAQoA0fkyFuhsmGWestqFL6cDEP9+s6gcdbFPqiEGjeAAAAABJRU5ErkJggg==);">I'm sprited</span>
                 </div>
               </div>
               
               <div class="kss-markup">
-                <pre><code data-language="html">&lt;p class=&quot;alert {$modifiers}&quot;&gt;
-  I&#x27;m warning you son, get off my land
-&lt;/p&gt;</code></pre>
+                <pre><code data-language="html">&lt;span class=&quot;sprite&quot; style=&quot;background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAQAAAC1+jfqAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAE3SURBVCjPhZFfK4NxGIZ/R458Dz7B7wv4Go5WpJW8819mSw3bos202DsTNpT3FTbCRs0YkYPFasvKJhw5kpVEu5y8W0uZ7sPnup+e+34EorH+HIRZQsXfLtKkOSPJCXEOiLGNxgarpPniGW9WnPPN5y+9E3p5I4+n6DaLFHmeuOSRFEUSFNgjj04WDVcbQiCOuWBfnrIlE0RkjKDU8ck1VBytCIE45JYkD8QpECOHTpYIGVzYmo0UO5Q5IiyjqFLDKyNMyUVs1GJq1mvuiZJjkzvCZAhyw3ClrocVQiwwhwc3E4xjZ5f+SoOihpr66Hk1gOWWYGAeHzM4cWBnlEF6QZjLBqBaEbPKdMmpVP0WpbtkVjo/DMBv9aJzxTo2RhjAQoA0fkyFuhsmGWestqFL6cDEP9+s6gcdbFPqiEGjeAAAAABJRU5ErkJggg==);&quot;&gt;I&#x27;m sprited&lt;/span&gt;</code></pre>
               </div>
             </div>
             
           </section>
           
-          <section id="section-7.2" class="kss-section kss-depth-2">
-            <h2 class="kss-title"><span class="kss-ref">7.2</span> Alert Block</h2>
+          <section id="section-9.2" class="kss-section kss-depth-2">
+            <h2 class="kss-title"><span class="kss-ref">9.2</span> Icon</h2>
             
             
             <div class="kss-description">
-              <p>A larger alert for multi-line alert messages such as form validation errors...etc. Can be extended using the same modifiers as for standard <code>.alert</code>.</p>
+              <p>Uses icon fonts to create icons</p>
 
             </div>
             
             <div class="kss-modifier-block">
               <div class="kss-modifier kss-modifier-original">
                 <div class="kss-modifier-example">
-                  <div class="alert-block {$modifiers}">
-  <p>I'm a total block head and here's why:</p>
-  <ul>
-     <li>I like potatoes</li>
-     <li>I like potatoes</li>
-     <li>I like potatoes</li>
-  </ul>
-</div>
+                  <i class="icon {modifiers} icon-zoom"></i>
                 </div>
               </div>
               
               <div class="kss-markup">
-                <pre><code data-language="html">&lt;div class=&quot;alert-block {$modifiers}&quot;&gt;
-  &lt;p&gt;I&#x27;m a total block head and here&#x27;s why:&lt;/p&gt;
-  &lt;ul&gt;
-     &lt;li&gt;I like potatoes&lt;/li&gt;
-     &lt;li&gt;I like potatoes&lt;/li&gt;
-     &lt;li&gt;I like potatoes&lt;/li&gt;
-  &lt;/ul&gt;
-&lt;/div&gt;</code></pre>
+                <pre><code data-language="html">&lt;i class=&quot;icon {modifiers} icon-zoom&quot;&gt;&lt;/i&gt;</code></pre>
               </div>
             </div>
             
