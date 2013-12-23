@@ -4,7 +4,6 @@
 //
 // Styleguide 7.
 
-
 // Base
 //
 // Default styling for all types of Alert
@@ -46,13 +45,8 @@
     line-height: $base-line-height;
 }
 
-/* ##Alert Success */
-
-/* 
-    <div class="alert alert-success">
-        <strong>Success</strong> Looking good!
-    </div>
-*/
+// SUCCESS
+// ==========================================================================
 
 .alert--success {
     background-color: $successBackground;
@@ -60,13 +54,8 @@
     color: $successText;
 }
 
-/* ##Alert Danger/Error */
-
-/* 
-    <div class="alert alert-danger">
-        <strong>Danger!</strong> Best check yo self, you're not looking too good.
-    </div>
-*/
+// ERROR
+// ==========================================================================
 .alert--danger,
 .alert--error {
     background-color: $errorBackground;
@@ -74,13 +63,8 @@
     color: $errorText;
 }
 
-/* ##Alert Info */
-
-/* 
-    <div class="alert alert-info">
-        <strong>Notice</strong> Everything isn't what it seems...
-    </div>
-*/
+// INFO
+// ==========================================================================
 .alert--info {
     background-color: $infoBackground;
     border-color: $infoBorder;
@@ -88,24 +72,37 @@
 }
 
 
-/* ##Alert Blocks */
+// ==========================================================================
+// BLOCK
+// ==========================================================================
 
-/* 
-    <div class="alert alert-block">
-        <h4>Warning!</h4>
-        Best check yo self, you're not...
-    </div>
-*/
-
+// Alert Block
+//
+// A larger alert for multi-line alert messages such as form validation errors...etc. Can be extended using the same modifiers as for standard `.alert`.
+//
+// Markup:
+// <div class="alert-block {$modifiers}">
+//   <p>I'm a total block head and here's why:</p>
+//   <ul>
+//      <li>I like potatoes</li>
+//      <li>I like potatoes</li>
+//      <li>I like potatoes</li>
+//   </ul>
+// </div>
+//
+// Styleguide 7.2
 
 .alert-block {
+    @extend .alert;
     padding-top: em(14px);
     padding-bottom: em(14px);
 }
+
 .alert-block > p,
 .alert-block > ul {
     margin-bottom: 0;
 }
+
 .alert-block p + p {
     margin-top: em(5px);
 }

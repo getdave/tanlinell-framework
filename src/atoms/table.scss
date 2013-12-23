@@ -1,0 +1,92 @@
+// TABLE
+//
+// Default `<table>` styles.
+//
+// Styleguide 8.
+
+
+// Base
+//
+// Note that all heading sizes are aliased via the `.hN` classes. So if you would like your `<h6>` to look like an `<h1>` then simply add the class `.h1`
+//
+// .table--striped         - Applies odd/even "striped" effect to tables
+//
+// Markup:
+//<table class="{$modifiers}">
+//   <thead>
+//       <tr>
+//           <th>Lorem</th>
+//           <th>Ipsum</th>
+//           <th>Dolor</th>
+//           <th>Sit</th>
+//       </tr>
+//   </thead>
+//   <tbody>
+//       <tr>
+//           <th>Sit</th>
+//           <td>Dolor</td>
+//           <td>03.788</td>
+//           <td>Lorem</td>
+//       </tr>
+//       <tr>
+//           <td>Dolor</td>
+//           <td>32.210</td>
+//           <td>Lorem</td>
+//           <td>Lorem</td>
+//       </tr>
+//       <tr>
+//           <td>Dolor</td>
+//           <td>47.797</td>
+//           <td>Lorem</td>
+//           <td>Lorem</td>
+//       </tr>
+//       <tr>
+//           <th>Sit</th>
+//           <td>Dolor</td>
+//           <td>09.640</td>
+//           <td>Lorem</td>
+//       </tr>
+//       <tr>
+//           <td>Dolor</td>
+//           <td>12.117</td>
+//           <td>Lorem</td>
+//           <td>Lorem</td>
+//       </tr>
+//  </tbody>
+//</table>
+//
+// Styleguide 8.1
+
+table{
+    width:100%;
+    margin-bottom: $base-line-height;
+}
+
+th,
+td {
+    padding: $base-line-height / 4;
+    border:1px solid #ccc;
+    text-align:left;
+
+    @include respond-to($mobileBreak) {
+        padding:$base-line-height / 3;
+    }
+}
+
+thead tr:last-child th {
+    border-bottom-width:0;
+}
+
+
+// ==========================================================================
+// MODIFIERS
+// ==========================================================================
+
+// STRIPED
+// ==========================================================================
+
+.table--striped {
+    tbody tr:nth-of-type(odd){
+        background-color:#f9f9f9; /* Override this color in your theme stylesheet */
+    }
+}

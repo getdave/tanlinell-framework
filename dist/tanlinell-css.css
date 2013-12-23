@@ -1,6 +1,6 @@
 /**
  * Tanlinell CSS Framework
- * Version: 0.1.0 (16-12-2013)
+ * Version: 0.1.0 (23-12-2013)
  * URL: git://github.com/getdave/tanlinell-css.git
  * : 
  * Author: David Smith (@get_dave)
@@ -447,6 +447,9 @@ body {
   line-height: 1.666em;
   color: #444444; }
 
+p {
+  margin: 0 0 1.666em 0; }
+
 input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="email"], input[type="month"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="time"], input[type="url"], input[type="week"], select, textarea {
   background-color: white;
   border: 1px solid #cccccc;
@@ -765,7 +768,7 @@ img {
 .img-circle {
   border-radius: 300px; }
 
-.alert {
+.alert, .alert-block {
   padding: 0.5em 0.875em;
   margin-bottom: 1.666em;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
@@ -786,46 +789,21 @@ img {
   right: -21px;
   line-height: 1.666em; }
 
-/* ##Alert Success */
-/* 
-    <div class="alert alert-success">
-        <strong>Success</strong> Looking good!
-    </div>
-*/
 .alert--success {
   background-color: #dff0d8;
   border-color: #d6e9c6;
   color: #468847; }
 
-/* ##Alert Danger/Error */
-/* 
-    <div class="alert alert-danger">
-        <strong>Danger!</strong> Best check yo self, you're not looking too good.
-    </div>
-*/
 .alert--danger, .alert--error {
   background-color: #f2dede;
   border-color: #eed3d7;
   color: #b94a48; }
 
-/* ##Alert Info */
-/* 
-    <div class="alert alert-info">
-        <strong>Notice</strong> Everything isn't what it seems...
-    </div>
-*/
 .alert--info {
   background-color: #d9edf7;
   border-color: #bceaf1;
   color: #3a87ad; }
 
-/* ##Alert Blocks */
-/* 
-    <div class="alert alert-block">
-        <h4>Warning!</h4>
-        Best check yo self, you're not...
-    </div>
-*/
 .alert-block {
   padding-top: 0.875em;
   padding-bottom: 0.875em; }
@@ -835,6 +813,25 @@ img {
 
 .alert-block p + p {
   margin-top: 0.3125em; }
+
+table {
+  width: 100%;
+  margin-bottom: 1.666em; }
+
+th, td {
+  padding: 0.4165em;
+  border: 1px solid #cccccc;
+  text-align: left; }
+  @media only screen and (min-width: 48em) {
+    th, td {
+      padding: 0.55533em; } }
+
+thead tr:last-child th {
+  border-bottom-width: 0; }
+
+.table--striped tbody tr:nth-of-type(odd) {
+  background-color: #f9f9f9;
+  /* Override this color in your theme stylesheet */ }
 
 .landmark {
   margin-bottom: 3.332em; }

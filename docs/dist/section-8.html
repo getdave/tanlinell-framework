@@ -21,7 +21,7 @@
             <h1 class="kss-doc-title"><a href="./">Tanlinell CSS Framework</a></h1>
           </header>
           <nav class="kss-nav">
-            <ul class="kss-menu" data-kss-ref="7">
+            <ul class="kss-menu" data-kss-ref="8">
               <li class="kss-menu-item"><a href="./"><span class="kss-ref">0</span><span class="kss-name">Overview</span></a></li>
               
               <li class="kss-menu-item"><a href="section-1.html"><span class="kss-ref">1</span><span class="kss-name">LINK</span></a></li>
@@ -48,11 +48,7 @@
               
               
               
-              <li class="kss-menu-item"><a href="#section-7.1"><span class="kss-ref">7.1</span><span class="kss-name">Base</span></a></li>
-              
-              
-              
-              <li class="kss-menu-item"><a href="#section-7.2"><span class="kss-ref">7.2</span><span class="kss-name">Alert Block</span></a></li>
+              <li class="kss-menu-item"><a href="#section-8.1"><span class="kss-ref">8.1</span><span class="kss-name">Base</span></a></li>
               
               
             </ul>
@@ -64,122 +60,172 @@
         <article class="kss-article">
           
           
-          <section id="section-7" class="kss-section kss-depth-1">
-            <h1 class="kss-title"><span class="kss-ref">7</span> ALERTS</h1>
+          <section id="section-8" class="kss-section kss-depth-1">
+            <h1 class="kss-title"><span class="kss-ref">8</span> TABLE</h1>
             
             
             <div class="kss-description">
-              <p>Standard alert styles with variations</p>
+              <p>Default <code>&lt;table&gt;</code> styles.</p>
 
             </div>
             
             
           </section>
           
-          <section id="section-7.1" class="kss-section kss-depth-2">
-            <h2 class="kss-title"><span class="kss-ref">7.1</span> Base</h2>
+          <section id="section-8.1" class="kss-section kss-depth-2">
+            <h2 class="kss-title"><span class="kss-ref">8.1</span> Base</h2>
             
             
             <div class="kss-description">
-              <p>Default styling for all types of Alert</p>
+              <p>Note that all heading sizes are aliased via the <code>.hN</code> classes. So if you would like your <code>&lt;h6&gt;</code> to look like an <code>&lt;h1&gt;</code> then simply add the class <code>.h1</code></p>
 
             </div>
             
             <div class="kss-modifier-block">
               <div class="kss-modifier kss-modifier-original">
                 <div class="kss-modifier-example">
-                  <p class="alert {$modifiers}">
-  I'm warning you son, get off my land
-</p>
+                  <table class="{$modifiers}">
+  <thead>
+      <tr>
+          <th>Lorem</th>
+          <th>Ipsum</th>
+          <th>Dolor</th>
+          <th>Sit</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <th>Sit</th>
+          <td>Dolor</td>
+          <td>03.788</td>
+          <td>Lorem</td>
+      </tr>
+      <tr>
+          <td>Dolor</td>
+          <td>32.210</td>
+          <td>Lorem</td>
+          <td>Lorem</td>
+      </tr>
+      <tr>
+          <td>Dolor</td>
+          <td>47.797</td>
+          <td>Lorem</td>
+          <td>Lorem</td>
+      </tr>
+      <tr>
+          <th>Sit</th>
+          <td>Dolor</td>
+          <td>09.640</td>
+          <td>Lorem</td>
+      </tr>
+      <tr>
+          <td>Dolor</td>
+          <td>12.117</td>
+          <td>Lorem</td>
+          <td>Lorem</td>
+      </tr>
+ </tbody>
+</table>
                 </div>
               </div>
               
               <div class="kss-modifier">
                 <div class="kss-modifier-head">
-                  <div class="kss-modifier-name">.alert--success</div>
+                  <div class="kss-modifier-name">.table--striped</div>
                   <div class="kss-modifier-description">
-                    <p>&quot;success&quot; style</p>
+                    <p>Applies odd/even &quot;striped&quot; effect to tables</p>
 
                   </div>
                 </div>
                 <div class="kss-modifier-example">
-                  <p class="alert alert--success">
-  I'm warning you son, get off my land
-</p>
-                </div>
-              </div>
-              
-              <div class="kss-modifier">
-                <div class="kss-modifier-head">
-                  <div class="kss-modifier-name">.alert--error</div>
-                  <div class="kss-modifier-description">
-                    <p>&quot;error&quot; style</p>
-
-                  </div>
-                </div>
-                <div class="kss-modifier-example">
-                  <p class="alert alert--error">
-  I'm warning you son, get off my land
-</p>
-                </div>
-              </div>
-              
-              <div class="kss-modifier">
-                <div class="kss-modifier-head">
-                  <div class="kss-modifier-name">.alert--info</div>
-                  <div class="kss-modifier-description">
-                    <p>&quot;info&quot; style</p>
-
-                  </div>
-                </div>
-                <div class="kss-modifier-example">
-                  <p class="alert alert--info">
-  I'm warning you son, get off my land
-</p>
+                  <table class="table--striped">
+  <thead>
+      <tr>
+          <th>Lorem</th>
+          <th>Ipsum</th>
+          <th>Dolor</th>
+          <th>Sit</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <th>Sit</th>
+          <td>Dolor</td>
+          <td>03.788</td>
+          <td>Lorem</td>
+      </tr>
+      <tr>
+          <td>Dolor</td>
+          <td>32.210</td>
+          <td>Lorem</td>
+          <td>Lorem</td>
+      </tr>
+      <tr>
+          <td>Dolor</td>
+          <td>47.797</td>
+          <td>Lorem</td>
+          <td>Lorem</td>
+      </tr>
+      <tr>
+          <th>Sit</th>
+          <td>Dolor</td>
+          <td>09.640</td>
+          <td>Lorem</td>
+      </tr>
+      <tr>
+          <td>Dolor</td>
+          <td>12.117</td>
+          <td>Lorem</td>
+          <td>Lorem</td>
+      </tr>
+ </tbody>
+</table>
                 </div>
               </div>
               
               <div class="kss-markup">
-                <pre><code data-language="html">&lt;p class=&quot;alert {$modifiers}&quot;&gt;
-  I&#x27;m warning you son, get off my land
-&lt;/p&gt;</code></pre>
-              </div>
-            </div>
-            
-          </section>
-          
-          <section id="section-7.2" class="kss-section kss-depth-2">
-            <h2 class="kss-title"><span class="kss-ref">7.2</span> Alert Block</h2>
-            
-            
-            <div class="kss-description">
-              <p>A larger alert for multi-line alert messages such as form validation errors...etc. Can be extended using the same modifiers as for standard <code>.alert</code>.</p>
-
-            </div>
-            
-            <div class="kss-modifier-block">
-              <div class="kss-modifier kss-modifier-original">
-                <div class="kss-modifier-example">
-                  <div class="alert-block {$modifiers}">
-  <p>I'm a total block head and here's why:</p>
-  <ul>
-     <li>I like potatoes</li>
-     <li>I like potatoes</li>
-     <li>I like potatoes</li>
-  </ul>
-</div>
-                </div>
-              </div>
-              
-              <div class="kss-markup">
-                <pre><code data-language="html">&lt;div class=&quot;alert-block {$modifiers}&quot;&gt;
-  &lt;p&gt;I&#x27;m a total block head and here&#x27;s why:&lt;/p&gt;
-  &lt;ul&gt;
-     &lt;li&gt;I like potatoes&lt;/li&gt;
-     &lt;li&gt;I like potatoes&lt;/li&gt;
-     &lt;li&gt;I like potatoes&lt;/li&gt;
-  &lt;/ul&gt;
-&lt;/div&gt;</code></pre>
+                <pre><code data-language="html">&lt;table class=&quot;{$modifiers}&quot;&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;Lorem&lt;/th&gt;
+          &lt;th&gt;Ipsum&lt;/th&gt;
+          &lt;th&gt;Dolor&lt;/th&gt;
+          &lt;th&gt;Sit&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;th&gt;Sit&lt;/th&gt;
+          &lt;td&gt;Dolor&lt;/td&gt;
+          &lt;td&gt;03.788&lt;/td&gt;
+          &lt;td&gt;Lorem&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Dolor&lt;/td&gt;
+          &lt;td&gt;32.210&lt;/td&gt;
+          &lt;td&gt;Lorem&lt;/td&gt;
+          &lt;td&gt;Lorem&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Dolor&lt;/td&gt;
+          &lt;td&gt;47.797&lt;/td&gt;
+          &lt;td&gt;Lorem&lt;/td&gt;
+          &lt;td&gt;Lorem&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;th&gt;Sit&lt;/th&gt;
+          &lt;td&gt;Dolor&lt;/td&gt;
+          &lt;td&gt;09.640&lt;/td&gt;
+          &lt;td&gt;Lorem&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Dolor&lt;/td&gt;
+          &lt;td&gt;12.117&lt;/td&gt;
+          &lt;td&gt;Lorem&lt;/td&gt;
+          &lt;td&gt;Lorem&lt;/td&gt;
+      &lt;/tr&gt;
+ &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
               </div>
             </div>
             

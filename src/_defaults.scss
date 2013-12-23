@@ -69,6 +69,31 @@ $gutter--small: 				$gutter/2 !default;
 
 
 // ==========================================================================
+// RESPONSIVE
+// ==========================================================================
+
+// Determines whether the site is fixed width. Defaults to "false" unless served is an oldie browser
+$isFixed:						if($is-oldie, true, false) !default;
+
+// Width of primary ".container" elements - determined by $isFixed var
+$containerWidth:				if($isFixed, 960px, 90%) !default;
+
+// BREAKPOINTS
+// ==========================================================================
+
+$break-tiny:            		320px !default;
+$break-small:           		600px !default;
+$break-medium:          		768px !default;
+$break-large:           		992px !default;
+$break-xlarge:          		1382px !default;
+
+// Constant to define which breakpoint name (above) determines the point
+// at which the grid system switches from full to "linearised" layout.
+$mobileBreak:					"medium" !default;
+
+
+
+// ==========================================================================
 // COLORS
 // ==========================================================================
 
