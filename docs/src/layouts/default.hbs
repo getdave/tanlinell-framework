@@ -6,19 +6,22 @@
 		<link rel="stylesheet" href="{{assets}}/css/highlight.css">
 		<link rel="stylesheet" href="{{assets}}/css/github.css">
 		<link rel="stylesheet" href="{{assets}}/css/tanlinell-css.css">
-
+		<link rel="stylesheet" href="{{assets}}/css/docs.css">
 	</head>
 	<body>
-		
 
-		<!-- Banner 
+
+		<!-- Banner
    		================================================== -->
     	{{> banner }}
-		
-		<main>
-		<h1>{{ title }}</h1>
-		{{> body }}
-		</main>
+
+		<div class="site-content">
+			<main>
+				<h1>{{ title }}</h1>
+
+				{{> body }}
+			</main>
+		</div>
 
 		<script src="http://yandex.st/highlightjs/8.0/highlight.min.js"></script>
 	</body>
