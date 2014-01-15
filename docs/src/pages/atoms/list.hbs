@@ -1,0 +1,109 @@
+---
+title: List
+---
+
+<section>
+{{#markdown}}
+### Base
+Default styling for all types of list.
+{{/markdown}}
+
+<div class="grid">
+	<div class="gc">
+		{{#markdown}}
+		<ul>
+			<li>List item
+			</li>
+			<li>List item
+				<ul>
+					<li>List item
+					</li>
+					<li>List item
+					</li>
+					<li>List item
+					</li>
+				</ul>
+			</li>
+			<li>List item
+			</li>
+		</ul>		
+		{{/markdown}}
+		<ul>
+			<li>List item
+			</li>
+			<li>List item
+				<ul>
+					<li>List item
+					</li>
+					<li>List item
+					</li>
+					<li>List item
+					</li>
+				</ul>
+			</li>
+			<li>List item
+			</li>
+		</ul>
+	</div>
+	<div class="gc">
+		{{#markdown}}
+		<ol>
+			<li>List item</li>
+			<li>List item</li>
+			<li>List item</li>
+		</ol>
+		{{/markdown}}
+		<ol>
+			<li>List item</li>
+			<li>List item</li>
+			<li>List item</li>
+		</ol>
+	</div>
+
+	<div class="gc">
+		{{#markdown}}
+		<ol>
+			<li>List item</li>
+			<li>List item</li>
+			<li>List item</li>
+		</ol>
+		{{/markdown}}
+		<ol>
+			<li>List item</li>
+			<li>List item</li>
+			<li>List item</li>
+		</ol>
+	</div>
+</div>
+</section>
+
+<section>
+{{#markdown}}
+### Complex
+Separation of components within a standard hyperlink.
+{{/markdown}}
+
+{{#markdown}}
+
+<a href="#" class="link-complex"><span class="link-complex__target">Complex Link</span> ></a>
+```
+{{/markdown}}
+
+<a href="#" class="link-complex"><span class="link-complex__target">Complex Link</span> ></a>
+</section>
+
+
+<section>
+{{#markdown}}
+### Blocky
+Links with button-like blockyness but without the button UI styles
+{{/markdown}}
+
+{{#markdown}}
+
+<a href="#" class="link-blocky">Blocky Link</a>
+```
+{{/markdown}}
+
+<a href="#" class="link-blocky">Blocky Link</a>
+</section>

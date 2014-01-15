@@ -1,33 +1,49 @@
 ---
-title: Atoms
+title: Link
 ---
-
-Base styles/objects. Mostly global, tag-based selector rules.
 
 <section>
 {{#markdown}}
-## Link
-
 ### Base
 Default styling for all types of list.
+{{/markdown}}
 
+{{#markdown}}
 ```html
 <a href="#">Link</a>
 ```
 {{/markdown}}
 
 <a href="#">Link</a>
-{{#markdown}}
 </section>
 
 <section>
+{{#markdown}}
 ### Complex
 Separation of components within a standard hyperlink.
+{{/markdown}}
 
+{{#markdown}}
 ```html
 <a href="#" class="link-complex"><span class="link-complex__target">Complex Link</span> ></a>
 ```
 {{/markdown}}
 
 <a href="#" class="link-complex"><span class="link-complex__target">Complex Link</span> ></a>
+</section>
+
+
+<section>
+{{#markdown}}
+### Blocky
+Links with button-like blockyness but without the button UI styles
+{{/markdown}}
+
+{{#markdown}}
+```html
+<a href="#" class="link-blocky">Blocky Link</a>
+```
+{{/markdown}}
+
+<a href="#" class="link-blocky">Blocky Link</a>
 </section>

@@ -77,7 +77,7 @@ module.exports = function(grunt) {
         assets: '<%= config.docsDist %>/assets',
         layoutdir: '<%= config.docsSrc %>/layouts/',
         layout: 'default.hbs',
-        partials: ['<%= config.docsSrc %>/partials/{,*/}*.hbs' ]
+        partials: ['<%= config.docsSrc %>/partials/{,*/}*.hbs', './*.md']
       },
       pages: {        
         files: {

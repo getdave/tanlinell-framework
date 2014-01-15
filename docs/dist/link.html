@@ -2,7 +2,7 @@
 <html lang ="en">
 	<head>
 		<meta charset ="UTF-8">
-		<title> Atoms </title>
+		<title> Link </title>
 		<link rel="stylesheet" href="assets/css/highlight.css">
 		<link rel="stylesheet" href="assets/css/github.css">
 		<link rel="stylesheet" href="assets/css/tanlinell-css.css">
@@ -39,30 +39,43 @@
 
 		<div class="site-content">
 			<main>
-				<h1>Atoms</h1>
+				<h1>Link</h1>
 
 				
 
-Base styles/objects. Mostly global, tag-based selector rules.
-
 <section>
-<h2 id="link">Link</h2>
 <h3 id="base">Base</h3>
 <p>Default styling for all types of list.</p>
+
+
 <pre><code class="language-html">&lt;a href=&quot;#&quot;&gt;Link&lt;/a&gt;</code></pre>
 
 
 <a href="#">Link</a>
-<p></section></p>
-<p><section></p>
+</section>
+
+<section>
 <h3 id="complex">Complex</h3>
 <p>Separation of components within a standard hyperlink.</p>
+
+
 <pre><code class="language-html">&lt;a href=&quot;#&quot; class=&quot;link-complex&quot;&gt;&lt;span class=&quot;link-complex__target&quot;&gt;Complex Link&lt;/span&gt; &gt;&lt;/a&gt;</code></pre>
 
 
 <a href="#" class="link-complex"><span class="link-complex__target">Complex Link</span> ></a>
 </section>
 
+
+<section>
+<h3 id="blocky">Blocky</h3>
+<p>Links with button-like blockyness but without the button UI styles</p>
+
+
+<pre><code class="language-html">&lt;a href=&quot;#&quot; class=&quot;link-blocky&quot;&gt;Blocky Link&lt;/a&gt;</code></pre>
+
+
+<a href="#" class="link-blocky">Blocky Link</a>
+</section>
 			</main>
 		</div>
 
