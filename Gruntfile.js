@@ -34,7 +34,11 @@ module.exports = function(grunt) {
     watch: {
       css: {
         files: ['<%= config.cssSrc %>/{,*/}*.{scss,sass}'],
-        tasks: ['sass', 'csslint', 'concat', 'copy:docs', 'styleguide'] // run sass, then lint then combine with normalize
+        tasks: ['framework'] // run sass, then lint then combine with normalize
+      },
+      docs: {
+        files: ['<%= config.docsSrc %>/**/*.hbs'],
+        tasks: ['docs'] // run sass, then lint then combine with normalize
       },
       livereload: {
         options: {
@@ -71,14 +75,13 @@ module.exports = function(grunt) {
       options: {
         flatten: true,
         assets: '<%= config.docsDist %>/assets',
-        layoutdir: '<%= config.docsSrc %>/templates/layouts/',
+        layoutdir: '<%= config.docsSrc %>/layouts/',
         layout: 'default.hbs',
-        data: '<%= config.docsSrc %>/data/{,*/}*.{json,yml}',
-        partials: '<%= config.docsSrc %>/templates/partials/{,*/}*.hbs'
+        partials: ['<%= config.docsSrc %>/partials/{,*/}*.hbs' ]
       },
       pages: {        
         files: {
-          '<%= config.docsDist %>/': ['<%= config.docsSrc %>/templates/pages/{,*/}*.hbs']
+          '<%= config.docsDist %>/': ['<%= config.docsSrc %>/pages/{,*/}*.hbs']
         }
       }
     },
@@ -162,35 +165,10 @@ module.exports = function(grunt) {
     copy: {
       docs: {
         src: '<%= config.cssDist %>/*.css',
-        dest: '<%= config.docsDist %>/',
+        dest: '<%= config.docsDist %>/assets/css/tanlinell-css.css',
         flatten: true
       }
     },
-
-    styleguide: {
-      options: {
-          name: 'Style Guide',
-
-          framework: {
-              name: 'kss'
-          },
-
-          template: {
-              src: './src/kss-node-template/template',
-              include: ['<%= config.cssDist %>/<%= config.fwFilename %>.css']
-          }
-
-
-
-      },
-      all: {
-        files: [{
-          '<%= config.docsDist %>': '<%= config.cssSrc %>/framework.scss'
-        }]
-      }
-    },
-
-
 
     fontello: {
       dist: {
@@ -202,6 +180,8 @@ module.exports = function(grunt) {
         }
       }
     },
+
+
 
 
   });
@@ -217,12 +197,15 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-sass');
   grunt.loadNpmTasks('grunt-autoprefixer');
   grunt.loadNpmTasks('grunt-bump');
-  grunt.loadNpmTasks('grunt-styleguide');
+  //grunt.loadNpmTasks('grunt-styleguide');
   grunt.loadNpmTasks('grunt-fontello');
+  grunt.loadNpmTasks('assemble' );
+
+  
+
 
   grunt.registerTask('server', [
     'clean',
-    'assemble',
     'connect:livereload',
     'watch'
   ]);
@@ -242,5 +225,21 @@ module.exports = function(grunt) {
     'clean',
     'watch'
   ]);
+
+
+  grunt.registerTask('framework', [
+    'sass', 
+    'csslint', 
+    'concat', 
+    'copy:docs'
+  ]);
+
+  grunt.registerTask('docs', [
+    'framework', 
+    'assemble'
+  ]);
+
+
+  
 
 };

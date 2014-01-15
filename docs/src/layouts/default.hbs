@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang ="en">
+	<head>
+		<meta charset ="UTF-8">
+		<title> {{ title }} </title>
+		<link rel="stylesheet" href="{{assets}}/css/highlight.css">
+		<link rel="stylesheet" href="{{assets}}/css/github.css">
+		<link rel="stylesheet" href="{{assets}}/css/tanlinell-css.css">
+
+	</head>
+	<body>
+		
+
+		<!-- Banner 
+   		================================================== -->
+    	{{> banner }}
+		
+		<main>
+		<h1>{{ title }}</h1>
+		{{> body }}
+		</main>
+
+		<script src="http://yandex.st/highlightjs/8.0/highlight.min.js"></script>
+	</body>
+</html>
