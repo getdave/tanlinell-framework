@@ -19,14 +19,13 @@ fieldset {
 legend {
 	background: $whiteDark;
 	border: 1px solid $grayLight;
-	@include border-radius;
 	font-weight: bold;
 	display: block;
 	left: 0;
 	margin: 0;
 	padding: rhythm(.2) rhythm(.8);
 	position: relative;
-	@include text-shadow( 1px 1px 0 rgba($white, .7) );
+	text-shadow: 1px 1px 0 rgba($white, .7);
 	top: 0;
 }
 
@@ -93,7 +92,7 @@ select {
   // Suppress red glow that Firefox
   // adds to form fields by default.
 	&:invalid {
-		@include box-shadow(none); 
+		box-shadow: none; 
 	}
 }
 
@@ -103,7 +102,7 @@ textarea {
   // Suppress red glow that Firefox
   // adds to form fields by default.
 	&:invalid {
-		@include box-shadow(none); }
+		box-shadow: none; }
 	
 }
 
@@ -117,7 +116,7 @@ input[type="submit"],
 input[type="button"] {
 	&:focus {
 		@include tab-focus();
-		@include box-shadow(none); // override for file inputs
+		box-shadow: none; // override for file inputs
 	}
 }
 
@@ -126,7 +125,7 @@ input[type="radio"],
 input[type="checkbox"] {
 	&:focus,
 	&:active {
-		@include box-shadow(none); 
+		box-shadow: none; 
 	} 
 }
 
@@ -185,7 +184,7 @@ input[type="url"],
 input[type="week"] {
 	@include box-sizing(border-box);
 	@include appearance(none);
-	@include box-shadow(none);
+	box-shadow: none;
 	@include rem(max-width,500px);
 	background-color: $white;
 	border: 1px solid;
@@ -215,10 +214,7 @@ input[type="week"] {
 		border-color: rgba(82,168,236,.8);
 		outline: 0;
 		outline: thin dotted \9; /* IE6-9 */
-		@include box-shadow(
-			inset 0 1px 1px rgba($black, .075), 
-			0 0 8px rgba(82,168,236,.6)
-		);
+		box-shadow: inset 0 1px 1px rgba($black, .075), 0 0 8px rgba(82,168,236,.6);
 	}
 }
 
@@ -250,7 +246,7 @@ select[disabled],
 select[disabled] option,
 select[disabled] optgroup,
 textarea[disabled] {
-	@include box-shadow(none);
+	box-shadow: none;
 	-moz-user-select: -moz-none;
 	-webkit-user-select: none;
 	-khtml-user-select: none;
@@ -284,7 +280,7 @@ select[multiple] {
 }
 
 select {
-	@include border-radius(0);
+	border-radius: 0;
 }
 
 // Set height back to normal,
@@ -324,7 +320,7 @@ select[size="1"] {
 		font: $baseFontSize / 17px "Lucida Grande", Arial, "Liberation Sans", FreeSans, sans-serif;
 		overflow: hidden;
 		padding: 15px 15px 17px;
-		@include text-shadow($black 0 0 1px);
+		text-shadow: $black 0 0 1px;
 		height: 16px; 
 	}
 	
