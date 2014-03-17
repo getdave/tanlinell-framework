@@ -33,7 +33,7 @@ module.exports = function(grunt) {
     watch: {
       css: {
         files: ['<%= config.cssSrc %>/**/*.scss'],
-        tasks: ['sass', 'concat', 'cssmin'] // run sass, then lint then combine with normalize
+        tasks: ['sass', 'concat'] // run sass, then lint then combine with normalize
       },
       livereload: {
         options: {
@@ -70,6 +70,7 @@ module.exports = function(grunt) {
         //includePaths: require('node-bourbon').includePaths,
         loadPath: require('node-bourbon').includePaths,
        // outputStyle: 'expanded', // minification via Grunt CSS Min is prefered
+       style: 'expanded'
       },
       dist: {
         files: {
@@ -114,7 +115,7 @@ module.exports = function(grunt) {
       options: {
         stripBanners: true,
         banner: '<%= config.cssBanner %>',
-        separator: '/* Begin: Tanlinell CSS Framework */',
+        separator: '\n\n\n\n/* Tanlinell CSS Framework */\n',
         nonull: true
       },
       dist: {
@@ -141,12 +142,12 @@ module.exports = function(grunt) {
     },
 
     copy: {
-		docs: {
-			src: '<%= config.cssDist %>/*.css',
-    		dest: '<%= config.docsDist %>/assets/',
-    		flatten: true
-		}
-	}
+  		docs: {
+  			src: '<%= config.cssDist %>/*.css',
+      		dest: '<%= config.docsDist %>/assets/',
+      		flatten: true
+  		}
+  	}
 
   });
 
@@ -161,7 +162,7 @@ module.exports = function(grunt) {
   grunt.registerTask('build', [
     'clean',
     'sass',
-    'csslint',
+    'autoprefixer',
     'concat',
     'cssmin',
   ]);
