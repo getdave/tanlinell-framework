@@ -1,0 +1,17 @@
+{% include head.html %}
+	<body>
+
+		<div class="page">
+
+			{% include banner.html %}
+
+			<main class="container container--padded">
+				
+				<h1>{{ page.title | capitalize }}</h1>
+						{{content}}
+		
+			</main>
+
+		</div> <!-- /container -->
+{% include close.html %}
+

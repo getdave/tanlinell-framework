@@ -1,446 +1,4 @@
-/**
- * Tanlinell CSS Framework
- * Version: 0.1.0 (17-03-2014)
- * URL: git://github.com/getdave/tanlinell-css.git
- * : 
- * Author: David Smith (@get_dave)
- */
-
-/**
- * Modular, OOCSS, Atomic Design-based CSS Framework
- *
- * Provided as a stand-alone packaged collection of SASS files. The _framework.scss file
- * should be @import'd into your projects' master SASS/SCSS file and utilised as required.
- *
- * You should *never* modify the files of the framework directly.
- *
- * If you find something you cannot work around it is
- * a bug and should be raised as an issue on Github at:
- *
- * https://github.com/getdave/tanlinell-css/issues
- *
- * This framework borrows heavily and draws inspiration from the great work of the following projects/authors:
-
- * OOCSS 					- https://github.com/stubbornella/oocss
- * Inuit.css 				- https://raw.github.com/csswizardry/inuit.css/
- * SMACSS guidelines 		- http://smacss.com/
- * Twitter Bootstrap		- http://twitter.github.com/bootstrap/
- * ZURB Foundation			- http://foundation.zurb.com/
- *
- */
-
-
-/*! normalize.css v2.1.3 | MIT License | git.io/normalize */
-
-/* ==========================================================================
-   HTML5 display definitions
-   ========================================================================== */
-
-/**
- * Correct `block` display not defined in IE 8/9.
- */
-
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-main,
-nav,
-section,
-summary {
-    display: block;
-}
-
-/**
- * Correct `inline-block` display not defined in IE 8/9.
- */
-
-audio,
-canvas,
-video {
-    display: inline-block;
-}
-
-/**
- * Prevent modern browsers from displaying `audio` without controls.
- * Remove excess height in iOS 5 devices.
- */
-
-audio:not([controls]) {
-    display: none;
-    height: 0;
-}
-
-/**
- * Address `[hidden]` styling not present in IE 8/9.
- * Hide the `template` element in IE, Safari, and Firefox < 22.
- */
-
-[hidden],
-template {
-    display: none;
-}
-
-/* ==========================================================================
-   Base
-   ========================================================================== */
-
-/**
- * 1. Set default font family to sans-serif.
- * 2. Prevent iOS text size adjust after orientation change, without disabling
- *    user zoom.
- */
-
-html {
-    font-family: sans-serif; /* 1 */
-    -ms-text-size-adjust: 100%; /* 2 */
-    -webkit-text-size-adjust: 100%; /* 2 */
-}
-
-/**
- * Remove default margin.
- */
-
-body {
-    margin: 0;
-}
-
-/* ==========================================================================
-   Links
-   ========================================================================== */
-
-/**
- * Remove the gray background color from active links in IE 10.
- */
-
-a {
-    background: transparent;
-}
-
-/**
- * Address `outline` inconsistency between Chrome and other browsers.
- */
-
-a:focus {
-    outline: thin dotted;
-}
-
-/**
- * Improve readability when focused and also mouse hovered in all browsers.
- */
-
-a:active,
-a:hover {
-    outline: 0;
-}
-
-/* ==========================================================================
-   Typography
-   ========================================================================== */
-
-/**
- * Address variable `h1` font-size and margin within `section` and `article`
- * contexts in Firefox 4+, Safari 5, and Chrome.
- */
-
-h1 {
-    font-size: 2em;
-    margin: 0.67em 0;
-}
-
-/**
- * Address styling not present in IE 8/9, Safari 5, and Chrome.
- */
-
-abbr[title] {
-    border-bottom: 1px dotted;
-}
-
-/**
- * Address style set to `bolder` in Firefox 4+, Safari 5, and Chrome.
- */
-
-b,
-strong {
-    font-weight: bold;
-}
-
-/**
- * Address styling not present in Safari 5 and Chrome.
- */
-
-dfn {
-    font-style: italic;
-}
-
-/**
- * Address differences between Firefox and other browsers.
- */
-
-hr {
-    -moz-box-sizing: content-box;
-    box-sizing: content-box;
-    height: 0;
-}
-
-/**
- * Address styling not present in IE 8/9.
- */
-
-mark {
-    background: #ff0;
-    color: #000;
-}
-
-/**
- * Correct font family set oddly in Safari 5 and Chrome.
- */
-
-code,
-kbd,
-pre,
-samp {
-    font-family: monospace, serif;
-    font-size: 1em;
-}
-
-/**
- * Improve readability of pre-formatted text in all browsers.
- */
-
-pre {
-    white-space: pre-wrap;
-}
-
-/**
- * Set consistent quote types.
- */
-
-q {
-    quotes: "\201C" "\201D" "\2018" "\2019";
-}
-
-/**
- * Address inconsistent and variable font size in all browsers.
- */
-
-small {
-    font-size: 80%;
-}
-
-/**
- * Prevent `sub` and `sup` affecting `line-height` in all browsers.
- */
-
-sub,
-sup {
-    font-size: 75%;
-    line-height: 0;
-    position: relative;
-    vertical-align: baseline;
-}
-
-sup {
-    top: -0.5em;
-}
-
-sub {
-    bottom: -0.25em;
-}
-
-/* ==========================================================================
-   Embedded content
-   ========================================================================== */
-
-/**
- * Remove border when inside `a` element in IE 8/9.
- */
-
-img {
-    border: 0;
-}
-
-/**
- * Correct overflow displayed oddly in IE 9.
- */
-
-svg:not(:root) {
-    overflow: hidden;
-}
-
-/* ==========================================================================
-   Figures
-   ========================================================================== */
-
-/**
- * Address margin not present in IE 8/9 and Safari 5.
- */
-
-figure {
-    margin: 0;
-}
-
-/* ==========================================================================
-   Forms
-   ========================================================================== */
-
-/**
- * Define consistent border, margin, and padding.
- */
-
-fieldset {
-    border: 1px solid #c0c0c0;
-    margin: 0 2px;
-    padding: 0.35em 0.625em 0.75em;
-}
-
-/**
- * 1. Correct `color` not being inherited in IE 8/9.
- * 2. Remove padding so people aren't caught out if they zero out fieldsets.
- */
-
-legend {
-    border: 0; /* 1 */
-    padding: 0; /* 2 */
-}
-
-/**
- * 1. Correct font family not being inherited in all browsers.
- * 2. Correct font size not being inherited in all browsers.
- * 3. Address margins set differently in Firefox 4+, Safari 5, and Chrome.
- */
-
-button,
-input,
-select,
-textarea {
-    font-family: inherit; /* 1 */
-    font-size: 100%; /* 2 */
-    margin: 0; /* 3 */
-}
-
-/**
- * Address Firefox 4+ setting `line-height` on `input` using `!important` in
- * the UA stylesheet.
- */
-
-button,
-input {
-    line-height: normal;
-}
-
-/**
- * Address inconsistent `text-transform` inheritance for `button` and `select`.
- * All other form control elements do not inherit `text-transform` values.
- * Correct `button` style inheritance in Chrome, Safari 5+, and IE 8+.
- * Correct `select` style inheritance in Firefox 4+ and Opera.
- */
-
-button,
-select {
-    text-transform: none;
-}
-
-/**
- * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
- *    and `video` controls.
- * 2. Correct inability to style clickable `input` types in iOS.
- * 3. Improve usability and consistency of cursor style between image-type
- *    `input` and others.
- */
-
-button,
-html input[type="button"], /* 1 */
-input[type="reset"],
-input[type="submit"] {
-    -webkit-appearance: button; /* 2 */
-    cursor: pointer; /* 3 */
-}
-
-/**
- * Re-set default cursor for disabled elements.
- */
-
-button[disabled],
-html input[disabled] {
-    cursor: default;
-}
-
-/**
- * 1. Address box sizing set to `content-box` in IE 8/9/10.
- * 2. Remove excess padding in IE 8/9/10.
- */
-
-input[type="checkbox"],
-input[type="radio"] {
-    box-sizing: border-box; /* 1 */
-    padding: 0; /* 2 */
-}
-
-/**
- * 1. Address `appearance` set to `searchfield` in Safari 5 and Chrome.
- * 2. Address `box-sizing` set to `border-box` in Safari 5 and Chrome
- *    (include `-moz` to future-proof).
- */
-
-input[type="search"] {
-    -webkit-appearance: textfield; /* 1 */
-    -moz-box-sizing: content-box;
-    -webkit-box-sizing: content-box; /* 2 */
-    box-sizing: content-box;
-}
-
-/**
- * Remove inner padding and search cancel button in Safari 5 and Chrome
- * on OS X.
- */
-
-input[type="search"]::-webkit-search-cancel-button,
-input[type="search"]::-webkit-search-decoration {
-    -webkit-appearance: none;
-}
-
-/**
- * Remove inner padding and border in Firefox 4+.
- */
-
-button::-moz-focus-inner,
-input::-moz-focus-inner {
-    border: 0;
-    padding: 0;
-}
-
-/**
- * 1. Remove default vertical scrollbar in IE 8/9.
- * 2. Improve readability and alignment in all browsers.
- */
-
-textarea {
-    overflow: auto; /* 1 */
-    vertical-align: top; /* 2 */
-}
-
-/* ==========================================================================
-   Tables
-   ========================================================================== */
-
-/**
- * Remove most spacing between table cells.
- */
-
-table {
-    border-collapse: collapse;
-    border-spacing: 0;
-}
-
-
-
-
-/* Tanlinell CSS Framework */
+/* ============================================================ */
 /* ============================================================ */
 html {
   font-family: none;
@@ -696,7 +254,34 @@ img {
   clear: both;
 }
 
-.grid, .column-container,
+/* #Grid */
+/* Custom grid system for rapid prototyping and quick layout solutions.
+
+##Example 1 - fractions
+	<div class="size1of2 firstcol">
+		I'm the first of two grid items. I need an extra class to remove my gutter!
+	</div>
+	<div class="size1of2">
+		I'm the second of the two grid items. No need for a second class for me!
+	</div>
+
+
+##Example 2 - columns
+	<div class="sixcolumns firstcol">
+		I'm the first of two grid items. I need an extra class to remove my gutter!
+	</div>
+	<div class="sixcolumns">
+		I'm the second of the two grid items. No need for a second class for me!
+	</div>
+*/
+.grid, .grid--double-gutter,
+.grid-wrap--large-gutter,
+.large-gutter, .grid--half-gutter,
+.grid-wrap--half-gutter,
+.half-gutter,
+.gallery-row, .grid--no-gutter,
+.grid-wrap--no-gutter,
+.no-gutter, .column-container,
 .grid-wrap {
   list-style: none;
   margin: 0;
@@ -706,12 +291,26 @@ img {
   text-rendering: optimizespeed;
   zoom: 1;
 }
-.grid:before, .column-container:before,
+.grid:before, .grid--double-gutter:before,
+.grid-wrap--large-gutter:before,
+.large-gutter:before, .grid--half-gutter:before,
+.grid-wrap--half-gutter:before,
+.half-gutter:before,
+.gallery-row:before, .grid--no-gutter:before,
+.grid-wrap--no-gutter:before,
+.no-gutter:before, .column-container:before,
 .grid-wrap:before {
   content: "";
   display: table;
 }
-.grid:after, .column-container:after,
+.grid:after, .grid--double-gutter:after,
+.grid-wrap--large-gutter:after,
+.large-gutter:after, .grid--half-gutter:after,
+.grid-wrap--half-gutter:after,
+.half-gutter:after,
+.gallery-row:after, .grid--no-gutter:after,
+.grid-wrap--no-gutter:after,
+.no-gutter:after, .column-container:after,
 .grid-wrap:after {
   content: "";
   display: table;
@@ -719,15 +318,7 @@ img {
 }
 
 .gc, .main,
-.sub,
-.gallery-row .col-1,
-.gallery-row .col-2,
-.gallery-row .col-3,
-.gallery-row .col-4,
-.gallery-row .col-5,
-.gallery-row .col-6,
-.gallery-row .col-7,
-.gallery-row .col-8,
+.sub, .gallery-row .col-1, .gallery-row .col-2, .gallery-row .col-3, .gallery-row .col-4, .gallery-row .col-5, .gallery-row .col-6, .gallery-row .col-7, .gallery-row .col-8,
 .gallery-row .col-9,
 .gallery-row .col-10,
 .gallery-row .col-11,
@@ -736,6 +327,8 @@ img {
   padding-left: 3em;
   float: left;
   text-rendering: auto;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
   *behavior: url(/boxsizing.htc);
 }
@@ -748,9 +341,7 @@ img {
    * Primarily for, but not limited to, use with `.grid__cell` components.
    * Intentional redundancy build into each set of unit classes.
    */
-  .h1-2, .h2-4, .h3-6, .h4-8,
-  .gallery-row .col-2,
-  .gallery-row .col-3 {
+  .h1-2, .h2-4, .h3-6, .h4-8, .gallery-row .col-2, .gallery-row .col-3 {
     width: 50%;
   }
 
@@ -938,16 +529,11 @@ img {
    * Primarily for, but not limited to, use with `.grid__cell` components.
    * Intentional redundancy build into each set of unit classes.
    */
-  .l1-2, .l2-4, .l3-6, .l4-8,
-  .gallery-row .col-4 {
+  .l1-2, .l2-4, .l3-6, .l4-8, .gallery-row .col-4 {
     width: 50%;
   }
 
-  .l1-3, .l2-6,
-  .gallery-row .col-3,
-  .gallery-row .col-5,
-  .gallery-row .col-6,
-  .gallery-row .col-7 {
+  .l1-3, .l2-6, .gallery-row .col-3, .gallery-row .col-5, .gallery-row .col-6, .gallery-row .col-7 {
     width: 33.33333%;
   }
 
@@ -955,8 +541,7 @@ img {
     width: 66.66667%;
   }
 
-  .l1-4, .l2-8,
-  .gallery-row .col-8,
+  .l1-4, .l2-8, .gallery-row .col-8,
   .gallery-row .col-9,
   .gallery-row .col-10,
   .gallery-row .col-11,
@@ -1061,8 +646,7 @@ img {
   }
 
   .d1-4, .d2-8, .layout-2c-r .sub,
-  .sub,
-  .gallery-row .col-4 {
+  .sub, .gallery-row .col-4 {
     width: 25%;
   }
 
@@ -1071,8 +655,7 @@ img {
     width: 75%;
   }
 
-  .d1-5,
-  .gallery-row .col-5 {
+  .d1-5, .gallery-row .col-5 {
     width: 20%;
   }
 
@@ -1088,8 +671,7 @@ img {
     width: 80%;
   }
 
-  .d1-6,
-  .gallery-row .col-6 {
+  .d1-6, .gallery-row .col-6 {
     width: 16.66667%;
   }
 
@@ -1097,8 +679,7 @@ img {
     width: 83.33333%;
   }
 
-  .d1-7,
-  .gallery-row .col-7 {
+  .d1-7, .gallery-row .col-7 {
     width: 14.28571%;
   }
 
@@ -1122,8 +703,7 @@ img {
     width: 85.71429%;
   }
 
-  .d1-8,
-  .gallery-row .col-8,
+  .d1-8, .gallery-row .col-8,
   .gallery-row .col-9,
   .gallery-row .col-10,
   .gallery-row .col-11,
@@ -1254,31 +834,151 @@ img {
     clear: left;
   }
 }
-.grid--double-gutter {
+.grid--double-gutter,
+.grid-wrap--large-gutter,
+.large-gutter {
   margin-left: -6em;
 }
-.grid--double-gutter .gc, .grid--double-gutter .main,
-.grid--double-gutter .sub {
+.grid--double-gutter > .gc, .grid--double-gutter > .main,
+.grid--double-gutter > .sub, .gallery-row .grid--double-gutter > .col-1, .gallery-row .grid--double-gutter > .col-2, .gallery-row .grid--double-gutter > .col-3, .gallery-row .grid--double-gutter > .col-4, .gallery-row .grid--double-gutter > .col-5, .gallery-row .grid--double-gutter > .col-6, .gallery-row .grid--double-gutter > .col-7, .gallery-row .grid--double-gutter > .col-8,
+.gallery-row .grid--double-gutter > .col-9,
+.gallery-row .grid--double-gutter > .col-10,
+.gallery-row .grid--double-gutter > .col-11,
+.gallery-row .grid--double-gutter > .col-12,
+.grid-wrap--large-gutter > .gc,
+.grid-wrap--large-gutter > .main,
+.grid-wrap--large-gutter > .sub,
+.gallery-row .grid-wrap--large-gutter > .col-1,
+.gallery-row .grid-wrap--large-gutter > .col-2,
+.gallery-row .grid-wrap--large-gutter > .col-3,
+.gallery-row .grid-wrap--large-gutter > .col-4,
+.gallery-row .grid-wrap--large-gutter > .col-5,
+.gallery-row .grid-wrap--large-gutter > .col-6,
+.gallery-row .grid-wrap--large-gutter > .col-7,
+.gallery-row .grid-wrap--large-gutter > .col-8,
+.gallery-row .grid-wrap--large-gutter > .col-9,
+.gallery-row .grid-wrap--large-gutter > .col-10,
+.gallery-row .grid-wrap--large-gutter > .col-11,
+.gallery-row .grid-wrap--large-gutter > .col-12,
+.large-gutter > .gc,
+.large-gutter > .main,
+.large-gutter > .sub,
+.gallery-row .large-gutter > .col-1,
+.gallery-row .large-gutter > .col-2,
+.gallery-row .large-gutter > .col-3,
+.gallery-row .large-gutter > .col-4,
+.gallery-row .large-gutter > .col-5,
+.gallery-row .large-gutter > .col-6,
+.gallery-row .large-gutter > .col-7,
+.gallery-row .large-gutter > .col-8,
+.gallery-row .large-gutter > .col-9,
+.gallery-row .large-gutter > .col-10,
+.gallery-row .large-gutter > .col-11,
+.gallery-row .large-gutter > .col-12 {
   padding-left: 6em;
 }
 
 .grid--half-gutter,
+.grid-wrap--half-gutter,
+.half-gutter,
 .gallery-row {
   margin-left: -1.5em;
 }
-.grid--half-gutter .gc, .grid--half-gutter .main,
-.grid--half-gutter .sub,
-.gallery-row .gc,
-.gallery-row .main,
-.gallery-row .sub {
+.grid--half-gutter > .gc, .grid--half-gutter > .main,
+.grid--half-gutter > .sub, .gallery-row .grid--half-gutter > .col-1, .gallery-row .grid--half-gutter > .col-2, .gallery-row .grid--half-gutter > .col-3, .gallery-row .grid--half-gutter > .col-4, .gallery-row .grid--half-gutter > .col-5, .gallery-row .grid--half-gutter > .col-6, .gallery-row .grid--half-gutter > .col-7, .gallery-row .grid--half-gutter > .col-8,
+.gallery-row .grid--half-gutter > .col-9,
+.gallery-row .grid--half-gutter > .col-10,
+.gallery-row .grid--half-gutter > .col-11,
+.gallery-row .grid--half-gutter > .col-12,
+.grid-wrap--half-gutter > .gc,
+.grid-wrap--half-gutter > .main,
+.grid-wrap--half-gutter > .sub,
+.gallery-row .grid-wrap--half-gutter > .col-1,
+.gallery-row .grid-wrap--half-gutter > .col-2,
+.gallery-row .grid-wrap--half-gutter > .col-3,
+.gallery-row .grid-wrap--half-gutter > .col-4,
+.gallery-row .grid-wrap--half-gutter > .col-5,
+.gallery-row .grid-wrap--half-gutter > .col-6,
+.gallery-row .grid-wrap--half-gutter > .col-7,
+.gallery-row .grid-wrap--half-gutter > .col-8,
+.gallery-row .grid-wrap--half-gutter > .col-9,
+.gallery-row .grid-wrap--half-gutter > .col-10,
+.gallery-row .grid-wrap--half-gutter > .col-11,
+.gallery-row .grid-wrap--half-gutter > .col-12,
+.half-gutter > .gc,
+.gallery-row > .gc,
+.half-gutter > .main,
+.gallery-row > .main,
+.half-gutter > .sub,
+.gallery-row > .sub,
+.gallery-row .half-gutter > .col-1,
+.gallery-row > .col-1,
+.gallery-row .half-gutter > .col-2,
+.gallery-row > .col-2,
+.gallery-row .half-gutter > .col-3,
+.gallery-row > .col-3,
+.gallery-row .half-gutter > .col-4,
+.gallery-row > .col-4,
+.gallery-row .half-gutter > .col-5,
+.gallery-row > .col-5,
+.gallery-row .half-gutter > .col-6,
+.gallery-row > .col-6,
+.gallery-row .half-gutter > .col-7,
+.gallery-row > .col-7,
+.gallery-row .half-gutter > .col-8,
+.gallery-row > .col-8,
+.gallery-row .half-gutter > .col-9,
+.gallery-row > .col-9,
+.gallery-row .half-gutter > .col-10,
+.gallery-row > .col-10,
+.gallery-row .half-gutter > .col-11,
+.gallery-row > .col-11,
+.gallery-row .half-gutter > .col-12,
+.gallery-row > .col-12 {
   padding-left: 1.5em;
 }
 
-.grid--no-gutter {
+.grid--no-gutter,
+.grid-wrap--no-gutter,
+.no-gutter {
   margin-left: 0;
 }
-.grid--no-gutter .gc, .grid--no-gutter .main,
-.grid--no-gutter .sub {
+.grid--no-gutter > .gc, .grid--no-gutter > .main,
+.grid--no-gutter > .sub, .gallery-row .grid--no-gutter > .col-1, .gallery-row .grid--no-gutter > .col-2, .gallery-row .grid--no-gutter > .col-3, .gallery-row .grid--no-gutter > .col-4, .gallery-row .grid--no-gutter > .col-5, .gallery-row .grid--no-gutter > .col-6, .gallery-row .grid--no-gutter > .col-7, .gallery-row .grid--no-gutter > .col-8,
+.gallery-row .grid--no-gutter > .col-9,
+.gallery-row .grid--no-gutter > .col-10,
+.gallery-row .grid--no-gutter > .col-11,
+.gallery-row .grid--no-gutter > .col-12,
+.grid-wrap--no-gutter > .gc,
+.grid-wrap--no-gutter > .main,
+.grid-wrap--no-gutter > .sub,
+.gallery-row .grid-wrap--no-gutter > .col-1,
+.gallery-row .grid-wrap--no-gutter > .col-2,
+.gallery-row .grid-wrap--no-gutter > .col-3,
+.gallery-row .grid-wrap--no-gutter > .col-4,
+.gallery-row .grid-wrap--no-gutter > .col-5,
+.gallery-row .grid-wrap--no-gutter > .col-6,
+.gallery-row .grid-wrap--no-gutter > .col-7,
+.gallery-row .grid-wrap--no-gutter > .col-8,
+.gallery-row .grid-wrap--no-gutter > .col-9,
+.gallery-row .grid-wrap--no-gutter > .col-10,
+.gallery-row .grid-wrap--no-gutter > .col-11,
+.gallery-row .grid-wrap--no-gutter > .col-12,
+.no-gutter > .gc,
+.no-gutter > .main,
+.no-gutter > .sub,
+.gallery-row .no-gutter > .col-1,
+.gallery-row .no-gutter > .col-2,
+.gallery-row .no-gutter > .col-3,
+.gallery-row .no-gutter > .col-4,
+.gallery-row .no-gutter > .col-5,
+.gallery-row .no-gutter > .col-6,
+.gallery-row .no-gutter > .col-7,
+.gallery-row .no-gutter > .col-8,
+.gallery-row .no-gutter > .col-9,
+.gallery-row .no-gutter > .col-10,
+.gallery-row .no-gutter > .col-11,
+.gallery-row .no-gutter > .col-12 {
   padding-left: 0;
 }
 
@@ -1287,14 +987,42 @@ img {
   letter-spacing: -0.31em;
   word-spacing: -0.43em;
 }
-.grid--ib .gc, .grid--center .gc, .grid--left .gc, .grid--right .gc, .grid--ib .main, .grid--center .main, .grid--left .main, .grid--right .main,
-.grid--ib .sub,
-.grid--center .sub,
-.grid--left .sub,
-.grid--right .sub,
-.grid-ib .gc,
-.grid-ib .main,
-.grid-ib .sub {
+.grid--ib > .gc, .grid--center > .gc, .grid--left > .gc, .grid--right > .gc, .grid--ib > .main, .grid--center > .main, .grid--left > .main, .grid--right > .main,
+.grid--ib > .sub,
+.grid--center > .sub,
+.grid--left > .sub,
+.grid--right > .sub, .gallery-row .grid--ib > .col-1, .gallery-row .grid--center > .col-1, .gallery-row .grid--left > .col-1, .gallery-row .grid--right > .col-1, .gallery-row .grid--ib > .col-2, .gallery-row .grid--center > .col-2, .gallery-row .grid--left > .col-2, .gallery-row .grid--right > .col-2, .gallery-row .grid--ib > .col-3, .gallery-row .grid--center > .col-3, .gallery-row .grid--left > .col-3, .gallery-row .grid--right > .col-3, .gallery-row .grid--ib > .col-4, .gallery-row .grid--center > .col-4, .gallery-row .grid--left > .col-4, .gallery-row .grid--right > .col-4, .gallery-row .grid--ib > .col-5, .gallery-row .grid--center > .col-5, .gallery-row .grid--left > .col-5, .gallery-row .grid--right > .col-5, .gallery-row .grid--ib > .col-6, .gallery-row .grid--center > .col-6, .gallery-row .grid--left > .col-6, .gallery-row .grid--right > .col-6, .gallery-row .grid--ib > .col-7, .gallery-row .grid--center > .col-7, .gallery-row .grid--left > .col-7, .gallery-row .grid--right > .col-7, .gallery-row .grid--ib > .col-8, .gallery-row .grid--center > .col-8, .gallery-row .grid--left > .col-8, .gallery-row .grid--right > .col-8,
+.gallery-row .grid--ib > .col-9,
+.gallery-row .grid--center > .col-9,
+.gallery-row .grid--left > .col-9,
+.gallery-row .grid--right > .col-9,
+.gallery-row .grid--ib > .col-10,
+.gallery-row .grid--center > .col-10,
+.gallery-row .grid--left > .col-10,
+.gallery-row .grid--right > .col-10,
+.gallery-row .grid--ib > .col-11,
+.gallery-row .grid--center > .col-11,
+.gallery-row .grid--left > .col-11,
+.gallery-row .grid--right > .col-11,
+.gallery-row .grid--ib > .col-12,
+.gallery-row .grid--center > .col-12,
+.gallery-row .grid--left > .col-12,
+.gallery-row .grid--right > .col-12,
+.grid-ib > .gc,
+.grid-ib > .main,
+.grid-ib > .sub,
+.gallery-row .grid-ib > .col-1,
+.gallery-row .grid-ib > .col-2,
+.gallery-row .grid-ib > .col-3,
+.gallery-row .grid-ib > .col-4,
+.gallery-row .grid-ib > .col-5,
+.gallery-row .grid-ib > .col-6,
+.gallery-row .grid-ib > .col-7,
+.gallery-row .grid-ib > .col-8,
+.gallery-row .grid-ib > .col-9,
+.gallery-row .grid-ib > .col-10,
+.gallery-row .grid-ib > .col-11,
+.gallery-row .grid-ib > .col-12 {
   display: inline-block;
   vertical-align: baseline;
   zoom: 1;
@@ -1318,19 +1046,62 @@ img {
   text-align: right;
 }
 
-.grid--divided .gc, .grid--divided .main,
-.grid--divided .sub {
+.grid--divided > .gc, .grid--divided > .main,
+.grid--divided > .sub, .gallery-row .grid--divided > .col-1, .gallery-row .grid--divided > .col-2, .gallery-row .grid--divided > .col-3, .gallery-row .grid--divided > .col-4, .gallery-row .grid--divided > .col-5, .gallery-row .grid--divided > .col-6, .gallery-row .grid--divided > .col-7, .gallery-row .grid--divided > .col-8,
+.gallery-row .grid--divided > .col-9,
+.gallery-row .grid--divided > .col-10,
+.gallery-row .grid--divided > .col-11,
+.gallery-row .grid--divided > .col-12,
+.grid-divide > .gc,
+.grid-divide > .main,
+.grid-divide > .sub,
+.gallery-row .grid-divide > .col-1,
+.gallery-row .grid-divide > .col-2,
+.gallery-row .grid-divide > .col-3,
+.gallery-row .grid-divide > .col-4,
+.gallery-row .grid-divide > .col-5,
+.gallery-row .grid-divide > .col-6,
+.gallery-row .grid-divide > .col-7,
+.gallery-row .grid-divide > .col-8,
+.gallery-row .grid-divide > .col-9,
+.gallery-row .grid-divide > .col-10,
+.gallery-row .grid-divide > .col-11,
+.gallery-row .grid-divide > .col-12 {
   margin-bottom: 3em;
 }
 
-.grid--vmiddle .gc, .grid--vmiddle .main,
-.grid--vmiddle .sub {
+.grid--middle > .gc, .grid--middle > .main,
+.grid--middle > .sub, .gallery-row .grid--middle > .col-1, .gallery-row .grid--middle > .col-2, .gallery-row .grid--middle > .col-3, .gallery-row .grid--middle > .col-4, .gallery-row .grid--middle > .col-5, .gallery-row .grid--middle > .col-6, .gallery-row .grid--middle > .col-7, .gallery-row .grid--middle > .col-8,
+.gallery-row .grid--middle > .col-9,
+.gallery-row .grid--middle > .col-10,
+.gallery-row .grid--middle > .col-11,
+.gallery-row .grid--middle > .col-12 {
   vertical-align: middle;
 }
 
-.grid--vbottom .gc, .grid--vbottom .main,
-.grid--vbottom .sub {
+.grid--bottom > .gc, .grid--bottom > .main,
+.grid--bottom > .sub, .gallery-row .grid--bottom > .col-1, .gallery-row .grid--bottom > .col-2, .gallery-row .grid--bottom > .col-3, .gallery-row .grid--bottom > .col-4, .gallery-row .grid--bottom > .col-5, .gallery-row .grid--bottom > .col-6, .gallery-row .grid--bottom > .col-7, .gallery-row .grid--bottom > .col-8,
+.gallery-row .grid--bottom > .col-9,
+.gallery-row .grid--bottom > .col-10,
+.gallery-row .grid--bottom > .col-11,
+.gallery-row .grid--bottom > .col-12 {
   vertical-align: bottom;
+}
+
+.gc--center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.gc--left {
+  display: block;
+  margin-right: auto;
+}
+
+.gc--right {
+  display: block;
+  margin-left: auto;
 }
 
 /* #Forms */

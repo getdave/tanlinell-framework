@@ -1,0 +1,18 @@
+<header class="banner clearfix">
+	<!--<h1 class="fl">{{ page.title | capitalize }}</h1>-->
+	<nav class="nav">			
+		<ul class="nav-primary">				
+			{% for category in site.categories %}
+			<li>
+				<a href="{{ category[0] }}">{{ category[0] }}</a>
+				<ul class="dropdown-menu sub-menu">
+				  {% for post in category[1] %} 
+				    <li><a href="{{ post.url }}">{{ post.title }}</a></li> 
+				  {% endfor %}
+				</ul>
+			</li>
+			{% endfor %}
+		</ul>
+	</nav>
+</header>
+

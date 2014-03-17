@@ -1,28 +1,17 @@
-/* #Grid */
-
-/* Custom grid system for rapid prototyping and quick layout solutions.
-
-##Example 1 - fractions
-	<div class="size1of2 firstcol">
-		I'm the first of two grid items. I need an extra class to remove my gutter!
-	</div>
-	<div class="size1of2">
-		I'm the second of the two grid items. No need for a second class for me!
-	</div>
+// ==========================================================================
+// GRID
+//
+// Fluid, mobile-first grid framework based on Griddle by @necolas
+// ==========================================================================
 
 
-##Example 2 - columns
-	<div class="sixcolumns firstcol">
-		I'm the first of two grid items. I need an extra class to remove my gutter!
-	</div>
-	<div class="sixcolumns">
-		I'm the second of the two grid items. No need for a second class for me!
-	</div>
-*/
-
-
+// ==========================================================================
+// GRID WRAP
+// unit which wraps a grid "row"
+// ==========================================================================
 
 .grid,
+%grid,
 .grid-wrap {
 	list-style:none;
     margin:0;
@@ -37,21 +26,22 @@
 
 
 // ==========================================================================
-// MOBILE GRID
+// GRID COLUMN/UNIT
 // ==========================================================================
 
-// Add styles to all the grid classes
-//#{$allGridClasses},
-.gc {
+.gc,
+%gc {
     width: 100%;
     padding-left: $gutter_width;
     float: left;
     text-rendering: auto; // Reset text defaults.
-    @include box-sizing(border-box);
+    box-sizing: border-box;
     *behavior: url(/boxsizing.htc);
 }
 
+
 @if ($use-standard-breakpoints == true) {
+	
 	// Handheld Grids
 	@include respond-to($break-tiny) {
 		@include griddle-build($grids,'h');
@@ -108,11 +98,12 @@
 	}
 }
 
+// OLDIE FIX
+// If we're in IE and JS is disabled then the .htc box-sizing hack won't
+// run therefore we need to linearise our layout to ensure it doesn't 
+// break in older IE
+// ==========================================================================
 
-// If we're in IE and JS is disabled then
-// the .htc box-sizing hack won't run
-// therefore we need to linearise our layout to ensure it
-// doesn't break in older IE
 @if ($is-oldie == true) {
     .no-js {
         .gc {
@@ -124,7 +115,7 @@
 
 
 // ==========================================================================
-// GRID MODIFIERS
+// MODIFIERS
 // ==========================================================================
 
 
@@ -132,13 +123,11 @@
 // ==========================================================================
 
 .grid--double-gutter,
-.grid-wrap--large-gutter,
-.large-gutter {
-	@extend .grid;
-	margin-left: -$large_gutter_width;
+%grid--double-gutter {
+	margin-left: -$double_gutter_width;
 
-	> .gc {
-		padding-left: $large_gutter_width;
+	.gc {
+		padding-left: $double_gutter_width;
 	}
 }
 
@@ -146,28 +135,22 @@
 // ==========================================================================
 
 .grid--half-gutter,
-.grid-wrap--half-gutter,
-.half-gutter {
-	@extend .grid;
+%grid--half-gutter {
 	margin-left: -$half_gutter_width;
 
-   	> .gc {
+   	.gc {
         padding-left: $half_gutter_width;
     }
 }
-
-
 
 // NO GUTTER
 // ==========================================================================
 
 .grid--no-gutter,
-.grid-wrap--no-gutter,
-.no-gutter {
-	@extend .grid;
+%grid--no-gutter {
 	margin-left: 0;
 
-    > .gc {
+    .gc {
         padding-left: 0;
     }
 }
@@ -177,11 +160,12 @@
 // ==========================================================================
 
 .grid--ib,
+%grid--ib,
 .grid-ib {
     letter-spacing: -0.31em; // Remove inter-unit whitespace that appears between `inline-block` child
     word-spacing: -0.43em; //  Remove inter-unit whitespace that appears between `inline-block` child
 
-    > .gc {
+    .gc {
 		@include inline-block;
 		vertical-align: top;
         float: none;
@@ -193,7 +177,8 @@
 // CENTERED
 // ==========================================================================
 
-.grid--center {
+.grid--center,
+%grid--center {
 	@extend .grid--ib;
 	text-align: center;
 }
@@ -201,7 +186,8 @@
 // LEFT
 // ==========================================================================
 
-.grid--left {
+.grid--left,
+%grid--left {
 	@extend .grid--ib;
 	text-align: left;
 }
@@ -210,7 +196,8 @@
 // RIGHT
 // ==========================================================================
 
-.grid--right {
+.grid--right,
+%grid--right {
 	@extend .grid--ib;
 	text-align: right;
 }
@@ -220,9 +207,9 @@
 // ==========================================================================
 
 .grid--divided,
-.grid-divide {
-	> .gc {
-        margin-bottom: $gutter-width;
+%grid--divided {
+	.gc {
+        margin-bottom: $gutter;
     }
 }
 
@@ -230,8 +217,9 @@
 // VERITCAL ALIGN: MIDDLE
 // ==========================================================================
 
-.grid--middle {
-	> .gc {
+.grid--vmiddle,
+%grid--vmiddle {
+	.gc {
 		vertical-align: middle;
 	}
 }
@@ -239,30 +227,9 @@
 // VERITCAL ALIGN: BOTTOM
 // ==========================================================================
 
-.grid--bottom {
-	> .gc {
+.grid--vbottom,
+%grid--vbottom {
+	.gc {
 		vertical-align: bottom;
 	}
-}
-
-
-
-// ==========================================================================
-// GRID COLUMN MODIFIERS
-// ==========================================================================
-
-.gc--center {
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-}
-
-.gc--left {
-	display: block;
-	margin-right: auto;
-}
-
-.gc--right {
-	display: block;
-	margin-left: auto;
 }

@@ -347,7 +347,7 @@
 // =============================================================================
 
 $gutter_width: $gutter;
-$large_gutter_width: ($gutter*2);
+$double_gutter_width: ($gutter*2);
 $half_gutter_width: ($gutter/2);
 
 
@@ -389,7 +389,8 @@ $half_gutter_width: ($gutter/2);
             $canreduce: contains($units, $n-r);
 
             // Create units based on fractions
-            .#{$prefix}#{$i}-#{$n} {
+            .#{$prefix}#{$i}-#{$n},
+            %#{$prefix}#{$i}-#{$n} {
                 // If this unit can be reduced then extend the previous rule
                 @if $canreduce {
                     @extend .#{$prefix}#{$i-r}-#{$n-r};
