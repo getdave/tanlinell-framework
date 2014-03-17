@@ -1,11 +1,14 @@
 {
-  "name": "Tanlinell CSS Framework",
+  "name": "Tanlinell Framework",
   "version": "0.1.0",
   "authors": [
     "David Smith <getdavemail@gmail.com>"
   ],
   "description": "Modular, OOCSS, Atomic Design-based CSS Framework",
-  "main": "./dist/tanlinell-framework.css",
+  "main": [
+    "./dist/tanlinell-css.css",
+    "./src/tanlinell.scss"
+  ]
   "keywords": [
     "css",
     "sass",
