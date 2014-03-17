@@ -6,9 +6,10 @@
   ],
   "description": "Modular, OOCSS, Atomic Design-based CSS Framework",
   "main": [
-    "./dist/tanlinell-css.css",
-    "./src/tanlinell.scss"
-  ]
+    "./sass/dist/tanlinell-css.css",
+    "./sass/src/tanlinell.scss",
+    "./js/tanlinell.js"
+  ],
   "keywords": [
     "css",
     "sass",
@@ -21,7 +22,12 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "normalize-css": "2.1.*"
+    "normalize-css": "~2.1.0",
+    "fitvids": "~1.1.0",
+    "hoverintent": "*",
+    "magnific-popup": "~0.9.9",
+    "socialite": "*",
+    "superfish": "~1.7.4"
   },
   "ignore": [
     "**/.*",
