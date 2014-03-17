@@ -33,7 +33,7 @@ module.exports = function(grunt) {
     watch: {
       css: {
         files: ['<%= config.cssSrc %>/**/*.scss'],
-        tasks: ['sass', 'csslint', 'concat'] // run sass, then lint then combine with normalize
+        tasks: ['sass', 'concat', 'cssmin'] // run sass, then lint then combine with normalize
       },
       livereload: {
         options: {
