@@ -68,7 +68,7 @@ module.exports = function(grunt) {
 	  	},
 		dist: {
 			files: {
-				'<%= config.cssDist %>/<%= config.fwFilename %>.css': '<%= config.cssSrc %>/framework.scss'
+				'<%= config.cssDist %>/<%= config.fwFilename %>.css': '<%= config.cssSrc %>/tanlinell.scss'
 			}
 		},
 	},
