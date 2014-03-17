@@ -24,8 +24,8 @@ module.exports = function(grunt) {
   grunt.initConfig({
 	pkg: grunt.file.readJSON('package.json'),
 	config: {
-	  cssSrc: './src',
-	  cssDist: './dist',
+	  cssSrc: './sass/src',
+	  cssDist: './sass/dist',
 	  docsSrc: './docs/src',
 	  docsDist: './docs/dist',
 	  cssBanner: grunt.file.read('banner.txt'),
