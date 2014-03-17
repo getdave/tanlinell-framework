@@ -6,7 +6,6 @@ lib-cov
 *.out
 *.pid
 *.gz
-*.yo-rc.json
 
 pids
 logs
@@ -19,3 +18,5 @@ node_modules
 
 bower_components/
 _ignored/
+
+docs/dist/*
