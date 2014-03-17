@@ -16,7 +16,8 @@
 // '<%= config.docsSrc %>/templates/pages/**/*.hbs'
 
 module.exports = function(grunt) {
-
+// load all grunt tasks
+  require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
   require('time-grunt')(grunt);
   
   // Project configuration.
@@ -27,29 +28,19 @@ module.exports = function(grunt) {
       cssDist: './dist',
       cssBanner: grunt.file.read('banner.txt'),
       fwFilename: '<%= pkg.name %>',
-      docsSrc: './docs/src',
-      docsDist: './docs/dist'
     },
 
     watch: {
-      assemble: {
-        files: ['<%= config.docsSrc %>/{content,data,templates}/**/*.{md,hbs,yml}'],
-        tasks: ['assemble']
-      },
       css: {
-        files: ['<%= config.cssSrc %>/{,*/}*.{scss,sass}'],
-        tasks: ['sass', 'csslint', 'concat', 'copy:docs'] // run sass, then lint then combine with normalize
+        files: ['<%= config.cssSrc %>/**/*.scss'],
+        tasks: ['sass', 'csslint', 'concat'] // run sass, then lint then combine with normalize
       },
       livereload: {
         options: {
           livereload: '<%= connect.options.livereload %>'
         },
         files: [
-          '<%= config.cssDist %>/<%= config.fwFilename %>.css',
-          '<%= config.docsDist %>/{,*/}*.html',
-          '<%= config.docsDist %>/assets/{,*/}*.css',
-          '<%= config.docsDist %>/assets/{,*/}*.js',
-          '<%= config.docsDist %>/assets/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
+          '<%= config.cssDist %>/<%= config.fwFilename %>.css'
         ]
       }
     },
@@ -71,27 +62,14 @@ module.exports = function(grunt) {
       }
     },
 
-    assemble: {
-      options: {
-        flatten: true,
-        assets: '<%= config.docsDist %>/assets',
-        layoutdir: '<%= config.docsSrc %>/templates/layouts/',
-        layout: 'default.hbs',
-        data: '<%= config.docsSrc %>/data/{,*/}*.{json,yml}',
-        partials: '<%= config.docsSrc %>/templates/partials/{,*/}*.hbs'
-      },
-      pages: {        
-        files: {
-          '<%= config.docsDist %>/': ['<%= config.docsSrc %>/templates/pages/{,*/}*.hbs']
-        }
-      }
-    },
+   
 
 
     sass: {
       options: {
-        includePaths: require('node-bourbon').includePaths,
-        outputStyle: 'expanded', // minification via Grunt CSS Min is prefered
+        //includePaths: require('node-bourbon').includePaths,
+        loadPath: require('node-bourbon').includePaths,
+       // outputStyle: 'expanded', // minification via Grunt CSS Min is prefered
       },
       dist: {
         files: {
@@ -149,8 +127,7 @@ module.exports = function(grunt) {
     // Before generating any new files,
     // remove any previously-created files.
     clean: [
-      '<%= config.cssDist %>/*.css',
-      '<%= config.docsDist %>/**/*.{html,xml}',
+      '<%= config.cssDist %>/*.css'
     ],
 
     bump: {
@@ -173,34 +150,20 @@ module.exports = function(grunt) {
 
   });
 
-  grunt.loadNpmTasks('assemble');
-  grunt.loadNpmTasks('grunt-contrib-clean');
-  grunt.loadNpmTasks('grunt-contrib-connect');
-  grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks('grunt-contrib-csslint');
-  grunt.loadNpmTasks('grunt-contrib-cssmin');
-  grunt.loadNpmTasks('grunt-contrib-concat');
-  grunt.loadNpmTasks('grunt-contrib-copy');
-  grunt.loadNpmTasks('grunt-sass');
-  grunt.loadNpmTasks('grunt-autoprefixer');
-  grunt.loadNpmTasks('grunt-bump');
+
 
   grunt.registerTask('server', [
     'clean',
-    'assemble',
     'connect:livereload',
     'watch'
   ]);
 
   grunt.registerTask('build', [
     'clean',
-    'assemble',
     'sass',
-    'autoprefixer',
     'csslint',
     'concat',
     'cssmin',
-    'copy:docs'
   ]);
 
   grunt.registerTask('default', [
