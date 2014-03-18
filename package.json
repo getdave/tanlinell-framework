@@ -1,8 +1,8 @@
 {
   "name": "tanlinell-css",
-  "description": "Modular, OOCSS, Atomic Design-based CSS Framework",
+  "description": "a modular frontend OOCSS web framework",
   "version": "0.1.0",
-  "homepage": "http://assemble.io",
+  "homepage": "https://github.com/getdave/tanlinell-css/",
   "author": {
     "name": "David Smith",
     "url": "http://github.com/getdave/"
@@ -18,7 +18,6 @@
     "node": ">=0.8"
   },
   "scripts": {
-    "test": "grunt assemble"
   },
   "devDependencies": {
     "grunt": "~0.4.1",
@@ -46,11 +45,11 @@
     }
   ],
   "keywords": [
-    "assemble",
-    "templates",
-    "handlebars",
-    "site generator",
-    "site builder",
-    "grunt"
+    "oocss",
+    "framework",
+    "javascript",
+    "css",
+    "sass",
+    "scss"
   ]
 }

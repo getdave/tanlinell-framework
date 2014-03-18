@@ -1,13 +1,46 @@
+/*
+
+**** I SEE YOU'RE LOOKING AT THE SOURCE! ****
+
+              .andAHHAbnn.
+           .aAHHHAAUUAAHHHAn.
+          dHP^~"        "~^THb.
+    .   .AHF                YHA.   .
+    |  .AHHb.              .dHHA.  |
+    |  HHAUAAHAbn      adAHAAUAHA  |
+    I  HF~"_____        ____ ]HHH  I
+   HHI HAPK""~^YUHb  dAHHHHHHHHHH IHH
+   HHI HHHD> .andHH  HHUUP^~YHHHH IHH
+   YUI ]HHP     "~Y  P~"     THH[ IUP
+    "  `HK                   ]HH'  "
+        THAn.  .d.aAAn.b.  .dHHP
+        ]HHHHAAUP" ~~ "YUAAHHHH[
+        `HHP^~"  .annn.  "~^YHH'
+         YHb    ~" "" "~    dHF
+          "YAb..abdHHbndbndAP"
+           THHAAb.  .adAHHF
+            "UHHHHHHHHHHU"
+              ]HHUUHHHHHH[
+            .adHHb "HHHHHbn.
+     ..andAAHHHHHHb.AHHHHHHHAAbnn..
+.ndAAHHHHHHUUHHHHHHHHHHUP^~"~^YUHHHAAbn.
+  "~^YUHHP"   "~^YUHHUP"        "^YUP^"
+       ""         "~~"
+
+*/
+
 /**
- * Tanlinell CSS Framework
+ * TANLINELL CSS FRAMEWORK
+ *
+ * a modular frontend OOCSS web framework
  * Version: 0.1.0 (18-03-2014)
  * URL: git://github.com/getdave/tanlinell-css.git
- * : 
- * Author: David Smith (@get_dave)
+ * License: MIT: https://github.com/getdave/tanlinell-css/blob/master/LICENSE-MIT
+ * Author: David Smith (Twitter: @get_dave)
  */
 
 /**
- * Modular, OOCSS, Atomic Design-based CSS Framework
+ * a modular frontend OOCSS web framework
  *
  * Provided as a stand-alone packaged collection of SASS files. The _framework.scss file
  * should be @import'd into your projects' master SASS/SCSS file and utilised as required.
