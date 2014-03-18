@@ -25,10 +25,10 @@ module.exports = function(grunt) {
 	pkg: grunt.file.readJSON('package.json'),
 	config: {
 		distDir: './dist',
-		cssSrc: './sass/src',
+		cssSrc: './sass',
 		cssDist: './dist/css',
-		jsSrc: './sass/src',
-		docsSrc: './docs/src',
+		jsSrc: './js',
+		docsSrc: './docs',
 		docsDist: './dist/docs',
 		cssBanner: grunt.file.read('banner.txt'),
 		fwFilename: '<%= pkg.name %>',
