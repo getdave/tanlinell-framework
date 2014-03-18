@@ -24,12 +24,14 @@ module.exports = function(grunt) {
   grunt.initConfig({
 	pkg: grunt.file.readJSON('package.json'),
 	config: {
-	  cssSrc: './sass/src',
-	  cssDist: './sass/dist',
-	  docsSrc: './docs/src',
-	  docsDist: './docs/dist',
-	  cssBanner: grunt.file.read('banner.txt'),
-	  fwFilename: '<%= pkg.name %>',
+		distDir: './dist',
+		cssSrc: './sass/src',
+		cssDist: './dist/css',
+		jsSrc: './sass/src',
+		docsSrc: './docs/src',
+		docsDist: './dist/docs',
+		cssBanner: grunt.file.read('banner.txt'),
+		fwFilename: '<%= pkg.name %>',
 	},
 
 	watch: {
@@ -118,10 +120,45 @@ module.exports = function(grunt) {
 	},
 
 
+	uglify: {
+	    dist: {
+	        options: {
+	            mangle: false,
+	            compress: false,
+	            beautify: true
+	        },
+	        files: {
+	            'assets/js/site.min.js': [
+	                // Compiled files
+	                'assets/js/vendor/**/*.js',
+	                'assets/js/tanlinell/tanlinell.js',
+	                'assets/js/tanlinell/modules/*.js',
+	                'assets/js/source/globals.js',
+	                'assets/js/modules/*.js',
+	                'assets/js/source/plugins.js',
+	                'assets/js/source/main.js',
+
+	                // Ignored files
+	                '!assets/js/modules/_EXAMPLE-MODULE.js', // ignore boilerplate files
+	                '!assets/js/vendor/modernizr*.js'
+	            ],
+	        }
+	    },
+	    build: {
+	        options: {
+	            compress: true
+	        },
+	        files: '<%= uglify.dist.files %>'
+	    }
+	},
+
+
+
+
 	// Before generating any new files,
 	// remove any previously-created files.
 	clean: [
-	  '<%= config.cssDist %>/*.css'
+	  '<%= config.distDir %>'
 	],
 
 	bump: {
@@ -163,6 +200,7 @@ module.exports = function(grunt) {
 	'autoprefixer',
 	'concat',
 	'cssmin',
+	'jekyll:docs'
   ]);
 
   grunt.registerTask('default', [
