@@ -1,3 +1,60 @@
+/*
+
+**** I SEE YOU'RE LOOKING AT THE SOURCE! ****
+
+              .andAHHAbnn.
+           .aAHHHAAUUAAHHHAn.
+          dHP^~"        "~^THb.
+    .   .AHF                YHA.   .
+    |  .AHHb.              .dHHA.  |
+    |  HHAUAAHAbn      adAHAAUAHA  |
+    I  HF~"_____        ____ ]HHH  I
+   HHI HAPK""~^YUHb  dAHHHHHHHHHH IHH
+   HHI HHHD> .andHH  HHUUP^~YHHHH IHH
+   YUI ]HHP     "~Y  P~"     THH[ IUP
+    "  `HK                   ]HH'  "
+        THAn.  .d.aAAn.b.  .dHHP
+        ]HHHHAAUP" ~~ "YUAAHHHH[
+        `HHP^~"  .annn.  "~^YHH'
+         YHb    ~" "" "~    dHF
+          "YAb..abdHHbndbndAP"
+           THHAAb.  .adAHHF
+            "UHHHHHHHHHHU"
+              ]HHUUHHHHHH[
+            .adHHb "HHHHHbn.
+     ..andAAHHHHHHb.AHHHHHHHAAbnn..
+.ndAAHHHHHHUUHHHHHHHHHHUP^~"~^YUHHHAAbn.
+  "~^YUHHP"   "~^YUHHUP"        "^YUP^"
+       ""         "~~"
+*/
+
+/**
+ * ##################################
+ *
+ * TANLINELL FRAMEWORK
+ *
+ * ##################################
+ *
+ * a modular, frontend CSS/JS web framework
+ * Version: 0.1.0 (26-03-2014)
+ * URL: git://github.com/getdave/tanlinell-framework.git
+ * License: MIT: https://github.com/getdave/tanlinell-framework/blob/master/LICENSE-MIT
+ * Author: David Smith (Twitter: @get_dave)
+ *
+ * a modular, frontend CSS/JS web framework
+ *
+ *
+ * This framework draws inspiration from the great work of the following projects/authors:
+ *
+ * OOCSS                  - https://github.com/stubbornella/oocss
+ * Inuit.css              - https://raw.github.com/csswizardry/inuit.css/
+ * SMACSS guidelines      - http://smacss.com/
+ * Twitter Bootstrap      - http://twitter.github.com/bootstrap/
+ * ZURB Foundation        - http://foundation.zurb.com/
+ *
+ */
+
+
 (function(win, doc) {
     var DELAY = 100, TEST_STRING = "AxmTYklsjo190QW", TOLERANCE = 2, SANS_SERIF_FONTS = "sans-serif", SERIF_FONTS = "serif", parent = doc.createElement("div"), html = '<div style="font-family:%s;position:absolute;top:0;left:-9999px;font-size:48px">' + TEST_STRING + "</div>", sansSerif, serif, dimensions, appended = false;
     parent.innerHTML = html.replace(/\%s/, SANS_SERIF_FONTS) + html.replace(/\%s/, SERIF_FONTS);

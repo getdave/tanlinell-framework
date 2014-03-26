@@ -6,7 +6,7 @@
   ],
   "description": "Modular, OOCSS, Atomic Design-based CSS Framework",
   "main": [
-    "./sass/dist/tanlinell-css.css",
+    "./sass/dist/tanlinell-framework.css",
     "./sass/src/tanlinell.scss",
     "./js/tanlinell.js"
   ],

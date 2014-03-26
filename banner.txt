@@ -29,35 +29,28 @@
 */
 
 /**
- * TANLINELL CSS FRAMEWORK
+ * ##################################
+ *
+ * TANLINELL FRAMEWORK
+ *
+ * ##################################
  *
  * <%= pkg.description %>
  * Version: <%= pkg.version %> (<%= grunt.template.today("dd-mm-yyyy") %>)
  * URL: <%= pkg.repository.url %>
  * License: <%= pkg.licenses[0].type %>: <%= pkg.licenses[0].url %>
  * Author: <%= pkg.author.name %> (Twitter: @get_dave)
- */
-
-/**
+ *
  * <%= pkg.description %>
  *
- * Provided as a stand-alone packaged collection of SASS files. The _framework.scss file
- * should be @import'd into your projects' master SASS/SCSS file and utilised as required.
  *
- * You should *never* modify the files of the framework directly.
+ * This framework draws inspiration from the great work of the following projects/authors:
  *
- * If you find something you cannot work around it is
- * a bug and should be raised as an issue on Github at:
- *
- * <%= pkg.bugs.url %>
- *
- * This framework borrows heavily and draws inspiration from the great work of the following projects/authors:
-
- * OOCSS 					- https://github.com/stubbornella/oocss
- * Inuit.css 				- https://raw.github.com/csswizardry/inuit.css/
- * SMACSS guidelines 		- http://smacss.com/
- * Twitter Bootstrap		- http://twitter.github.com/bootstrap/
- * ZURB Foundation			- http://foundation.zurb.com/
+ * OOCSS                  - https://github.com/stubbornella/oocss
+ * Inuit.css              - https://raw.github.com/csswizardry/inuit.css/
+ * SMACSS guidelines      - http://smacss.com/
+ * Twitter Bootstrap      - http://twitter.github.com/bootstrap/
+ * ZURB Foundation        - http://foundation.zurb.com/
  *
  */
 

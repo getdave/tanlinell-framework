@@ -31,7 +31,7 @@ module.exports = function(grunt) {
 		jsDist: './dist/js',
 		docsSrc: './docs',
 		docsDist: './dist/docs',
-		cssBanner: grunt.file.read('banner.txt'),
+		packageBanner: grunt.file.read('banner.txt'),
 		fwFilename: '<%= pkg.name %>',
 	},
 
@@ -75,7 +75,7 @@ module.exports = function(grunt) {
 	  	},
 		dist: {
 			files: {
-				'<%= config.cssDist %>/<%= config.fwFilename %>.css': '<%= config.cssSrc %>/tanlinell.scss'
+				'<%= config.cssDist %>/<%= config.fwFilename %>.css': '<%= config.cssSrc %>/<%= pkg.name %>.scss'
 			}
 		},
 	},
@@ -98,10 +98,10 @@ module.exports = function(grunt) {
 	  },
 	},
 
-	// Minify CSS for dist
+	// Minify CSS for "dist"
 	cssmin: {
 	  options: {
-		  banner: '<%= config.cssBanner %>',
+		  banner: '<%= config.packageBanner %>',
 	  },
 	  minify: {
 		files: {
@@ -114,7 +114,7 @@ module.exports = function(grunt) {
 	concat: {
 	  options: {
 		stripBanners: true,
-		banner: '<%= config.cssBanner %>',
+		banner: '<%= config.packageBanner %>',
 		separator: '\n\n\n\n/* Tanlinell CSS Framework */\n',
 		nonull: true
 	  },
@@ -130,13 +130,14 @@ module.exports = function(grunt) {
 	        options: {
 	            mangle: false,
 	            compress: false,
-	            beautify: true
+	            beautify: true,
+	            banner: "<%= config.packageBanner %>"
 	        },
 	        files: {
-	            '<%= config.jsDist %>/tanlinell.js': [
+	            '<%= config.jsDist %>/<%= pkg.name %>.js': [
 	                // Compiled files
 	                '<%= config.jsSrc %>/vendor/**/*.js',
-	                '<%= config.jsSrc %>/tanlinell.js',
+	                '<%= config.jsSrc %>/<%= pkg.name %>.js',
 	                '<%= config.jsSrc %>/modules/*.js',
 
 	                // Ignored files
