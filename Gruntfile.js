@@ -41,7 +41,7 @@ module.exports = function(grunt) {
         },
         css: {
             files: ['<%= config.cssSrc %>/**/*.scss'],
-            tasks: ['sass', 'concat'] // run sass, then lint then combine with normalize
+            tasks: ['sass'] // run sass, then lint then combine with normalize
         },
         js: {
             files: ['<%= config.jsSrc %>/**/*.js'],
@@ -68,10 +68,8 @@ module.exports = function(grunt) {
 
     sass: {
         options: {
-            //includePaths: require('node-bourbon').includePaths,
-            loadPath: require('node-bourbon').includePaths,
-            // outputStyle: 'expanded', // minification via Grunt CSS Min is prefered
-            style: 'expanded'
+            style: 'expanded',
+            loadPath: '<%= config.cssSrc %>',
         },
         dist: {
             files: {
@@ -107,20 +105,6 @@ module.exports = function(grunt) {
         files: {
           '<%= config.cssDist %>/<%= config.fwFilename %>.min.css': ['<%= config.cssDist %>/<%= config.fwFilename %>.css', '!*.min.css']
         }
-      },
-    },
-
-    // Combine normalize with CSS framework (runs post CSSLint to avoid overzealous linting!)
-    concat: {
-      options: {
-        stripBanners: true,
-        banner: '<%= config.packageBanner %>',
-        separator: '\n\n\n\n/* Tanlinell CSS Framework */\n',
-        nonull: true
-      },
-      dist: {
-        src: ['./bower_components/normalize-css/normalize.css', '<%= config.cssDist %>/<%= config.fwFilename %>.css'],
-        dest: '<%= config.cssDist %>/<%= config.fwFilename %>.css',
       },
     },
 
@@ -215,7 +199,6 @@ module.exports = function(grunt) {
     'clean',
     'sass',
     'autoprefixer',
-    'concat',
     'cssmin',
     'jshint',
     'uglify',

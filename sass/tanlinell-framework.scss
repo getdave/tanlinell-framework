@@ -29,14 +29,14 @@
 // Frameworks and configuration
 // ==========================================================================
 
-	//@import "compass";
-	@import "bourbon";
+	@import "bower_components/bourbon/dist/bourbon";
 	@import "_defaults";
 
 	@import "imports/_mixins";
 	@import "imports/_media-queries.scss";
+	
+	@import "imports/_normalize.scss";
 	@import "imports/_js-media-queries.scss";
-
 
 // ==========================================================================
 // ATOMS
