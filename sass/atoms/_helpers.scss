@@ -166,6 +166,7 @@
     background-color: transparent;
     border: 0;
     overflow: hidden;
+    line-height: 0; // http://adriandalvarez.tumblr.com/post/6731022156/html5-boilerplate-image-replacement-helper-class-ie7
     /* IE 6/7 fallback */
     *text-indent: -9999px;
 }
