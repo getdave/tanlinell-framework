@@ -1,25 +1,23 @@
 {
-  "name": "tanlinell-css",
-  "description": "Modular, OOCSS, Atomic Design-based CSS Framework",
+  "name": "tanlinell-framework",
+  "description": "a modular, frontend CSS/JS web framework",
   "version": "0.1.0",
-  "homepage": "http://assemble.io",
+  "homepage": "https://github.com/getdave/tanlinell-framework/",
   "author": {
     "name": "David Smith",
     "url": "http://github.com/getdave/"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/getdave/tanlinell-css.git"
+    "url": "git://github.com/getdave/tanlinell-framework.git"
   },
   "bugs": {
-    "url": "https://github.com/getdave/tanlinell-css/issues"
+    "url": "https://github.com/getdave/tanlinell-framework/issues"
   },
   "engines": {
     "node": ">=0.8"
   },
-  "scripts": {
-    "test": "grunt assemble"
-  },
+  "scripts": {},
   "devDependencies": {
     "grunt": "~0.4.1",
     "grunt-contrib-clean": "~0.5.0",
@@ -37,20 +35,22 @@
     "matchdep": "~0.3.0",
     "grunt-jekyll": "~0.4.1",
     "grunt-contrib-watch": "~0.5",
-    "grunt-contrib-connect": "~0.6.0"
+    "grunt-contrib-connect": "~0.6.0",
+    "grunt-contrib-uglify": "~0.4.0",
+    "grunt-contrib-jshint": "~0.9.2"
   },
   "licenses": [
     {
       "type": "MIT",
-      "url": "https://github.com/getdave/tanlinell-css/blob/master/LICENSE-MIT"
+      "url": "https://github.com/getdave/tanlinell-framework/blob/master/LICENSE-MIT"
     }
   ],
   "keywords": [
-    "assemble",
-    "templates",
-    "handlebars",
-    "site generator",
-    "site builder",
-    "grunt"
+    "oocss",
+    "framework",
+    "javascript",
+    "css",
+    "sass",
+    "scss"
   ]
 }
