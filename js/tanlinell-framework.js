@@ -1,7 +1,7 @@
 /**
- * GLOBALS JS
+ * TANLINELL JS
  *
- * Define global namespace and attach utils
+ * primary library file
  *
  */
 
