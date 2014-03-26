@@ -71,6 +71,17 @@
 }
 
 
+// INLINE BLOCK
+// Bourbon is deprecating but we still need it!
+// ==========================================================================
+@mixin inline-block {
+    display: inline-block;
+    vertical-align: baseline;
+    zoom: 1;
+    *display: inline;
+    *vertical-align: auto;
+}
+
 
 // ==========================================================================
 // COLOUR
