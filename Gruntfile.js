@@ -28,6 +28,7 @@ module.exports = function(grunt) {
 		cssSrc: './sass',
 		cssDist: './dist/css',
 		jsSrc: './js',
+		jsDist: './dist/js',
 		docsSrc: './docs',
 		docsDist: './dist/docs',
 		cssBanner: grunt.file.read('banner.txt'),
@@ -41,6 +42,10 @@ module.exports = function(grunt) {
 		css: {
 			files: ['<%= config.cssSrc %>/**/*.scss'],
 			tasks: ['sass', 'concat'] // run sass, then lint then combine with normalize
+		},
+		js: {
+			files: ['<%= config.jsSrc %>/**/*.js'],
+			tasks: ['uglify'] // uglify
 		},
 		docs: {
             files: ['<%= jekyll.docs.options.src %>/**/*.html'],
@@ -128,27 +133,17 @@ module.exports = function(grunt) {
 	            beautify: true
 	        },
 	        files: {
-	            'assets/js/site.min.js': [
+	            '<%= config.jsDist %>/tanlinell.js': [
 	                // Compiled files
-	                'assets/js/vendor/**/*.js',
-	                'assets/js/tanlinell/tanlinell.js',
-	                'assets/js/tanlinell/modules/*.js',
-	                'assets/js/source/globals.js',
-	                'assets/js/modules/*.js',
-	                'assets/js/source/plugins.js',
-	                'assets/js/source/main.js',
+	                '<%= config.jsSrc %>/vendor/**/*.js',
+	                '<%= config.jsSrc %>/tanlinell.js',
+	                '<%= config.jsSrc %>/modules/*.js',
 
 	                // Ignored files
-	                '!assets/js/modules/_EXAMPLE-MODULE.js', // ignore boilerplate files
-	                '!assets/js/vendor/modernizr*.js'
+	                '!<%= config.jsSrc %>/modules/_*.js', // ignore boilerplate files
+	                '!<%= config.jsSrc %>/vendor/modernizr*.js'
 	            ],
 	        }
-	    },
-	    build: {
-	        options: {
-	            compress: true
-	        },
-	        files: '<%= uglify.dist.files %>'
 	    }
 	},
 
@@ -173,7 +168,7 @@ module.exports = function(grunt) {
 
 	copy: {
 		docsAssets: {
-			src: '<%= config.cssDist %>/*.css',
+			src: ['<%= config.cssDist %>/*.css', '<%= config.jsDist %>/*.js'],
 			dest: '<%= config.docsDist %>/assets/',
 			flatten: true
 		}
@@ -200,12 +195,15 @@ module.exports = function(grunt) {
 	'autoprefixer',
 	'concat',
 	'cssmin',
-	'jekyll:docs'
+	'uglify',
+	'jekyll:docs',
+	'copy:docsAssets'
   ]);
 
   grunt.registerTask('default', [
 	'clean',
 	'sass',
+	'uglify',
 	'connect',
 	'watch'
   ]);
