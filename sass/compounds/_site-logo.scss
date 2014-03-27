@@ -2,8 +2,8 @@
 
 .site-logo {
 	@include inline-block;
-	width: image-width($logo);
-	height: image-height($logo);
+	width: $logoWidth;
+	height: $logoHeight;
 	border: 0;
 	padding: 0;
 	margin: $baseLineHeight 0;
@@ -13,7 +13,7 @@
 	direction:ltr;
 	background-repeat: no-repeat;
 	background-position: 0 0;
-	background-image: image-url($logo);
+	background-image: url(#{$images_dir}/#{$logo});
 	background-size: 100%;
 
 	&:hover,
@@ -23,7 +23,7 @@
 	}
 
 	@include hdpi() {
-		background-image: image-url($logoRetina);
+		background-image: url(#{$images_dir}/#{$logoRetina});
 	}
 }
 
