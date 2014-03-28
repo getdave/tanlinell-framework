@@ -69,7 +69,10 @@ module.exports = function(grunt) {
     sass: {
         options: {
             style: 'expanded',
-            loadPath: '<%= config.cssSrc %>',
+            loadPath: [
+                '.',
+                '<%= config.cssSrc %>'
+            ],
         },
         dist: {
             files: {
