@@ -4,5 +4,8 @@
   "known-properties": false,
   "duplicate-properties": false,
   "star-property-hack": false,
-  "compatible-vendor-prefixes": false
+  "compatible-vendor-prefixes": false,
+  "box-sizing": false,
+  "display-property-grouping": false,
+  "important": false
 }

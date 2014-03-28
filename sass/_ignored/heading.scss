@@ -1,0 +1,84 @@
+// ==========================================================================
+// HEADING
+//
+//
+// ==========================================================================
+
+// ==========================================================================
+// LANDMARK
+// ==========================================================================
+
+.landmark {
+    margin-bottom: $base-line-height*2;
+}
+
+.landmark--small {
+    margin-bottom: $base-line-height;
+}
+
+.landmark--large {
+    margin-bottom: $base-line-height*4;
+}
+
+// ==========================================================================
+// VERTICAL SPACE
+// ==========================================================================
+
+.vspace {
+    padding-top: $base-line-height;
+    padding-bottom: $base-line-height;
+}
+
+.vspace--flush {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.vspace--gap {
+    padding-top: $base-line-height/2;
+    padding-bottom: $base-line-height/2;
+}
+
+.vspace--void {
+    padding-top: $base-line-height*2;
+    padding-bottom: $base-line-height*2;
+}
+
+
+
+// ==========================================================================
+// OVERIDES
+// ==========================================================================
+
+.ptn,.pvn,.pan{padding-top:0 !important}
+.pts,.pvs,.pas{padding-top:$base-line-height/4 !important}
+.ptm,.pvm,.pam{padding-top:$base-line-height/2 !important}
+.ptl,.pvl,.pal{padding-top:$base-line-height !important}
+.prn,.phn,.pan{padding-right:0 !important}
+.prs,.phs,.pas{padding-right:$base-line-height/4 !important}
+.prm,.phm,.pam{padding-right:$base-line-height/2 !important}
+.prl,.phl,.pal{padding-right:$base-line-height !important}
+.pbn,.pvn,.pan{padding-bottom:0 !important}
+.pbs,.pvs,.pas{padding-bottom:$base-line-height/4 !important}
+.pbm,.pvm,.pam{padding-bottom:$base-line-height/2 !important}
+.pbl,.pvl,.pal{padding-bottom:$base-line-height !important}
+.pln,.phn,.pan{padding-left:0 !important}
+.pls,.phs,.pas{padding-left:$base-line-height/4 !important}
+.plm,.phm,.pam{padding-left:$base-line-height/2 !important}
+.pll,.phl,.pal{padding-left:$base-line-height !important}
+.mtn,.mvn,.man{margin-top:0 !important}
+.mts,.mvs,.mas{margin-top:$base-line-height/4 !important}
+.mtm,.mvm,.mam{margin-top:$base-line-height/2 !important}
+.mtl,.mvl,.mal{margin-top:$base-line-height !important}
+.mrn,.mhn,.man{margin-right:0 !important}
+.mrs,.mhs,.mas{margin-right:$base-line-height/4 !important}
+.mrm,.mhm,.mam{margin-right:$base-line-height/2 !important}
+.mrl,.mhl,.mal{margin-right:$base-line-height !important}
+.mbn,.mvn,.man{margin-bottom:0 !important}
+.mbs,.mvs,.mas{margin-bottom:$base-line-height/4 !important}
+.mbm,.mvm,.mam{margin-bottom:$base-line-height/2 !important}
+.mbl,.mvl,.mal{margin-bottom:$base-line-height !important}
+.mln,.mhn,.man{margin-left:0 !important}
+.mls,.mhs,.mas{margin-left:$base-line-height/4 !important}
+.mlm,.mhm,.mam{margin-left:$base-line-height/2 !important}
+.mll,.mhl,.mal{margin-left:$base-line-height !important}

@@ -1,11 +1,15 @@
 {
-  "name": "Tanlinell CSS Framework",
-  "version": "0.1.0",
+  "name": "Tanlinell Framework",
+  "version": "1.0.0",
   "authors": [
     "David Smith <getdavemail@gmail.com>"
   ],
   "description": "Modular, OOCSS, Atomic Design-based CSS Framework",
-  "main": "./dist/tanlinell-framework.css",
+  "main": [
+    "./sass/dist/tanlinell-framework.css",
+    "./sass/src/tanlinell-framework.scss",
+    "./js/tanlinell-framework.js"
+  ],
   "keywords": [
     "css",
     "sass",
@@ -18,7 +22,12 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "normalize-css": "2.1.*"
+    "bourbon": "~4.0.0",
+    "fitvids": "~1.1.0",
+    "hoverintent": "*",
+    "magnific-popup": "~0.9.9",
+    "socialite": "*",
+    "superfish": "~1.7.4"
   },
   "ignore": [
     "**/.*",

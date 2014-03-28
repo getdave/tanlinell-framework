@@ -3,7 +3,7 @@
  * generator-assemble v0.4.3
  * https://github.com/assemble/generator-assemble
  *
- * Copyright (c) 2013 Hariadi Hinta
+ * Copyright (c) 2013 David Smith
  * Licensed under the MIT license.
  */
 
@@ -16,88 +16,66 @@
 // '<%= config.docsSrc %>/templates/pages/**/*.hbs'
 
 module.exports = function(grunt) {
-
+// load all grunt tasks
+  require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
   require('time-grunt')(grunt);
-  
+
   // Project configuration.
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
     config: {
-      cssSrc: './src',
-      cssDist: './dist',
-      cssBanner: grunt.file.read('banner.txt'),
-      fwFilename: '<%= pkg.name %>',
-      docsSrc: './docs/src',
-      docsDist: './docs/dist'
+        distDir: './dist',
+        cssSrc: './sass',
+        cssDist: './dist/css',
+        jsSrc: './js',
+        jsDist: './dist/js',
+        docsSrc: './docs',
+        docsDist: './dist/docs',
+        packageBanner: grunt.file.read('banner.txt'),
+        fwFilename: '<%= pkg.name %>',
     },
 
     watch: {
-      assemble: {
-        files: ['<%= config.docsSrc %>/{content,data,templates}/{,*/}*.{md,hbs,yml}'],
-        tasks: ['assemble']
-      },
-      css: {
-        files: ['<%= config.cssSrc %>/{,*/}*.{scss,sass}'],
-        tasks: ['sass', 'csslint', 'concat'] // run sass, then lint then combine with normalize
-      },
-      livereload: {
         options: {
-          livereload: '<%= connect.options.livereload %>'
+            livereload: true,
         },
-        files: [
-          '<%= config.cssDist %>/<%= config.fwFilename %>.css',
-          '<%= config.docsDist %>/{,*/}*.html',
-          '<%= config.docsDist %>/assets/{,*/}*.css',
-          '<%= config.docsDist %>/assets/{,*/}*.js',
-          '<%= config.docsDist %>/assets/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
-        ]
-      }
+        css: {
+            files: ['<%= config.cssSrc %>/**/*.scss'],
+            tasks: ['sass'] // run sass, then lint then combine with normalize
+        },
+        js: {
+            files: ['<%= config.jsSrc %>/**/*.js'],
+            tasks: ['jshint','uglify'] // uglify
+        },
+        docs: {
+            files: ['<%= jekyll.docs.options.src %>/**/*.html'],
+            tasks: ['assets','jekyll:docs','copy:docsAssets']
+        },
     },
 
     connect: {
-      options: {
-        port: 9000,
-        livereload: 35729,
-        // change this to '0.0.0.0' to access the server from outside
-        hostname: 'localhost'
-      },
-      livereload: {
         options: {
-          open: true,
-          base: [
-            '<%= config.docsDist %>'
-          ]
-        }
-      }
-    },
-
-    assemble: {
-      pages: {
-        options: {
-          flatten: true,
-          assets: '<%= config.docsDist %>/assets',
-          layout: '<%= config.docsSrc %>/templates/layouts/default.hbs',
-          data: '<%= config.docsSrc %>/data/*.{json,yml}',
-          partials: '<%= config.docsSrc %>/templates/partials/*.hbs'
+            open: true,
+            keepalive: false
         },
-        files: {
-          '<%= config.docsDist %>/': ['<%= config.docsSrc %>/templates/pages/*.hbs']
-        }
-      }
+        docs: {
+            options: {
+                port: 9000,
+                base: '<%= jekyll.docs.options.dest %>'
+            }
+        },
     },
-
 
     sass: {
-      options: {
-        includePaths: require('node-bourbon').includePaths,
-        outputStyle: 'nested', // minification via Grunt CSS Min is prefered
-      },
-      dist: {
-        files: {
-            '<%= config.cssDist %>/<%= config.fwFilename %>.css': '<%= config.cssSrc %>/framework.scss'
-        }
-      },
-
+        options: {
+            style: 'expanded',
+            loadPath: '<%= config.cssSrc %>',
+        },
+        dist: {
+            files: {
+                '<%= config.cssDist %>/<%= config.fwFilename %>.css': '<%= config.cssSrc %>/<%= pkg.name %>.scss'
+            }
+        },
     },
 
     // Lint CSS
@@ -118,37 +96,66 @@ module.exports = function(grunt) {
       },
     },
 
-    // Minify CSS for dist
+    // Minify CSS for "dist"
     cssmin: {
       options: {
-          banner: '<%= config.cssBanner %>',
+          banner: '<%= config.packageBanner %>',
       },
-      minify: {        
+      minify: {
         files: {
           '<%= config.cssDist %>/<%= config.fwFilename %>.min.css': ['<%= config.cssDist %>/<%= config.fwFilename %>.css', '!*.min.css']
         }
       },
     },
 
-    // Combine normalize with CSS framework (runs post CSSLint to avoid overzealous linting!)
-    concat: {
-      options: {
-        stripBanners: true,
-        banner: '<%= config.cssBanner %>',
-        separator: '/* Begin: Tanlinell CSS Framework */',
-      },
-      dist: {
-        src: ['./bower_components/normalize-css/normalize.css', '<%= config.cssDist %>/<%= config.fwFilename %>.css'],
-        dest: '<%= config.cssDist %>/<%= config.fwFilename %>.css',
-      },
+    // JavaScipt Linting with JSHint
+    jshint: {
+        options: {
+            jshintrc: '.jshintrc',
+            "force": true
+        },
+        all: [
+            'Gruntfile.js',
+            '<%= config.jsSrc %>/**/*.js',
+
+            // Ignored files
+            '!<%= config.jsSrc %>/modules/_*.js',
+            '!<%= config.jsSrc %>/vendor/**/*.js'
+        ]
     },
+
+    // Compress and minify JS
+    uglify: {
+        dist: {
+            options: {
+                mangle: false,
+                compress: false,
+                beautify: true,
+                banner: "<%= config.packageBanner %>"
+            },
+            files: [{
+                src: [
+                    // Compiled files
+                    '<%= config.jsSrc %>/vendor/**/*.js',
+                    '<%= config.jsSrc %>/<%= pkg.name %>.js',
+                    '<%= config.jsSrc %>/modules/*.js',
+
+                    // Ignored files
+                    '!<%= config.jsSrc %>/modules/_*.js', // ignore boilerplate files
+                    '!<%= config.jsSrc %>/vendor/modernizr*.js'
+                ],
+                dest: '<%= config.jsDist %>/<%= pkg.name %>.js'
+            }],
+        },
+    },
+
+
 
 
     // Before generating any new files,
     // remove any previously-created files.
     clean: [
-      '<%= config.cssDist %>/*.css',
-      '<%= config.docsDist %>/**/*.{html,xml}',
+      '<%= config.distDir %>'
     ],
 
     bump: {
@@ -159,40 +166,59 @@ module.exports = function(grunt) {
         createTag: false,
         push: false
       }
-    }
+    },
+
+    // Copy assets to Documentation
+    copy: {
+        docsAssets: {
+            src: ['<%= config.cssDist %>/*.css', '<%= config.jsDist %>/*.js'],
+            dest: '<%= config.docsDist %>/assets/',
+            flatten: true
+        }
+    },
+
+
+    // Documentation Static Site
+    jekyll: {
+        options: {
+
+        },
+        docs: {
+            options: {
+                src : '<%= config.docsSrc %>',
+                dest: '<%= config.docsDist %>'
+            }
+        },
+    },
 
   });
 
-  grunt.loadNpmTasks('assemble');
-  grunt.loadNpmTasks('grunt-contrib-clean');
-  grunt.loadNpmTasks('grunt-contrib-connect');
-  grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks('grunt-contrib-csslint');
-  grunt.loadNpmTasks('grunt-contrib-cssmin');
-  grunt.loadNpmTasks('grunt-contrib-concat');
-  grunt.loadNpmTasks('grunt-sass');
-  grunt.loadNpmTasks('grunt-autoprefixer');
-  grunt.loadNpmTasks('grunt-bump');
 
-  grunt.registerTask('server', [
-    'clean',
-    'assemble',
-    'connect:livereload',
-    'watch'
-  ]);
 
   grunt.registerTask('build', [
     'clean',
-    'assemble',
     'sass',
     'autoprefixer',
-    'csslint',
-    'concat',
-    'cssmin'
+    'cssmin',
+    'jshint',
+    'uglify',
+    'jekyll:docs',
+    'copy:docsAssets'
   ]);
+
+
+
+  grunt.registerTask('assets', [
+    'sass',
+    'jshint',
+    'uglify',
+  ]);
+
 
   grunt.registerTask('default', [
     'clean',
+    'assets',
+    'connect',
     'watch'
   ]);
 

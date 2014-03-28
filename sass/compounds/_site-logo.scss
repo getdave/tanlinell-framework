@@ -1,0 +1,31 @@
+@if $use-site-logo == true {
+
+.site-logo {
+	@include inline-block;
+	width: $logoWidth;
+	height: $logoHeight;
+	border: 0;
+	padding: 0;
+	margin: $baseLineHeight 0;
+	vertical-align: bottom;
+	text-indent: -999em; 
+	text-align:left;
+	direction:ltr;
+	background-repeat: no-repeat;
+	background-position: 0 0;
+	background-image: url(#{$images_dir}/#{$logo});
+	background-size: 100%;
+
+	&:hover,
+	&:focus {
+		@include opacity(0.8);	
+		@include transition(opacity 0.5s ease);
+	}
+
+	@include hdpi() {
+		background-image: url(#{$images_dir}/#{$logoRetina});
+	}
+}
+
+
+}//endif

@@ -1,0 +1,235 @@
+// ==========================================================================
+// GRID
+//
+// Fluid, mobile-first grid framework based on Griddle by @necolas
+// ==========================================================================
+
+
+// ==========================================================================
+// GRID WRAP
+// unit which wraps a grid "row"
+// ==========================================================================
+
+.grid,
+%grid,
+.grid-wrap {
+	list-style:none;
+    margin:0;
+    padding:0;
+    margin-left: -$gutter_width;
+    clear: both;
+	text-rendering: optimizespeed; // Protect against WebKit bug with optimizelegibility.
+    @include clearfix;
+}
+
+
+
+
+// ==========================================================================
+// GRID COLUMN/UNIT
+// ==========================================================================
+
+.gc,
+%gc {
+    width: 100%;
+    padding-left: $gutter_width;
+    float: left;
+    text-rendering: auto; // Reset text defaults.
+    box-sizing: border-box;
+    *behavior: url(/boxsizing.htc);
+}
+
+
+@if ($use-standard-breakpoints == true) {
+	
+	// Handheld Grids
+	@include respond-to($break-tiny) {
+		@include griddle-build($grids,'h');
+		.h-grid-clear {
+			clear: left;
+		}
+	}
+
+	// Palm Grids
+	@include respond-to($break-small) {
+		@include griddle-build($grids,'p');
+
+	}
+
+	// Lap Grids
+	@include respond-to($break-medium) {
+		@include griddle-build($grids,'l');
+
+		.h-grid-clear {
+			clear: none;
+		}
+
+		.l-grid-clear {
+			clear: left;
+		}
+	}
+
+	// Desktop Grids
+	@include respond-to($break-large) {
+		@include griddle-build($grids,'d');
+		.h-grid-clear,
+		.l-grid-clear {
+			clear: none;
+		}
+
+		.d-grid-clear {
+			clear: left;
+		}
+	}
+
+	// Widescreen Grids
+	@include respond-to($break-xlarge) {
+		@include griddle-build($grids,'w');
+
+		.h-grid-clear,
+		.l-grid-clear,
+		.d-grid-clear {
+			clear: none;
+		}
+
+		.w-grid-clear {
+			clear: left;
+		}
+	}
+}
+
+// OLDIE FIX
+// If we're in IE and JS is disabled then the .htc box-sizing hack won't
+// run therefore we need to linearise our layout to ensure it doesn't 
+// break in older IE
+// ==========================================================================
+
+@if ($is-oldie == true) {
+    .no-js {
+        .gc {
+            float: none !important;
+            width: 100% !important;
+        }
+    }
+}
+
+
+// ==========================================================================
+// MODIFIERS
+// ==========================================================================
+
+
+// DOUBLE GUTTER
+// ==========================================================================
+
+.grid--double-gutter,
+%grid--double-gutter {
+	margin-left: -$double_gutter_width;
+
+	.gc {
+		padding-left: $double_gutter_width;
+	}
+}
+
+// HALF GUTTER
+// ==========================================================================
+
+.grid--half-gutter,
+%grid--half-gutter {
+	margin-left: -$half_gutter_width;
+
+   	.gc {
+        padding-left: $half_gutter_width;
+    }
+}
+
+// NO GUTTER
+// ==========================================================================
+
+.grid--no-gutter,
+%grid--no-gutter {
+	margin-left: 0;
+
+    .gc {
+        padding-left: 0;
+    }
+}
+
+
+// INLINE BLOCK
+// ==========================================================================
+
+.grid--ib,
+%grid--ib,
+.grid-ib {
+    letter-spacing: -0.31em; // Remove inter-unit whitespace that appears between `inline-block` child
+    word-spacing: -0.43em; //  Remove inter-unit whitespace that appears between `inline-block` child
+
+    .gc {
+		@include inline-block;
+		vertical-align: top;
+        float: none;
+		letter-spacing: normal; // Reset text defaults.
+		word-spacing: normal; // Reset text defaults.
+    }
+}
+
+// CENTERED
+// ==========================================================================
+
+.grid--center,
+%grid--center {
+	@extend .grid--ib;
+	text-align: center;
+}
+
+// LEFT
+// ==========================================================================
+
+.grid--left,
+%grid--left {
+	@extend .grid--ib;
+	text-align: left;
+}
+
+
+// RIGHT
+// ==========================================================================
+
+.grid--right,
+%grid--right {
+	@extend .grid--ib;
+	text-align: right;
+}
+
+
+// DIVIDED
+// ==========================================================================
+
+.grid--divided,
+%grid--divided {
+	.gc {
+        margin-bottom: $gutter;
+    }
+}
+
+
+// VERITCAL ALIGN: MIDDLE
+// ==========================================================================
+
+.grid--vmiddle,
+%grid--vmiddle {
+	.gc {
+		vertical-align: middle;
+	}
+}
+
+// VERITCAL ALIGN: BOTTOM
+// ==========================================================================
+
+.grid--vbottom,
+%grid--vbottom {
+	.gc {
+		vertical-align: bottom;
+	}
+}
