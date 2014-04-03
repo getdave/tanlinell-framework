@@ -20,17 +20,17 @@
     margin-left: 2px;
 
     .no-svg & {
-        background-image: image-url("framework/site-credit.png");
+        background-image: url("#{$images_dir}/framework/site-credit.png");
         height: 20px;
         top: auto;
     }
 }
 
 .site-credit--dark {
-    background-image: image-url("framework/site-credit--dark.svg");
+    background-image: url("#{$images_dir}/framework/site-credit--dark.svg");
 
     .no-svg & {
-        background-image: image-url("framework/site-credit--dark.png");
+        background-image: url("#{$images_dir}/framework/site-credit--dark.png");
     }
 }
 

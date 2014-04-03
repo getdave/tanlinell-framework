@@ -23,5 +23,29 @@ Update primary nav partial
     }
 }
 
+.nav-primary .sub-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: $zindex-tier-5;
+	@include list-reset;
+    float: left;
+    min-width: 160px;
+    text-align: left;
+    direction: ltr;
+    background-color: $navbar-background;
+
+
+
+    a {
+        text-align: left;
+        white-space: nowrap;
+    }
+
+    .sub-menu {
+        display: none !important;
+    }
+}
+
 
 }//endif

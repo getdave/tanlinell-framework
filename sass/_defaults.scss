@@ -23,6 +23,17 @@ $debug-mode:					false !default;
 
 
 // ==========================================================================
+// ASSET PATHS
+// ==========================================================================
+
+$css_dir: 						"../css" !default;
+$sass_dir: 						"../sass" !default;
+$images_dir: 					"../images" !default;
+$js_dir: 						"../js" !default;
+$fonts_dir: 					"../fonts" !default;
+
+
+// ==========================================================================
 // BRAND
 // ==========================================================================
 
@@ -30,7 +41,13 @@ $debug-mode:					false !default;
 // ==========================================================================
 
 $logo: 							"site-logo.png" !default;
+$logoWidth: 					200px !default;
+$logoHeight: 					80px !default;
+
 $logoRetina: 					"site-logo--retina.png" !default;
+
+// Site Credit
+// ==========================================================================
 $site-credit:					"site-credit.png" !default;
 
 // Tones
