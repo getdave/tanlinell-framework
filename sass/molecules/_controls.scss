@@ -27,16 +27,18 @@
 }
 
 %control-dotted__link {
-	@extend .img-replace;
+	border: 0;
+	overflow: hidden;
+	line-height: 0;
+	text-indent: -999em;
 	display: block;
 	width: 15px;
 	height: 15px;
 	overflow: hidden;
 	background-color: $grayLight;
-	background-color: rgba(255,255,255,.6);
 	cursor: pointer;
 	border-radius: 100px;
-	box-shadow: inset 0 0 4px rgba(0,0,0,.6), 0 1px 0 rgba(255,255,255,.5);
+	box-shadow: inset 0 0 4px rgba(0,0,0,.6);
 
 	&:hover,
 	&:focus {
