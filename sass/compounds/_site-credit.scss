@@ -19,6 +19,8 @@
     height: 12px;
     margin-left: 2px;
 
+    background-image: url("#{$images_dir}/framework/site-credit.svg");
+
     .no-svg & {
         background-image: url("#{$images_dir}/framework/site-credit.png");
         height: 20px;
