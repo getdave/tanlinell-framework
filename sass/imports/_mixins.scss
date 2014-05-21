@@ -76,7 +76,7 @@
 // ==========================================================================
 @mixin inline-block {
     display: inline-block;
-    vertical-align: baseline;
+    vertical-align: middle;
     zoom: 1;
     *display: inline;
     *vertical-align: auto;
@@ -378,7 +378,7 @@ $half_gutter_width: ($gutter/2);
 
     @each $n in $units {
         // Avoid creating rules like `.unit-12-12 {}`
-        $x: $n - 1;
+        $x: $n;
 
         @for $i from 1 through $x {
             // Initialize variables

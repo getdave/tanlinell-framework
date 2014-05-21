@@ -1,0 +1,183 @@
+@if $use-bump == true {
+/* ============================================================ */
+
+// BUMP MODULE
+
+// Description: allows selective application of spacing based
+// on current active breakpoint. Ideal for cancelling vertical
+// spacing which is required on smaller viewports
+
+/* ============================================================ */
+
+
+// ==========================================================================
+// BASE
+// ==========================================================================
+
+
+.bump-dn {
+    padding: 0;
+}
+
+.bump-da {
+    padding: $baseLineHeight;
+}
+
+.bump-dt {
+    padding-top: $baseLineHeight;
+}
+
+.bump-dr {
+    padding-right: $baseLineHeight;
+}
+
+.bump-db {
+    padding-bottom: $baseLineHeight;
+}
+
+.bump-dl {
+    padding-left: $baseLineHeight;
+}
+
+@include respond-to($break-tiny) {
+    
+    .bump-tn {
+        padding: 0;
+    }
+
+    .bump-ta {
+        padding: $baseLineHeight;
+    }
+
+    .bump-tt {
+        padding-top: $baseLineHeight;
+    }
+
+    .bump-tr {
+        padding-right: $baseLineHeight;
+    }
+
+    .bump-tb {
+        padding-bottom: $baseLineHeight;
+    }
+
+    .bump-tl {
+        padding-left: $baseLineHeight;
+    }
+}
+
+    
+@include respond-to($break-small) {
+
+    .bump-sn {
+        padding: 0;
+    }
+
+    .bump-sa {
+        padding: $baseLineHeight;
+    }
+
+    .bump-st {
+        padding-top: $baseLineHeight;
+    }
+
+    .bump-sr {
+        padding-right: $baseLineHeight;
+    }
+
+    .bump-sb {
+        padding-bottom: $baseLineHeight;
+    }
+
+    .bump-sl {
+        padding-left: $baseLineHeight;
+    }
+}
+
+
+@include respond-to($break-medium) {
+
+    .bump-mn {
+        padding: 0;
+    }
+
+    .bump-ma {
+        padding: $baseLineHeight;
+    }
+
+    .bump-mt {
+        padding-top: $baseLineHeight;
+    }
+
+    .bump-mr {
+        padding-right: $baseLineHeight;
+    }
+
+    .bump-mb {
+        padding-bottom: $baseLineHeight;
+    }
+
+    .bump-ml {
+        padding-left: $baseLineHeight;
+    }
+}
+
+
+@include respond-to($break-large) {
+    
+    .bump-ln {
+        padding: 0;
+    }
+
+    .bump-la {
+        padding: $baseLineHeight;
+    }
+
+    .bump-lt {
+        padding-top: $baseLineHeight;
+    }
+
+    .bump-lr {
+        padding-right: $baseLineHeight;
+    }
+
+    .bump-lb {
+        padding-bottom: $baseLineHeight;
+    }
+
+    .bump-ll {
+        padding-left: $baseLineHeight;
+    }
+}
+
+// Widescreen Grids
+@include respond-to($break-xlarge) {
+
+    .bump-xln {
+        padding: 0;
+    }
+
+    .bump-xla {
+        padding: $baseLineHeight;
+    }
+
+    .bump-xlt {
+        padding-top: $baseLineHeight;
+    }
+
+    .bump-xlr {
+        padding-right: $baseLineHeight;
+    }
+
+    .bump-xlb {
+        padding-bottom: $baseLineHeight;
+    }
+
+    .bump-xll {
+        padding-left: $baseLineHeight;
+    }
+}
+
+
+
+}//endif

@@ -6,15 +6,43 @@
 
 // Description: styles for standard primary navigation
 
-// ==========================================================================	
+// ==========================================================================   
 
 .nav-primary {
-	@include tan-nav-menu;
-	@include tan-nav-menu--stacked;
+    @include tan-nav-menu;
+    @include tan-nav-menu--stacked;
 
-	@include respond-to($nav-break-1) {
-		@include tan-nav-menu--inline;
-	}
+    @include respond-to($nav-break-1) {
+        @include tan-nav-menu--inline;
+    }
+
+    @if ($is-oldie == true) {
+        @include tan-nav-menu--inline;
+    }
+}
+
+.nav-primary .sub-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: $zindex-tier-5;
+	@include list-reset;
+    float: left;
+    min-width: 160px;
+    text-align: left;
+    direction: ltr;
+    background-color: $navbar-background;
+
+
+
+    a {
+        text-align: left;
+        white-space: nowrap;
+    }
+
+    .sub-menu {
+        display: none !important;
+    }
 }
 
 
