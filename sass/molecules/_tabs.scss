@@ -1,5 +1,3 @@
-@if $use-tabs == true {
-
 /* ============================================================ */
 
 // TABS MODULE
@@ -10,68 +8,84 @@
 
 
 // ==========================================================================
-// TAB LIST
+// MIXINS
 // ==========================================================================
 
-%tabs-list {
+@mixin tan-tabs(
+		$tabs-list-item: "> li",
+		$tabs-list-link: "> li > a",
+		$tabs-list-item-current: "> .current"
+	) {
+
 	@extend .cf;
 	@include list-reset;
 	border-bottom: 1px solid #ccc;
+
+	#{$tabs-list-item} {
+		clear: both;
+	}
+
+	#{$tabs-list-link} {
+		display: block;
+		padding: $baseLineHeight/3 $baseLineHeight*1.5;
+		text-decoration: none;
+		border-color: #ccc;
+		border-style: solid;
+		border-width: 1px 1px 0 1px;
+		background-color: #fff;
+	}
+
+	#{$tabs-list-item-current} {
+		border-left: 3px solid #ccc;
+
+		> a {
+			background-color: #f1f1f1;
+			color: #333;
+		}
+	}
 }
 
-%tabs-list__item {
-	clear: both;
 
-	@include respond-to($mobileBreak) {
+@mixin tan-tabs--inline (
+		$tabs-list-item: "> li",
+		$tabs-list-link: "> li > a",
+		$tabs-list-item-current: "> .current"
+	) {
+
+
+	#{$tabs-list-item} {
 		float: left;
 		clear: none;
 		margin-bottom: -1px;
 	}
-}
 
-%tabs-list__link {
-	display: block;
-	padding: $baseLineHeight/3 $baseLineHeight*1.5;
-	@include rem(font-size,16px);
-	text-decoration: none;
-	border-color: #ccc;
-	border-style: solid;
-	border-width: 1px 1px 0 1px;
-	background-color: #fff;
-	@include respond-to($mobileBreak) {
-		border-color: #fff;
+	#{$tabs-list-link} {
 		border-bottom-width: 0;
+		border-color: white(0);
+		*border-color: #fff; //oldie hack
 		background-color: transparent;
 	}
 
-	&:hover,
-	&:focus {
-		
-	}
-}
-
-// CURRENT
-// ==========================================================================
-
-%tabs-list__item--current {
-	border-left: 3px solid #ccc;
-
-	a {
-		background-color: #f1f1f1;
-		color: #333;
-	}
-
-	@include respond-to($mobileBreak) {
+	#{$tabs-list-item-current} {
 		border-left: 0;
-		a {
+
+		> a {
 			background-color: #fff;
 			border-top-color: #ccc;
 			border-left-color: #ccc;
 			border-right-color: #ccc;
 		}
-
 	}
 }
+
+@if $use-tabs == true {
+
+
+// ==========================================================================
+// TAB LIST
+// ==========================================================================
+
+// depracated - use mixins above
 
 
 // ==========================================================================
