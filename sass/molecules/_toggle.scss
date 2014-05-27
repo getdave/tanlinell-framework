@@ -1,22 +1,21 @@
 @if $use-toggle == true {
 
-/* ============================================================ */
-
+// ==========================================================================
 // TOGGLE
-
+//
 // Description: styles for standard "toggle" units. Typically
 // these are "button"-like UI elements which when interacted with
 // initiate a state change on another UI element. This state change
 // is controlled via JavaScript
-
-/* ============================================================ */
+// ==========================================================================
 
 
 // ==========================================================================
 // BASE
 // ==========================================================================
 
-.toggle {
+.toggle,
+%toggle {
 	display: block;
 	text-decoration: none;
 
@@ -31,16 +30,25 @@
 	font-size: 100%;
 }
 
+.toggle__text--hidden {
+	@extend %vh;
+}
+
 
 // ==========================================================================
 // MODIFIER: MENU
 // a classic 3-lined "hamburger" icon to denote a togglable menu
 // ==========================================================================
 
-.toggle--menu {
+.toggle--menu,
+%toggle--menu {
 	i {
-		@include rem(font-size,30px);
+		font-size: rem-calc(30px);
 		@extend .icon-hamburger;
+	}
+
+	.toggle__text {
+		@extend %vh;
 	}
 }
 
@@ -51,10 +59,11 @@
 // an "X" close icon. Useful for toggles that hide a visible area
 // ==========================================================================
 
-.toggle--close {
+.toggle--close,
+%toggle--close {
 	i {
-		@include rem(font-size,30px);
 		@extend .icon-cross;
+		font-size: rem-calc(30px);
 	}
 }
 
@@ -63,5 +72,8 @@
 		@extend .icon-cross;
 	}
 }
+
+
+
 
 } //endif

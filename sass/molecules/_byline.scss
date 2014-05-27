@@ -1,0 +1,33 @@
+@if $use-byline == true {
+// ==========================================================================
+//
+// BYLINE
+//
+// Description: styles of subheader-like or "meta" content. Typically follows
+// a primary header and provides ancillary information about the content
+// that follows (eg: Blog category, posted by...etc)
+//
+// ==========================================================================
+
+
+// ==========================================================================
+// BASE
+// ==========================================================================
+
+.byline {
+    line-height: 1.4;
+    color: #6F6F6F;
+    font-weight: normal;
+    margin-left: -1em;
+    font-size: 0.9em;
+
+    > * {
+        font-size: 1em;
+    }
+}
+
+.byline__section {
+    margin-left: 1em;
+}
+
+}//endif

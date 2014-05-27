@@ -1,76 +1,94 @@
-@if $use-images == true {
-/* #Images */
+// ==========================================================================
+//
+// IMAGES
+//
+// Description: Common styling patterns for images to be applied to
+// `<img` elements. Please note that `.img-rounded` and `.img-circle` do
+// not work in IE7-8.
+//
+// ==========================================================================
 
-/* Common styling patterns for images to be applied to `<img` elements. */
-/* Please note that `.img-rounded` and `.img-circle` do not work in IE7-8. */
 
-// BASE
-%img-base {
-    // Do not apply display: inline-block; here else it breaks Responsive Images max-width: 100%;
+// ==========================================================================
+// ROUNDED
+// ==========================================================================
+
+.img-rounded,
+%img-rounded,
+.img-circle,
+%img-circle {
+    border-radius: $global-rounded;
 }
 
-/* ##Rounded */
-/*
-    <img src="http://www.placehold.it/200x200" class="img-rounded" />
-*/
+// ==========================================================================
+// RADIUS
+// creates a fully circular image
+// ==========================================================================
 
-.img-rounded {
-    @extend %img-base !optional;
-    border-radius: 6px;
+.img-radius,
+%img-radius {
+    border-radius: $global-radius;
 }
 
-/* ##Poloroid */
-/*
-    <img src="http://www.placehold.it/200x200" class="img-polaroid" />
-*/
 
-.img-polaroid {
-    @extend %img-base !optional;
-    padding: 4px;
+// ==========================================================================
+// POLAROID
+// applies neat border and subtle shadow
+// ==========================================================================
+
+.img-polaroid,
+%img-polaroid {
+    @include rem(padding,4px);
     background-color: #fff;
     border: 1px solid #ccc;
-    border: 1px solid rgba(0, 0, 0, 0.2);
+    border: 1px solid black(.2);
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 
-/* ##Circle */
-/*
-    <img src="http://www.placehold.it/200x200" class="img-circle" />
-*/
-.img-circle {
-    @extend %img-base !optional;
-    border-radius: 500px;
+// ==========================================================================
+// THUMB
+// applies a standard bottom margin
+// ==========================================================================
+
+.img-thumb,
+%img-thumb {
+    margin-bottom: $spacing-unit;
 }
 
-
-/* ##Image Thumb */
-/*
-    <img src="http://www.placehold.it/200x200" class="img-thumb" />
-*/
-
-.img-thumb {
-    margin-bottom: $baseLineHeight;
+.img-thumb--small,
+%img-thumb--small {
+    margin-bottom: $half-spacing-unit;
 }
 
-/* ##Ratios */
-/*
-    <div class="img-ratio img-ratio--4-3">
-        <img src="http://www.placehold.it/200x200" />
-    </div>
-*/
+// ==========================================================================
+// RATIO
+// base on Uncle Dave's 'ole padded box technique
+// http://daverupert.com/2012/04/uncle-daves-ol-padded-box/
+// ==========================================================================
 
-.img-ratio {
+// BASE
+// ==========================================================================
+
+.img-ratio,
+%img-ratio {
     height: 0;
     overflow: hidden;
 }
 
-.img-ratio--4-3 {
+// RATIOS
+// ==========================================================================
+.img-ratio--1-1,
+%img-ratio--1-1 {
+    padding-bottom: 100%;
+}
+
+.img-ratio--4-3,
+%img-ratio--4-3 {
     padding-bottom: 75%;
 }
 
-.img-ratio--16-8 {
+.img-ratio--16-9,
+%img-ratio--16-9 {
     padding-bottom: 56.25%;
 }
-
-}//endif

@@ -1,0 +1,72 @@
+@if $use-inline-definitions == true {
+// ==========================================================================
+//
+// INLINE DEFINITIONS
+//
+// Description: enhance default Foundation styles by aliasing to classes
+// that match the heading level. Provides greater flexibility than relying
+// on headings alone.
+//
+// ==========================================================================
+
+
+.inline-definitions {
+	margin-bottom: 0;
+	
+	dt,
+	dd {
+		@include inline-block;
+		vertical-align: baseline;
+		margin: 0;
+	}
+
+	.inline-definitions__term,
+	dt {
+		font-weight: bold;
+		color: #111;
+		margin-right: 0.3em;
+	}
+
+
+	.inline-definitions__desc,
+	dd {
+		margin-right: 1em;
+	}
+}
+
+
+
+// ==========================================================================
+// MODIFIER: DESCRIPTION PRIORITY
+// ==========================================================================
+
+.inline-definitions--desc-priority {
+	.inline-definitions__term,
+	dt {
+		font-weight: normal;
+		color: inherit;
+	}
+
+	.inline-definitions__desc,
+	dd {
+		font-weight: bold;
+		color: #111;
+	}
+}
+
+
+// ==========================================================================
+// MODIFIER: VERTICALLY SPACED
+// ==========================================================================
+
+.inline-definitions--v-spaced {
+	
+	.inline-definitions__term,
+	.inline-definitions__desc,
+	dt,
+	dd {
+		margin-bottom: $half-spacing-unit;
+	}
+}
+
+}//endif

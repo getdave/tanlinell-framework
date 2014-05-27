@@ -162,6 +162,7 @@
 */
 
 .ir,
+%ir,
 .img-replace {
     background-color: transparent;
     border: 0;
@@ -172,6 +173,7 @@
 }
 
 .ir:before,
+%ir:before,
 .img-replace:before {
     content: "";
     display: block;
@@ -202,6 +204,7 @@
 	<p>Lorem ipsum dolor sit amet, <strong class="vh">Hah! You are stupid but you don't know it!</strong>consequat.</p>
 */
 .vh,
+%vh,
 .v-hidden,
 .screen-reader-text,
 .assistive-text {
