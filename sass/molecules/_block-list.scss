@@ -58,6 +58,7 @@ a.block-list__link--padded {
 
 
 .block-list--dashed {
+    .block-list__item,
     li {
         border-bottom: 1px dashed $blockListBorderColor;
     }
@@ -70,6 +71,7 @@ a.block-list__link--padded {
 // ==========================================================================
 
 .block-list--solid {
+    .block-list__item,
     li {
         border-bottom: 1px solid $blockListBorderColor;
     }
