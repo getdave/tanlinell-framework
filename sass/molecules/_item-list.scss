@@ -47,4 +47,21 @@
 	}
 }
 
+
+.item-list--bdr-solid {
+
+	> li,
+	.list-item {
+		border-bottom: 1px solid $itemListBorderColor;
+	}
+}
+
+.item-list--bdr-dashed {
+
+	> li,
+	.list-item {
+		border-bottom: 1px dashed $itemListBorderColor;
+	}
+}
+
 }//endif
