@@ -43,7 +43,7 @@
 .toggle--menu,
 %toggle--menu {
 	i {
-		font-size: rem-calc(30px);
+		@include rem(font-size, 30px);
 		@extend .icon-hamburger;
 	}
 
@@ -63,7 +63,7 @@
 %toggle--close {
 	i {
 		@extend .icon-cross;
-		font-size: rem-calc(30px);
+		@include rem(font-size, 30px);
 	}
 }
 
