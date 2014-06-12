@@ -13,14 +13,17 @@
 	function Toggle(el, options) {
 		this.el = el;
 		this.$el = $(el);
+		this.isActive = false;
 
 		this.settings = $.extend({
 			eventType: "click",
 			toggleTarget: this.$el.data('toggle-target'),
-			classList: this.$el.data("toggle-classlist") || "is-active"
+			classList: this.$el.data("toggle-classlist") || "is-active",
+			toggleActiveText: this.$el.data("toggle-active-text") || false
 		}, options);
 
 		this.$toggleTarget = $(this.settings.toggleTarget);
+		this.toggleText = this.$el.text();
 
 		this.setup();
 	}
@@ -33,7 +36,7 @@
 		var _this = this;
 
 		// This has to be directly bound else we end up with
-		// issues when this.el is a selector representing a 
+		// issues when this.el is a selector representing a
 		// collection of elements
 		this.$el.on(this.settings.eventType, this.el, function(e) {
 			e.preventDefault();
@@ -43,8 +46,21 @@
 
 	Toggle.prototype.toggleIt = function($ele,event) {
 
-		this.$toggleTarget.toggleClass( this.settings.classList );
-		$(event.currentTarget).toggleClass('toggle--active');
+		if (this.isActive) {
+			this.$toggleTarget.removeClass( this.settings.classList );
+			$(event.currentTarget).removeClass('toggle--active');
+			if (this.settings.toggleActiveText) {
+				this.$el.html(this.toggleText);
+			}
+			this.isActive = false;
+		} else {
+			this.$toggleTarget.addClass( this.settings.classList );
+			$(event.currentTarget).addClass('toggle--active');
+			if (this.settings.toggleActiveText) {
+				this.$el.html(this.settings.toggleActiveText);
+			}
+			this.isActive = true;
+		}
 	};
 
 
