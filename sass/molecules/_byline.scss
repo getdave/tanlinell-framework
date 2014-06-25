@@ -27,6 +27,7 @@
 }
 
 .byline__section {
+	@include inline-block;
     margin-left: 1em;
 }
 
