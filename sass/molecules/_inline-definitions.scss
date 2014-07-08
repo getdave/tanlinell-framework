@@ -14,6 +14,9 @@
 	margin-top: 0;
 	margin-bottom: 0;
 	
+	.inline-definitions__group,
+	.inline-definitions__term,
+	.inline-definitions__desc,
 	dt,
 	dd {
 		@include inline-block;
