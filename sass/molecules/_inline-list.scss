@@ -115,4 +115,14 @@
     }
 }
 
+
+.inline-list--reduced {
+    margin-left: -#{$baseLineHeight/2};
+
+    .inline-list__item,
+    > li {
+         margin-left: $baseLineHeight/2;
+    }
+}
+
 }//endif
