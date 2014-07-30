@@ -47,7 +47,9 @@
 
 
 .clearfix,
-.cf {
+%clearfix,
+.cf,
+%cf {
 	zoom: 1;
 
 	&:before,
@@ -119,6 +121,7 @@
 	consequat.</p>
 */
 .img-left,
+%img-left,
 .img-l,
 .alignleft {
 	float: left;
@@ -133,6 +136,7 @@
 	consequat.</p>
 */
 .img-right,
+%img-right,
 .img-r,
 .alignright {
 	float: right;
@@ -147,6 +151,7 @@
 	consequat.</p>
 */
 .img-center,
+%img-center,
 .aligncenter {
 	float: none;
 	margin: 0 auto $baseLineHeight auto;
@@ -191,7 +196,8 @@
 /*
 	<p>Lorem ipsum dolor sit amet, <strong class="hidden">Hah! You are stupid but you don't know it!</strong>consequat.</p>
 */
-.hidden {
+.hidden,
+%hidden {
     display: none !important;
     visibility: hidden;
 }
@@ -252,7 +258,8 @@
 
 /* ###Lists */
 
-.list-reset {
+.list-reset,
+%list-reset {
 	@include list-reset;
 }
 

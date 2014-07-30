@@ -18,6 +18,9 @@
 	.inline-definitions__group,
 	.inline-definitions__term,
 	.inline-definitions__desc,
+	%inline-definitions__group,
+	%inline-definitions__term,
+	%inline-definitions__desc,
 	dt,
 	dd {
 		@include inline-block;
@@ -26,6 +29,7 @@
 	}
 
 	.inline-definitions__term,
+	%inline-definitions__term,
 	dt {
 		font-weight: bold;
 		color: #111;
@@ -34,6 +38,7 @@
 
 
 	.inline-definitions__desc,
+	%inline-definitions__desc,
 	dd {
 		margin-right: 1em;
 	}
@@ -46,13 +51,16 @@
 // ==========================================================================
 
 .inline-definitions--desc-priority {
+	
 	.inline-definitions__term,
+	%inline-definitions__term--desc-priority,
 	dt {
 		font-weight: normal;
 		color: inherit;
 	}
 
 	.inline-definitions__desc,
+	%inline-definitions__desc--desc-priority,
 	dd {
 		font-weight: bold;
 		color: #111;
@@ -68,6 +76,8 @@
 	
 	.inline-definitions__term,
 	.inline-definitions__desc,
+	%inline-definitions__term--v-spaced,
+	%inline-definitions__desc--v-spaced,
 	dt,
 	dd {
 		margin-bottom: $half-spacing-unit;

@@ -14,7 +14,8 @@
 // BASE
 // ==========================================================================
 
-.byline {
+.byline,
+%byline {
     line-height: 1.4;
     color: #6F6F6F;
     font-weight: normal;
@@ -26,7 +27,8 @@
     }
 }
 
-.byline__section {
+.byline__section,
+%byline__section {
 	@include inline-block;
     margin-left: 1em;
 }

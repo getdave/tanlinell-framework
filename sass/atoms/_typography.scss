@@ -55,6 +55,7 @@ p {
 	margin: 0 0 $baseLineHeight;
 }
 
+%lead,
 .lead {
 	font-size: 1.15em;
 	line-height: 1.4;
@@ -189,6 +190,11 @@ img {
 }
 
 // We need to revert these for Google maps cos else it breaks!
+%img--no-max,
+.img--no-max { 
+	max-width: none; 
+}
+.no-maximages img { max-width: none; }
 #googlemap img, object, embed { max-width: none; }
 #map_canvas embed { max-width: none; }
 #map_canvas img { max-width: none; }

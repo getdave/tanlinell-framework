@@ -13,13 +13,15 @@
 	</ul>
 */
 
-.inline-list {
+.inline-list,
+%inline-list {
 	margin: 0 0 $baseLineHeight -#{$baseLineHeight};
 	@include clearfix;
 	zoom: 1;
 }
 
 .inline-list__item,
+%inline-list__item,
 .inline-list > li {
 	float: left;
     list-style: none;
@@ -37,10 +39,12 @@
 	</ul>
 */
 
-.inline-list--divided {
+.inline-list--divided,
+%inline-list--divided {
 	margin-left: -#{$baseLineHeight/2};
 
 	.inline-list__item,
+	%inline-list__item--divided,
 	> li {
 		margin-left: $baseLineHeight/2;
 		&:after {
@@ -61,13 +65,15 @@
 	</ul>
 */
 
-.inline-list--centered {
+.inline-list--centered,
+%inline-list--centered {
     text-align: center;
     letter-spacing: -4px;
     margin-left: 0;
 
     > li,
-    .inline-list__item {
+    .inline-list__item,
+    %inline-list__item--centered {
         float: none;
         letter-spacing: normal;
         @include inline-block;
@@ -85,10 +91,12 @@
 	  <li class="inline-list__item"><a href="#">Link 5</a></li>
 	</ul>
 */
-.inline-list--ib {
+.inline-list--ib,
+%inline-list--ib {
     letter-spacing: rsize(-4px);
 
     .inline-list__item,
+    %inline-list__item--ib,
     > li {
         @include inline-block;
         vertical-align: middle;
@@ -106,20 +114,24 @@
 	  <li class="inline-list__item"><a href="#">Link 5</a></li>
 	</ul>
 */
-.inline-list--spaced {
+.inline-list--spaced,
+%inline-list--spaced {
     margin-left: -#{$baseLineHeight*2};
 
     .inline-list__item,
+    %inline-list__item--spaced,
     > li {
          margin-left: $baseLineHeight*2;
     }
 }
 
 
-.inline-list--reduced {
+.inline-list--reduced,
+%inline-list--reduced {
     margin-left: -#{$baseLineHeight/2};
 
     .inline-list__item,
+    %inline-list__item--reduced,
     > li {
          margin-left: $baseLineHeight/2;
     }
