@@ -1,3 +1,12 @@
+v01.1.0:
+  date: "2014-07-30"
+  changes:
+    - improvements to JS flexibility
+    - integrate Baselayer components
+    - addition of lots of silent selectors
+    - fix bugs in various molecules
+    - update docs
+
 v0.1.0:
   date: "2013-12-06"
   changes:
