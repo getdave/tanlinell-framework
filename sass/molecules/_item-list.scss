@@ -16,34 +16,61 @@
 */
 
 
-.item-list {
+.item-list,
+%item-list {
 	@include list-reset;
 	@include clearfix;
 
 	> li,
-	.list-item {
+	.list-item,
+	%list-item {
 		margin-bottom: $baseLineHeight;
 		padding-bottom: $baseLineHeight;
 		@include clearfix;
 	}
 }
 
-.item-list--contracted {
+.item-list--contracted,
+%item-list--contracted {
 
 	> li,
-	.list-item {
+	.list-item,
+	%list-item--contracted {
 		margin-bottom: $baseLineHeight/2;
 		padding-bottom: $baseLineHeight/2;
 	}
 }
 
 
-.item-list--expanded {
+.item-list--expanded,
+%item-list--expanded {
 
 	> li,
-	.list-item {
+	.list-item,
+	%list-item--expanded {
 		margin-bottom: $baseLineHeight*2;
 		padding-bottom: $baseLineHeight*2;
+	}
+}
+
+
+.item-list--bdr-solid,
+%item-list--bdr-solid {
+
+	> li,
+	.list-item,
+	%list-item--bdr-solid {
+		border-bottom: 1px solid $itemListBorderColor;
+	}
+}
+
+.item-list--bdr-dashed,
+%item-list--bdr-dashed {
+
+	> li,
+	.list-item,
+	%list-item--bdr-dashed {
+		border-bottom: 1px dashed $itemListBorderColor;
 	}
 }
 

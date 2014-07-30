@@ -1,0 +1,42 @@
+@if $use-skip-link == true {
+
+/* ============================================================ */
+
+// SKIP LINK
+
+// Description: accessible links for skipping to key points
+// in the page structure. Inspired by WebAIM's guide:
+// http://webaim.org/techniques/skipnav/
+
+/* ============================================================ */
+
+
+// ==========================================================================
+// BASE
+// ==========================================================================
+
+.skip-link {
+	position: absolute;
+	@include rem(top,-100px);
+	left:0px;
+    z-index: $zindex-tier-6;
+	@include rem(padding,6px);
+	border-right:1px solid white;
+	border-bottom:1px solid white;
+	border-bottom-right-radius:8px;
+	color:#fff;
+	background:transparent;
+	@include transition(top 1s ease-out, background 1s linear);
+
+    &:focus {
+		left:0px;
+		top:0px;
+		outline:0;
+    	color: #fff;
+		background-color:#BF1722;
+		@include transition(top .1s ease-in, background .5s linear);
+    }
+}
+
+
+}//endif

@@ -12,7 +12,8 @@
 	</ul>
 */
 
-.dropdown-menu {
+.dropdown-menu,
+%dropdown-menu {
 	@include list-reset;
 	position: absolute;
 	top: 100%;
@@ -26,7 +27,8 @@
 	background-color: $navbar-background;
 }
 
-.dropdown-menu__item {
+.dropdown-menu__item,
+%dropdown-menu__item {
 	position: relative; // positioning context for secondary level if required
 	vertical-align: bottom; /* This fixes the IE5 Win gap (no harm done to modern browsers) */
 	white-space: nowrap;
@@ -35,14 +37,16 @@
 	display: list-item;
 }
 
-.dropdown-menu__link {
+.dropdown-menu__link,
+%dropdown-menu__link {
 	display: block;
 	white-space: nowrap; /* forces drop down to stretch to accommodate length of text (and not wrap) */
 	padding: rsize(6px) rsize(20px);
 	text-align: left;
 }
 
-.dropdown-menu--is-open {
+.dropdown-menu--is-open,
+%dropdown-menu--is-open {
 	display: block;
 }
 

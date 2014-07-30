@@ -132,7 +132,8 @@
 /* A series of classes for setting massive type; for use in heroes, mastheads, promos, etc. */
 /* CSS classes to use are `.giga` (massive!), `.mega` (giant) and `.kilo` (large) */
 
-.giga {
+.giga,
+%giga {
     @extend .h1;
 
     @include respond-to($mobileBreak) {
@@ -140,26 +141,31 @@
     }
 }
 
-.mega {
+.mega,
+%mega {
     @extend .h1;
     @include respond-to($mobileBreak) {
         font-size: rsize($mega);
     }
 }
 
-.kilo {
+.kilo,
+%kilo {
     @extend .h1;
     @include respond-to($mobileBreak) {
         font-size: rsize($kilo);
     }
 }
 
+%heading-small {
+	font-weight: normal;
+	line-height: 1;
+	color: #999;
+}
 
 @include headings() {
 	small {
-		font-weight: normal;
-		line-height: 1;
-		color: #999;
+		@extend %heading-small;
 	}
 }
 

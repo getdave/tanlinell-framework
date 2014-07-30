@@ -13,14 +13,21 @@
 	function Toggle(el, options) {
 		this.el = el;
 		this.$el = $(el);
+		this.isActive = false;
 
 		this.settings = $.extend({
 			eventType: "click",
 			toggleTarget: this.$el.data('toggle-target'),
-			classList: this.$el.data("toggle-classlist") || "is-active"
+			focusTarget: false,
+			classList: this.$el.data("toggle-classlist") || "is-active",
+			toggleActiveText: this.$el.data("toggle-active-text") || false
 		}, options);
 
 		this.$toggleTarget = $(this.settings.toggleTarget);
+		this.$focusTarget =  (this.settings.focusTarget) ? $(this.settings.focusTarget) : this.$toggleTarget;
+
+
+		this.toggleText = this.$el.text();
 
 		this.setup();
 	}
@@ -33,7 +40,7 @@
 		var _this = this;
 
 		// This has to be directly bound else we end up with
-		// issues when this.el is a selector representing a 
+		// issues when this.el is a selector representing a
 		// collection of elements
 		this.$el.on(this.settings.eventType, this.el, function(e) {
 			e.preventDefault();
@@ -43,9 +50,40 @@
 
 	Toggle.prototype.toggleIt = function($ele,event) {
 
-		this.$toggleTarget.toggleClass( this.settings.classList );
-		$(event.currentTarget).toggleClass('toggle--active');
+		if (this.isActive) {
+			this.close($ele,event);
+		} else {
+			this.open($ele,event);
+		}
 	};
+
+	Toggle.prototype.close = function($ele,event) {
+		this.$toggleTarget.removeClass( this.settings.classList );
+		this.$focusTarget.attr("tabindex","-1");
+
+		this.$el.removeClass('toggle--active');
+		this.$el.focus();
+
+		if (this.settings.toggleActiveText) {
+			this.$el.html(this.toggleText);
+		}
+		this.isActive = false;
+	};
+
+	Toggle.prototype.open = function($ele,event) {
+		this.$toggleTarget.addClass( this.settings.classList );
+		this.$focusTarget.attr("tabindex","0").focus();
+
+		this.$el.addClass('toggle--active');
+
+		if (this.settings.toggleActiveText) {
+			this.$el.html(this.settings.toggleActiveText);
+		}
+
+		this.isActive = true;
+	};
+
+
 
 
 

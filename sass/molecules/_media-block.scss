@@ -1,71 +1,135 @@
+
+// ==========================================================================
+//
+// MEDIA BLOCK
+//
+// Description: Baselayer's take on the classic media object is an image to
+// the left, with descriptive content to the right. The content area on the
+// right can actually contain any type of content.
+//
+// Baselayer provides extensions to scope application of media element to
+// specific Medium query ranges
+//
+// ==========================================================================
+
+
+
+// ==========================================================================
+// MIXINS
+// ==========================================================================
+
+@mixin media-block__img {
+	float: left;
+	margin-right: $spacing-unit;
+}
+
+@mixin media-block__img--alt {
+	float: right;
+	margin-left: $spacing-unit;
+	margin-right: 0;
+}
+
+
 @if $use-media-block == true {
-/* #Media Block */
-/* The media object is an image to the left, with descriptive content to the right. The content area on the right can contain any other objects. */
 
-/* ##Base 
-/* 
-	<div class="m-block">
-		<img class="m-img" src="http://www.placehold.it/138x151" />
+// ==========================================================================
+// BASE
+// ==========================================================================
 
-		<div class="m-content">
-			<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
-			<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
-		</div>
-	</div>
-*/
-
-
-.m-block,
-.m-block .m-content {
+.media-block,
+.media-block .media-block__content {
 	overflow:hidden;
 	*overflow:visible;
 	zoom:1;
 }
 
-// Media "img"
+
+// ==========================================================================
+// MODIFIER: SMALL VIEWPORTS
 // ==========================================================================
 
-.m-block {
-	// Standard left layout
-	.m-img {	
-		float:left;	
-		margin-right: $baseLineHeight;
+@include respond-to($break-small) {
+	.media-block--small {
+		.media-block__img {
+			@include media-block__img;
+		}
 
-		img {
-			display: block;
+		.media-block__img--alt {
+			@include media-block__img--alt;
 		}
 	}
 }
 
-/* ##Reversed */
-/* Image on right with content on the left */
-/* 
-	<div class="m-block">
-		<img class="m-img-alt" src="http://www.placehold.it/138x151" />
+@include max-screen($break-small) {
+	.media-block--small-only {
+		.media-block__img {
+			@include media-block__img;
+		}
 
-		<div class="m-content">
-			<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
-			<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
-		</div>
-	</div>
-*/
-
-.m-block .m-img-alt {
-	float:right;
-	margin-left: $baseLineHeight;	
-}
-
-
-
-.m-block--ib {
-	letter-spacing: rsize(-4px);
-
-	.m-img,
-	.m-content {
-		float: none;
-		letter-spacing: normal;
-		@include inline-block;
+		.media-block__img--alt {
+			@include media-block__img--alt;
+		}
 	}
 }
+
+
+// ==========================================================================
+// MODIFIER: MEDIUM VIEWPORTS
+// ==========================================================================
+
+@include respond-to($break-medium) {
+	.media-block--medium {
+		.media-block__img {
+			@include media-block__img;
+		}
+
+		.media-block__img--alt {
+			@include media-block__img--alt;
+		}
+	}
+}
+
+@include max-screen($break-medium) {
+	.media-block--medium-only {
+		.media-block__img {
+			@include media-block__img;
+		}
+
+		.media-block__img--alt {
+			@include media-block__img--alt;
+		}
+	}
+}
+
+
+// ==========================================================================
+// MODIFIER: LARGE VIEWPORTS
+// ==========================================================================
+
+
+@include respond-to($break-large) {
+	.media-block--large {
+		.media-block__img {
+			@include media-block__img;
+		}
+
+		.media-block__img--alt {
+			@include media-block__img--alt;
+		}
+	}
+}
+
+@include max-screen($break-large) {
+	.media-block--large-only {
+		.media-block__img {
+			@include media-block__img;
+		}
+
+		.media-block__img--alt {
+			@include media-block__img--alt;
+		}
+	}
+}
+
 
 }//endif

@@ -1,0 +1,19 @@
+---
+layout: pattern
+summary: "Creates a neatly spaced, stacked list of 'entries'. Typically used 'Entry-like' content listings such as for Blog archive layouts. Comes with `.item-list--contracted` and `.item-list--expanded` modifiers."
+---
+
+<ul class="item-list">
+	{% for i in (1..4) %}
+	<li class="list-item">
+		<div class="">
+			<h3>Item {{i}}</h3>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
+		</div>
+	</li>
+	{% endfor %}
+</ul>
+
+
+
+

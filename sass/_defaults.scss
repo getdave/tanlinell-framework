@@ -33,6 +33,9 @@ $js_dir: 						"../js" !default;
 $fonts_dir: 					"../fonts" !default;
 
 
+
+
+
 // ==========================================================================
 // BRAND
 // ==========================================================================
@@ -114,6 +117,18 @@ $infoBorder:              		darken(adjust-hue($infoBackground, -10), 7%) !defaul
 
 $iconFontFamily: 				"icomoon" !default;
 $bIconDefaultChars: 			true !default;
+
+
+$global-rounded: 				3px;
+$global-radius: 				1000px;
+$hr-border-color: 				#ccc;
+
+
+// Dividers
+// ==========================================================================
+
+$blockListBorderColor: 			#ccc;
+$itemListBorderColor: 			#ccc;
 
 // ==========================================================================
 // TYPOGRAPHY
@@ -239,8 +254,18 @@ $bGridPullClasses:				false !default;
 $cols_as_string: 				one two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen sixteen seventeen eighteen nineteen twenty !default;
 
 
-
 // ==========================================================================
+// LAYOUT
+// ==========================================================================
+
+// SPACING
+// ==========================================================================
+$spacing-unit: 					$baseLineHeight;
+$half-spacing-unit: 			$baseLineHeight/2;
+$double-spacing-unit: 			$baseLineHeight*2;
+
+
+
 // STACKING
 // bird's eye view of components dependent on the z-axis
 // ==========================================================================
@@ -271,6 +296,7 @@ $use-buttons: 					true !default;
 $use-images: 					true !default;
 $use-dropdowns: 				true !default;
 $use-inline-list: 				true !default;
+$use-inline-definitions: 		true !default;
 $use-item-list: 				true !default;
 $use-island: 					true !default;
 $use-alerts: 					true !default;
@@ -290,10 +316,13 @@ $use-tabs: 						true !default;
 $use-scrollable: 				true !default;
 $use-expandable: 				true !default;
 $use-bump: 						true !default;
+$use-side-lined:				true !default;
+$use-complex-link: 				true !default;
+$use-byline: 					true !default;
+$use-skip-link: 				true !default;
 
 // Default "off"
 $use-title-block:				false !default;
-$use-complex-link: 				false !default;
 $use-feature-element: 			false !default;
 $use-flippable: 				false !default;
 $use-graybox: 					false !default;

@@ -1,0 +1,88 @@
+// ==========================================================================
+//
+// NAV MENU
+//
+// Description: mixins to create various styles of navigation. Typically
+// useful for creating primary navigation that needs to vary in layout
+// depending on breakpoint.
+//
+// 1) Base menu styles
+// 2) "Stacked" menu style
+// 3) "Horiztonal" menu style
+//
+// ==========================================================================
+
+
+// ==========================================================================
+// MIXINS
+// ==========================================================================
+
+@mixin tan-nav-menu() {
+	position: relative;
+	@include list-reset;
+	@include clearfix;
+	
+	// ALL ANCHORS
+	// ==========================================================================
+	a {
+		display: block;
+		@include rem(padding,10px 20px);
+		text-decoration: none;
+	}
+
+	// TOP LEVEL ITEMS
+	// ==========================================================================
+	> li {
+		position: relative;
+	}
+}
+
+
+@mixin tan-nav-menu--stacked() {
+	li {
+		clear: both;
+		float: none;
+	}
+
+	a {
+		text-align: left;
+	}
+}
+
+
+
+
+@mixin tan-nav-menu--inline() {
+
+	// ALL ANCHORS
+	// ==========================================================================
+	a {
+		text-align: center;
+	}
+
+	// TOP LEVEL ITEMS
+	// ==========================================================================
+	> li {
+		float: left;
+		clear: none;
+	}
+}
+
+// ==========================================================================
+// SELECTORS
+// ==========================================================================
+
+// BASE
+.tan-nav-menu {
+	@include tan-nav-menu;
+}
+
+// STACKED
+.tan-nav-menu--stacked {
+	@include tan-nav-menu--stacked;
+}
+
+// INLINE
+.tan-nav-menu--inline {
+	@include tan-nav-menu--inline;
+}

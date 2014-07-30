@@ -29,8 +29,8 @@ module.exports = function(grunt) {
         cssDist: './dist/css',
         jsSrc: './js',
         jsDist: './dist/js',
-        docsSrc: './docs',
-        docsDist: './dist/docs',
+        docsSrc: './docs/src',
+        docsDist: './docs/dist',
         packageBanner: grunt.file.read('banner.txt'),
         fwFilename: '<%= pkg.name %>',
     },
@@ -61,7 +61,7 @@ module.exports = function(grunt) {
         docs: {
             options: {
                 port: 9000,
-                base: '<%= jekyll.docs.options.dest %>'
+                base: '<%= config.docsDist %>'
             }
         },
     },
@@ -173,6 +173,9 @@ module.exports = function(grunt) {
 
     // Copy assets to Documentation
     copy: {
+        options: {
+            flatten: true
+        },
         docsAssets: {
             src: ['<%= config.cssDist %>/*.css', '<%= config.jsDist %>/*.js'],
             dest: '<%= config.docsDist %>/assets/',

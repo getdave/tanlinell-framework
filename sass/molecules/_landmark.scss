@@ -11,17 +11,24 @@
 // BASE
 // ==========================================================================
 
-.landmark {
+.landmark,
+%landmark {
 	margin-bottom: $baseLineHeight*2;
+	@include clearfix;
 }
 
-.landmark--minor {
+.landmark--minor,
+%landmark--minor {
 	margin-bottom: $baseLineHeight;
+	@include clearfix;
 }
 
-.landmark--major {
+.landmark--major,
+%landmark--major {
 	margin-bottom: $baseLineHeight*3;
+	@include clearfix;
 }
+
 
 
 }//endif

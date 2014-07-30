@@ -1,0 +1,90 @@
+// ==========================================================================
+// SIDELINED
+//
+// Description: create horizontal lines extending from either side of
+// center-aligned text. Borrowed from:
+// https://github.com/davidtheclark/scut
+// ==========================================================================
+
+// ==========================================================================
+// MIXIN
+// ==========================================================================
+
+@mixin scut-side-lined (
+  $height: 1px,
+  $space: 0.5em,
+  $color: inherit,
+  $style: solid,
+  $v-adjust: false,
+  $double: false
+) {
+
+  display: block;
+  overflow: hidden;
+  text-align: center;
+
+  &:before,
+  &:after {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    width: 50%;
+
+    border-top-style: $style;
+    border-top-width: $height;
+
+    @if $color != inherit {
+      border-top-color: $color;
+    }
+
+    @if $v-adjust != false {
+      bottom: $v-adjust;
+    }
+
+    @if $double != false {
+      height: $double;
+      border-bottom-style: $style;
+      border-bottom-width: $height;
+      @if $color != inherit {
+        border-bottom-color: $color;
+      }
+    }
+  }
+
+  &:before {
+    right: $space;
+    margin-left: -50%;
+  }
+  &:after {
+    left: $space;
+    margin-right: -50%;
+  }
+
+}
+
+
+// ==========================================================================
+// BASE
+// ==========================================================================
+
+@if $use-side-lined == true {
+
+%sidelined {
+    @include scut-side-lined($color: $hr-border-color);
+}
+
+.sidelined {
+  text-align: center;
+  @include respond-to($break-medium) {
+      @include scut-side-lined($color: $hr-border-color);
+  }
+}
+
+
+
+
+}//endif
+
+
+

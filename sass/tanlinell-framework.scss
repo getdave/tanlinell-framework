@@ -61,11 +61,10 @@
 	@import "molecules/_landmark.scss";
 	@import "molecules/_split.scss";
 	@import "molecules/_hero-unit.scss";
-	@import "molecules/_menu.scss";
 	@import "molecules/_item-list.scss";
 	@import "molecules/_block-list.scss";
 	@import "molecules/_controls.scss";
-	@import "molecules/_nav.scss";
+	@import "molecules/_nav-menu.scss";
 	@import "molecules/_buttons.scss";
 	@import "molecules/_dropdowns.scss";
 	@import "molecules/_alerts.scss";
@@ -76,8 +75,8 @@
 	@import "molecules/_complex-link.scss";
 	@import "molecules/_images.scss";
 	@import "molecules/_feature-element.scss";
-	@import "molecules/_title-block.scss";
 	@import "molecules/_inline-list.scss";
+	@import "molecules/_inline-definitions.scss";
 	@import "molecules/_flippable.scss";
 	@import "molecules/_graybox.scss";
 	@import "molecules/_code.scss";
@@ -93,6 +92,10 @@
 	@import "molecules/_blockquotes.scss";
 	@import "molecules/_bump.scss";
 	@import "molecules/_offcanvas.scss";
+	@import "molecules/_side-lined.scss";
+	@import "molecules/_byline.scss";
+	@import "molecules/_skip-link.scss";
+	@import "molecules/_title-block.scss";
 
 // ==========================================================================
 // COMPOUNDS

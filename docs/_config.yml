@@ -1,4 +1,0 @@
-name: Tanlinell CSS
-pygments: true
-exclude: [node_modules, assets/sass, readme.md]
-permalink: none
