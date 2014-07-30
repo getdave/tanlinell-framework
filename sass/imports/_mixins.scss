@@ -367,14 +367,15 @@ $half_gutter_width: ($gutter/2);
 // with "prefix" which is better suited to our grid system
 @mixin griddle-build($units, $prefix: 'gc') {
 
-    /* Proportional units
-       ========================================================================== */
+    // Proportional units
+    // ==========================================================================
+       
 
-    /*
-     * Specify the proportional width of an object.
-     * Primarily for, but not limited to, use with `.grid__cell` components.
-     * Intentional redundancy build into each set of unit classes.
-     */
+    
+    // Specify the proportional width of an object.
+    // Primarily for, but not limited to, use with `.grid__cell` components.
+    // Intentional redundancy build into each set of unit classes.
+     
 
     @each $n in $units {
         // Avoid creating rules like `.unit-12-12 {}`
