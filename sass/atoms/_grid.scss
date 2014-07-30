@@ -126,7 +126,8 @@
 %grid--double-gutter {
 	margin-left: -$double_gutter_width;
 
-	.gc {
+	.gc,
+	%gc--double-gutter {
 		padding-left: $double_gutter_width;
 	}
 }
@@ -138,7 +139,8 @@
 %grid--half-gutter {
 	margin-left: -$half_gutter_width;
 
-   	.gc {
+   	.gc,
+   	%gc--half-gutter {
         padding-left: $half_gutter_width;
     }
 }
@@ -150,7 +152,8 @@
 %grid--no-gutter {
 	margin-left: 0;
 
-    .gc {
+    .gc,
+    %gc--no-gutter {
         padding-left: 0;
     }
 }
@@ -165,7 +168,8 @@
     letter-spacing: -0.31em; // Remove inter-unit whitespace that appears between `inline-block` child
     word-spacing: -0.43em; //  Remove inter-unit whitespace that appears between `inline-block` child
 
-    .gc {
+    .gc,
+    %gc--ib {
 		@include inline-block;
 		vertical-align: top;
         float: none;
@@ -208,7 +212,8 @@
 
 .grid--divided,
 %grid--divided {
-	.gc {
+	.gc,
+	%gc--divided {
         margin-bottom: $gutter;
     }
 }
@@ -219,7 +224,8 @@
 
 .grid--vmiddle,
 %grid--vmiddle {
-	.gc {
+	.gc,
+	%gc--vmiddle {
 		vertical-align: middle;
 	}
 }
@@ -229,7 +235,8 @@
 
 .grid--vbottom,
 %grid--vbottom {
-	.gc {
+	.gc,
+	%gc--vbottom {
 		vertical-align: bottom;
 	}
 }
