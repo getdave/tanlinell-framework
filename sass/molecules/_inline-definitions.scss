@@ -10,7 +10,8 @@
 // ==========================================================================
 
 
-.inline-definitions {
+.inline-definitions,
+%inline-definitions {
 	@extend %list-unstyled;
 	margin-top: 0;
 	margin-bottom: 0;
@@ -50,7 +51,8 @@
 // MODIFIER: DESCRIPTION PRIORITY
 // ==========================================================================
 
-.inline-definitions--desc-priority {
+.inline-definitions--desc-priority,
+%inline-definitions--desc-priority {
 	
 	.inline-definitions__term,
 	%inline-definitions__term--desc-priority,
@@ -72,7 +74,8 @@
 // MODIFIER: VERTICALLY SPACED
 // ==========================================================================
 
-.inline-definitions--v-spaced {
+.inline-definitions--v-spaced,
+%inline-definitions--v-spaced {
 	
 	.inline-definitions__term,
 	.inline-definitions__desc,
