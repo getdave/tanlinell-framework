@@ -1,3 +1,8 @@
+v01.1.5:
+  date: "2014-08-27"
+  changes:
+    - fix missing grid extension inside Gallery molecule
+
 v01.1.4:
   date: "2014-08-27"
   changes:
