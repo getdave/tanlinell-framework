@@ -1,10 +1,11 @@
 @if $use-buttons == true {
-/* #Buttons */
-
-/* Adding the class `.btn` to an anchor `<button>` or `<input>` provides extra visual weight and identifies the primary action in a set of buttons.
-
-    <button class="btn primary">Primary</button>
-*/
+// ==========================================================================
+//
+// BUTTONS
+//
+// Description: creates standard button
+//
+// ==========================================================================
 
 
 .btn,
@@ -25,11 +26,9 @@ input.btn {
 	height: rsize(40px);
 }
 
-/* ## Button Sizes */
-/* Various sizes for buttons */
-/* 
-	<a href="#" class="btn btn-huge">Button Huge</a>
-*/
+// MODIFIER: HUGE
+// ==========================================================================
+.btn--huge,
 .btn-huge,
 %btn-huge {
 	padding-right: 40px;
@@ -38,9 +37,9 @@ input.btn {
   	line-height: 1.5;
 }
 
-/* 
-	<a href="#" class="btn btn-large">Button Large</a>
-*/
+// MODIFIER: LARGE
+// ==========================================================================
+.btn--large,
 .btn-large,
 %btn-large {
 	font-size: 123.0769230769231%;
@@ -49,9 +48,9 @@ input.btn {
 	padding-left: 20px;
 }
 
-/* 
-	<a href="#" class="btn btn-small">Button Small</a>
-*/
+// MODIFIER: SMALL
+// ==========================================================================
+.btn--small,
 .btn-small,
 %btn-small {
 	padding-right: 10px;
@@ -61,13 +60,27 @@ input.btn {
   	font-size: 84.61538461538462%;
 }
 
-/* ## Button States */
+// MODIFIER: FULL
+// ==========================================================================
+.btn--full,
+.btn-full {
+	display: block;
+}
 
-/* 
-	<a href="#" class="btn btn-disabled">Button Disabled</a>
-*/
+// MODIFIER: NAKED
+// ==========================================================================
+.btn--naked {
+	background: 0 !important;
+	border: 0 !important;
+	color: inherit;
+}
+
+
+// MODIFIER: DISABLED
+// ==========================================================================
 .btn[disabled],
 .btn-disabled,
+.btn--disabled,
 %btn-disabled {
 	background-image: none !important;
 	@include opacity(0.65);
@@ -78,26 +91,10 @@ input.btn {
 	}
 }
 
-/* ## Button Full */
 
-/* 
-	<a href="#" class="btn btn-full">Full Width Button</a>
-*/
-
-.btn-full {
-	display: block;
-}
-
-
-/* ## Button Groups */
-
-/* 
-	<div class="btn-group">
-	  <button class="btn">1</button>
-	  <button class="btn">2</button>
-	  <button class="btn">3</button>
-	</div>
-*/
+// ==========================================================================
+// BUTTON GROUPS
+// ==========================================================================
 
 .btn-group {
 	display: inline-block;
@@ -158,7 +155,7 @@ input.btn {
 // ==========================================================================
 .btn--prepend {
     .btn__text {
-        margin-left: $baseLineHeight/2;
+        margin-left: $half-spacing-unit;
     }
 }
 
@@ -166,7 +163,7 @@ input.btn {
 // ==========================================================================
 .btn--append {
     .btn__text {
-        margin-right: $baseLineHeight/2;
+        margin-right: $half-spacing-unit;
     }
 }
 

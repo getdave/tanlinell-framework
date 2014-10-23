@@ -1,0 +1,21 @@
+---
+layout: pattern
+title: Button
+summary: Standard buttons
+modifiers:
+- small
+- large
+- huge
+- naked
+- full
+---
+
+<a href="#" class="btn">Button (standard)</a>
+<br><br>
+
+{% for modifier in page.modifiers %}
+    <a href="#" class="btn btn--{{modifier}}">Button ({{modifier}})</a>
+    <br><br>
+{% endfor %}
+
+
