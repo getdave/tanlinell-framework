@@ -222,7 +222,7 @@ module.exports = function(grunt) {
     // CSS
     // ==========================================================================
     grunt.registerTask('css', [], function() {
-        grunt.loadNpmTasks('grunt-contrib-sass');
+        grunt.loadNpmTasks('grunt-sass');
 
         grunt.task.run(
             'sass'

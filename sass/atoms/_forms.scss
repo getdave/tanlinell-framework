@@ -260,19 +260,9 @@ textarea[disabled] {
 // Separate rule for Firefox.
 // Separate rule for IE, too.
 // Cannot stack with WebKit's.
-input::-webkit-input-placeholder,
-textarea::-webkit-input-placeholder {
-	color: #88888; 
-}
-
-input:-moz-placeholder,
-textarea:-moz-placeholder {
-	color: #888888; 
-}
-
-input.placeholder_text,
-textarea.placeholder_text {
-	color: #888888; 
+input,
+textarea {
+	@include placeholder();
 }
 
 textarea,
