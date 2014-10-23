@@ -1,0 +1,16 @@
+---
+layout: pattern
+title: Alerts
+summary: "Standard alert messages and dialogues."
+alerts:
+- success
+- error
+- info
+---
+
+{% for level in page.alerts %}
+	<div class="alert alert--{{level}}">
+		I am a alert
+	</div>
+{% endfor %}
+
