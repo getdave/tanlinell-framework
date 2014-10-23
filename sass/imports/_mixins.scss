@@ -102,7 +102,7 @@
 // ==========================================================================
 
 // Deprecated - prefer "min-screen()"
-@mixin respond-to($res) {
+/* @mixin respond-to($res) {
   @if ($isFixed == true) {
     @content;
   } @else {
@@ -110,6 +110,40 @@
       @content;
     }
   }
+} */
+
+
+@mixin respond-to($viewport1, $viewport2: null, $constraint: min-width) {
+
+  @if $constraint == min-width {
+    @if ($isFixed == true) {
+        @content;
+    } @else { 
+        @media screen and (min-width: $viewport1) {
+            @content;
+        }
+    }
+
+  } @else if $constraint == max-width {
+    @if ($isFixed == true) {
+        @content;
+    } @else { 
+        @media screen and (max-width: $viewport1) {
+            @content;
+        }
+    }
+
+  } @else {
+    @if ($isFixed == true) {
+        @content;
+    } @else { 
+        @media screen and (min-width: $viewport1) and (max-width: $viewport2) {
+            @content;
+        }
+    }
+
+  }
+
 }
 
 
