@@ -103,14 +103,10 @@
 
 // Deprecated - prefer "min-screen()"
 @mixin respond-to($res) {
-  @if ($is-oldie == true or $isFixed == true) {
-      // Check if we're IE. If so then just return the content sans-media query
-      @if $fix-mqs >= $res {
-          @content;
-      }
+  @if ($isFixed == true) {
+    @content;
   } @else {
-    @media screen and (min-width: $res)
-    {
+    @media screen and (min-width: $res) {
       @content;
     }
   }
@@ -176,6 +172,7 @@
 
 // GCF
 // Find the greatest common factor of two integers
+// borrowed from https://raw.github.com/necolas/griddle/master/_griddle-build.scss
 // ==========================================================================
 @function gcf($a, $b) {
     @if $b == 0 { @return $a; }
@@ -184,9 +181,11 @@
 
 // CONTAINS
 // Check if a list contains a given value
+// borrowed from https://raw.github.com/necolas/griddle/master/_griddle-build.scss
 // ==========================================================================
 @function contains($list, $value) {
-    @if type-of($list) == list { @return not not index($list, $value); }
+    //@if type-of($list) == list { @return not not index($list, $value); }
+    @if length($list) != 1 { @return index($list, $value); }
     @else { @return $list == $value; }
 }
 
@@ -352,11 +351,6 @@
 // borrowed and adapted from original source at
 // https://raw.github.com/necolas/griddle/master/_griddle-build.scss
 // =============================================================================
-
-$gutter_width: $gutter;
-$double_gutter_width: ($gutter*2);
-$half_gutter_width: ($gutter/2);
-
 
 // Fluid grid units
 // modified from original to remove "modifier" and replace

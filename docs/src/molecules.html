@@ -1,0 +1,19 @@
+---
+layout: pattern-list
+title: Molecules
+---
+
+<ul class="inline-list">
+	{% for pattern in site.molecules %}
+	<li>
+		<a href="#pattern-{{forloop.index}}">{{ pattern.title }}</a>
+	</li>
+	{% endfor %}
+</ul>
+
+<div class="patterns">
+	{% for pattern in site.molecules %}
+		{% include pattern.html pattern=pattern %}
+	{% endfor %}
+</div>
+

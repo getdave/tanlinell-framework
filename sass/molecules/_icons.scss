@@ -22,7 +22,7 @@
 
 // ICON DEFAULTS
 // ==========================================================================
-.icon {
+%icon {
     font-family: $iconFontFamily;
     speak: none;
     font-style: normal;
@@ -30,7 +30,6 @@
     font-variant: normal;
     text-transform: none;
     line-height: 1;
-
 
     /* Better Font Rendering =========== */
     -webkit-font-smoothing: antialiased;
@@ -41,25 +40,46 @@
     }
 }
 
+.icon {
+    @extend %icon;
+}
+
 // COLOUR MODIFIERS
 // ==========================================================================
+
+%icon--muted {
+    color: $muted;
+}
+
+.icon--muted,
 .icon--gray,
 .icon--grey {
-    color: #bdc3c7;
+    @extend %icon--muted;
 }
 
 
 // ==========================================================================
 // SIZING MODIFIERS
 // ==========================================================================
-.icon--small   { font-size:16px; }
-.icon--large   { font-size:32px; }
-.icon--huge    { font-size:64px; }
-.icon--natural { font-size:inherit; }
 
-.icon--small-alt { font-size: 20px; }
-.icon--large-alt { font-size: 40px; }
-.icon--huge-alt { font-size: 60px; }
+%icon--small   { font-size:16px; }
+%icon--large   { font-size:32px; }
+%icon--huge    { font-size:64px; }
+%icon--natural { font-size:inherit; }
+%icon--small-alt { font-size: 20px; }
+%icon--large-alt { font-size: 40px; }
+%icon--huge-alt { font-size: 60px; }
+
+// Based on 32px icon grid
+.icon--small   { @extend %icon--small; }
+.icon--large   { @extend %icon--large; }
+.icon--huge    { @extend %icon--huge; }
+.icon--natural { @extend %icon--natural; }
+
+// Based on 24px icon grid
+.icon--small-alt { @extend %icon--small-alt; }
+.icon--large-alt { @extend %icon--large-alt; }
+.icon--huge-alt { @extend %icon--huge-alt; }
 
 
 
@@ -67,69 +87,29 @@
 // POSITIONING
 // ==========================================================================
 
-// INLINE
+// INLINE ICON
 // creates valigned icon with an appropriate RHS margin to push text away.
 // ==========================================================================
+
+%icon--inline,
 .icon--inline {
     @include inline-block;
-    vertical-align: text-bottom;
+    vertical-align: middle;
     margin-right: 0.2em;
 }
 
-
-// ==========================================================================
-// FONTGARDE
-// "managed" usage of webfonts
-// http://filamentgroup.com/lab/bulletproof_icon_fonts/
+// ICON TEXT
 // ==========================================================================
 
-.icon-fallback-text .icon {
-    display: none;
-}
-/*
-ADDED BY afontgarde.js:
-.supports-fontface.FONT_NAME.supports-generatedcontent .icon-fallback-text .icon {
-    display: inline-block;
-}*/
-
-.icon-fallback-glyph .text,
-.icon-fallback-img .text/*,
-ADDED BY afontgarde.js:
-.supports-fontface.FONT_NAME.supports-generatedcontent .icon-fallback-text .text*/ {
-    /* visually hide but accessible (h5bp.com) */
-    clip: rect(0 0 0 0);
-    overflow: hidden;
-    position: absolute;
-    height: 1px;
-    width: 1px;
+%icon-text {
+    @include inline-block;
+    vertical-align: middle;
 }
 
-/* Careful, don’t use adjoining classes here (IE7) */
-.supports-no-generatedcontent .icon-fallback-glyph .text {
-    clip: auto;
-    overflow: visible;
-    position: static;
-    height: auto;
-    width: auto;
+.icon-text,
+.icon--text {
+    @extend %icon-text;
 }
-/*
-ADDED BY afontgarde.js:
-.supports-fontface.FONT_NAME .icon-fallback-glyph .icon:before {
-    font-size: inherit;
-    line-height: inherit;
-}*/
-.icon-fallback-img .icon {
-    display: inline-block;
-}
-.icon-fallback-img .icon:before {
-    content: "";
-}
-/* The img fallback version is not as reliable since it does not check to make sure the fontloaded font has loaded. If we did add the .fontloaded class, it would unnecessarily request the fallback image. */
-.supports-fontface.supports-generatedcontent .icon-fallback-img .icon {
-    background-image: none;
-}
-
-
 
 
 
@@ -165,9 +145,6 @@ ADDED BY afontgarde.js:
     .icon-cross:before {
         content: "\e608";
     }
-
-} //endif
-
-
+}
 
 } //endif

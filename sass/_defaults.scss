@@ -65,6 +65,8 @@ $grayLighter:           		#eee;
 $whiteDark:						#f9f9f9;
 $white:                 		#fff;
 
+$muted: 						#999;
+
 // Accents
 // ==========================================================================
 
@@ -206,11 +208,8 @@ $headingLevel6:					16px !default;
 // RESPONSIVE
 // ==========================================================================
 
-// At what breakpoint should we fix all media queries for oldie
-$fix-mqs: 						false !default;
-
 // Determines whether the site is fixed width. Defaults to "false" unless served is an oldie browser
-$isFixed:						if($is-oldie, true, false) !default;
+$isFixed:						false !default;
 
 // Width of primary ".container" elements - determined by $isFixed var
 $containerWidth:				if($isFixed, 960px, 90%) !default;
@@ -230,7 +229,6 @@ $break-xlarge:          		1382px !default;
 // at which the grid system switches from full to "linearised" layout.
 $mobileBreak:					$break-medium !default;
 
-
 // Nav Breakpoints
 $nav-break-1: 					$break-medium !default;
 $nav-break-2: 					$break-large !default; 
@@ -244,14 +242,16 @@ $use-standard-breakpoints: 		true !default;
 
 // Grid configuration
 $grids: 						2 3 4 5 6 7 8 !default;	// number of columns required
-$gutter: 						3em !default;	 // gutter between each column in em's
+$gutter_width: 					3em !default; // alias
+$gutter: 						$gutter_width;	 // gutter between each column in em's
+
+$double_gutter_width: 			($gutter_width*2) !default;
+$half_gutter_width: 			($gutter_width/2) !default;
+
 
 // Include "push-" and "pull-" classes for source reordering?
 $bGridPushClasses:				false !default;
 $bGridPullClasses:				false !default;
-
-// We loop thorugh this string to produce our written grid classes (TODO: remove this)
-$cols_as_string: 				one two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen sixteen seventeen eighteen nineteen twenty !default;
 
 
 // ==========================================================================

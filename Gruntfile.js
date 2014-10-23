@@ -33,6 +33,7 @@ module.exports = function(grunt) {
         docsDist: './docs/dist',
         packageBanner: grunt.file.read('banner.txt'),
         fwFilename: '<%= pkg.name %>',
+        flattenMQs: 960 // width (in px) at which all MQs should be "flattened" for oldie
     },
 
     watch: {
@@ -41,15 +42,15 @@ module.exports = function(grunt) {
         },
         css: {
             files: ['<%= config.cssSrc %>/**/*.scss'],
-            tasks: ['sass'] // run sass, then lint then combine with normalize
+            tasks: ['css'] // run sass, then lint then combine with normalize
         },
         js: {
             files: ['<%= config.jsSrc %>/**/*.js'],
-            tasks: ['jshint','uglify'] // uglify
+            tasks: ['javascripts'] // uglify
         },
         docs: {
             files: ['<%= jekyll.docs.options.src %>/**/*.html'],
-            tasks: ['assets','jekyll:docs','copy:docsAssets']
+            tasks: ['docs']
         },
     },
 
@@ -106,8 +107,22 @@ module.exports = function(grunt) {
       },
       minify: {
         files: {
-          '<%= config.cssDist %>/<%= config.fwFilename %>.min.css': ['<%= config.cssDist %>/<%= config.fwFilename %>.css', '!*.min.css']
+          '<%= config.cssDist %>/<%= config.fwFilename %>.min.css': ['<%= config.cssDist %>/<%= config.fwFilename %>.css', '!*.min.css'],
+          '<%= config.cssDist %>/<%= config.fwFilename %>-oldie.min.css': ['<%= config.cssDist %>/<%= config.fwFilename %>-oldie.css', '!*.min.css']
         }
+      },
+    },
+
+    // Flatten MQs at given width
+    legacssy: {
+      dist: {
+        options: {
+          // Include only styles for a screen 800px wide
+          legacyWidth: "<%= config.flattenMQs %>"
+        },
+        files: {
+          '<%= config.cssDist %>/<%= config.fwFilename %>-oldie.css': '<%= config.cssDist %>/<%= config.fwFilename %>.css',
+        },
       },
     },
 
@@ -244,20 +259,41 @@ module.exports = function(grunt) {
     // end "ASSETS"
 
 
+    // ==========================================================================
+    // DOCS
+    // ==========================================================================
+    grunt.registerTask('docs', [], function() {
+        grunt.loadNpmTasks('grunt-jekyll');
+        grunt.loadNpmTasks('grunt-contrib-copy');
+
+        grunt.task.run(
+           'jekyll:docs',
+           'copy:docsAssets'
+        );
+    });
+
 
     // ==========================================================================
     // BUILD
     // ==========================================================================
-    grunt.registerTask('build', [
-        'clean',
-        'sass',
-        'autoprefixer',
-        'cssmin',
-        'jshint',
-        'uglify',
-        'jekyll:docs',
-        'copy:docsAssets'
-    ]);
+
+    grunt.registerTask('build', [], function() {
+        //grunt.loadNpmTasks('grunt-newer');
+        grunt.loadNpmTasks('grunt-contrib-clean');
+        grunt.loadNpmTasks('grunt-autoprefixer');
+        grunt.loadNpmTasks('grunt-legacssy');
+        grunt.loadNpmTasks('grunt-contrib-cssmin');
+
+        grunt.task.run(
+            'clean',
+            'css',
+            'autoprefixer',
+            'legacssy',
+            'cssmin',
+            'javascripts',
+            'docs'
+        );
+    });
 
 
 
