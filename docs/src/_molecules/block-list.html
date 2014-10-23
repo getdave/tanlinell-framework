@@ -1,5 +1,7 @@
 ---
 layout: pattern
+title: Block List
+summary: Blocky lists of content. Typically useful for secondary type navigation.
 ---
 
 <ul class="block-list">
@@ -10,7 +12,7 @@ layout: pattern
     {% endfor %}
 </ul>
 
-<br><br>
+<br>
 
 <ul class="block-list block-list--padded">
     {% for i in (1..4) %}
@@ -20,3 +22,25 @@ layout: pattern
     {% endfor %}
 </ul>
 
+
+<br>
+
+<ul class="block-list block-list--dashed">
+    {% for i in (1..4) %}
+    <li>
+        <a href="#">Block Link Dashed</a>
+    </li>
+    {% endfor %}
+</ul>
+
+<br>
+
+<ul class="block-list block-list--solid">
+    {% for i in (1..4) %}
+    <li>
+        <a href="#">Block Link Solid</a>
+    </li>
+    {% endfor %}
+</ul>
+
+<br>

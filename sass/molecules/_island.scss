@@ -10,7 +10,9 @@
     </div>
 */
 
-
+// ==========================================================================
+// ISLAND
+// ==========================================================================
 .island,
 .islet,
 %island,
@@ -30,19 +32,32 @@
 }
 
 
+// MODIFIER: BOXED
+// ==========================================================================
+%island--boxed,
+.island--boxed {
+    background-color: #f2f2f2;
+    border: 1px solid #d8d8d8;
+}
 
 
-/* ##Island */
-/* Just like `.island`, only less padding/smaller. */
-/*
-    <div class="islet">
-        I am boxed off too only with less padding
-    </div>
-*/
+
+
+// ==========================================================================
+// ISLET
+// ==========================================================================
 
 .islet,
 %islet {
     padding: $baseLineHeight/2;
+}
+
+// MODIFIER: BOXED
+// ==========================================================================
+%islet--boxed,
+.islet--boxed {
+    background-color: #f2f2f2;
+    border: 1px solid #d8d8d8;
 }
 
 }//endif
