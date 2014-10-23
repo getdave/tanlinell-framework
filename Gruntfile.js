@@ -16,8 +16,8 @@
 // '<%= config.docsSrc %>/templates/pages/**/*.hbs'
 
 module.exports = function(grunt) {
-// load all grunt tasks
-  require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
+    // load all grunt tasks
+
   require('time-grunt')(grunt);
 
   // Project configuration.
@@ -201,31 +201,85 @@ module.exports = function(grunt) {
 
 
 
-  grunt.registerTask('build', [
-    'clean',
-    'sass',
-    'autoprefixer',
-    'cssmin',
-    'jshint',
-    'uglify',
-    'jekyll:docs',
-    'copy:docsAssets'
-  ]);
 
 
 
-  grunt.registerTask('assets', [
-    'sass',
-    'jshint',
-    'uglify',
-  ]);
+
+    // ==========================================================================
+    // ASSETS
+    // ==========================================================================
+
+    grunt.registerTask('assets', [], function() {
+        //grunt.loadNpmTasks('grunt-newer');
 
 
-  grunt.registerTask('default', [
-    'clean',
-    'assets',
-    'connect',
-    'watch'
-  ]);
+        grunt.task.run(
+            'css',
+            'javascripts'
+        );
+    });
+
+    // CSS
+    // ==========================================================================
+    grunt.registerTask('css', [], function() {
+        grunt.loadNpmTasks('grunt-contrib-sass');
+
+        grunt.task.run(
+            'sass'
+        );
+    });
+
+    // JAVASCRIPTS
+    // ==========================================================================
+    grunt.registerTask('javascripts', [], function() {
+        grunt.loadNpmTasks('grunt-contrib-jshint');
+        grunt.loadNpmTasks('grunt-contrib-uglify');
+
+        grunt.task.run(
+            'jshint',
+            'uglify'
+        );
+    });
+
+    // end "ASSETS"
+
+
+
+    // ==========================================================================
+    // BUILD
+    // ==========================================================================
+    grunt.registerTask('build', [
+        'clean',
+        'sass',
+        'autoprefixer',
+        'cssmin',
+        'jshint',
+        'uglify',
+        'jekyll:docs',
+        'copy:docsAssets'
+    ]);
+
+
+
+    // ==========================================================================
+    // DEFAULT
+    // ==========================================================================
+
+    grunt.registerTask('default', [], function() {
+        //grunt.loadNpmTasks('grunt-newer');
+        grunt.loadNpmTasks('grunt-contrib-clean');
+        grunt.loadNpmTasks('grunt-contrib-connect');
+        grunt.loadNpmTasks('grunt-contrib-watch');
+
+        grunt.task.run(
+            'clean',
+            'assets',
+            'connect',
+            'watch'
+        );
+    });
+
+
+
 
 };
