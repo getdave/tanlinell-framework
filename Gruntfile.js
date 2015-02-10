@@ -71,7 +71,7 @@ module.exports = function(grunt) {
         options: {
             style: 'expanded',
             loadPath: [
-                '.',
+                './',
                 '<%= config.cssSrc %>'
             ],
         },
