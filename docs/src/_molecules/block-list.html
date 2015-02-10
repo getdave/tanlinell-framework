@@ -1,0 +1,46 @@
+---
+layout: pattern
+title: Block List
+summary: Blocky lists of content. Typically useful for secondary type navigation.
+---
+
+<ul class="block-list">
+    {% for i in (1..4) %}
+    <li>
+        <a href="#">Block Link {{i}}</a>
+    </li>
+    {% endfor %}
+</ul>
+
+<br>
+
+<ul class="block-list block-list--padded">
+    {% for i in (1..4) %}
+    <li>
+        <a href="#">Block Link Padded</a>
+    </li>
+    {% endfor %}
+</ul>
+
+
+<br>
+
+<ul class="block-list block-list--dashed">
+    {% for i in (1..4) %}
+    <li>
+        <a href="#">Block Link Dashed</a>
+    </li>
+    {% endfor %}
+</ul>
+
+<br>
+
+<ul class="block-list block-list--solid">
+    {% for i in (1..4) %}
+    <li>
+        <a href="#">Block Link Solid</a>
+    </li>
+    {% endfor %}
+</ul>
+
+<br>

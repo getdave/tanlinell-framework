@@ -60,7 +60,7 @@
 	}
 }
 
-@include max-screen($break-small) {
+@include respond-to($break-small, null, "max-width") {
 	.media-block--small-only {
 		.media-block__img {
 			@include media-block__img;
@@ -89,7 +89,7 @@
 	}
 }
 
-@include max-screen($break-medium) {
+@include respond-to($break-medium, null, "max-width") {
 	.media-block--medium-only {
 		.media-block__img {
 			@include media-block__img;
@@ -119,7 +119,7 @@
 	}
 }
 
-@include max-screen($break-large) {
+@include respond-to($break-large, null, "max-width") {
 	.media-block--large-only {
 		.media-block__img {
 			@include media-block__img;

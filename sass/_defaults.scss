@@ -34,8 +34,6 @@ $fonts_dir: 					"../fonts" !default;
 
 
 
-
-
 // ==========================================================================
 // BRAND
 // ==========================================================================
@@ -64,6 +62,8 @@ $grayLight:             		#999;
 $grayLighter:           		#eee;
 $whiteDark:						#f9f9f9;
 $white:                 		#fff;
+
+$muted: 						#999;
 
 // Accents
 // ==========================================================================
@@ -206,11 +206,8 @@ $headingLevel6:					16px !default;
 // RESPONSIVE
 // ==========================================================================
 
-// At what breakpoint should we fix all media queries for oldie
-$fix-mqs: 						false !default;
-
 // Determines whether the site is fixed width. Defaults to "false" unless served is an oldie browser
-$isFixed:						if($is-oldie, true, false) !default;
+$isFixed:						false !default;
 
 // Width of primary ".container" elements - determined by $isFixed var
 $containerWidth:				if($isFixed, 960px, 90%) !default;
@@ -219,17 +216,32 @@ $containerWidth:				if($isFixed, 960px, 90%) !default;
 // Breakpoints
 // ==========================================================================
 
+// Gap "between" breakpoints
+$viewport-increment: 			0.1px !default;
+
+// Core breakpoints (overide these)
 $break-tiny:            		320px !default;
 $break-small:           		600px !default;
 $break-medium:          		768px !default;
 $break-large:           		992px !default;
 $break-xlarge:          		1382px !default;
 
+// Pre/post breakpoints - for targetting upper/lower bounds
+$pre-break-tiny:            	$break-tiny - $viewport-increment !default;
+$post-break-tiny:            	$break-tiny + $viewport-increment !default;
+$pre-break-small:            	$break-small - $viewport-increment !default;
+$post-break-small:            	$break-small + $viewport-increment !default;
+$pre-break-medium:            	$break-medium - $viewport-increment !default;
+$post-break-medium:            	$break-medium + $viewport-increment !default;
+$pre-break-large:            	$break-large - $viewport-increment !default;
+$post-break-large:            	$break-large + $viewport-increment !default;
+$pre-break-xlarge:            	$break-xlarge - $viewport-increment !default;
+$post-break-xlarge:            	$break-xlarge + $viewport-increment !default;
+
 
 // Constant to define which breakpoint name (above) determines the point
 // at which the grid system switches from full to "linearised" layout.
 $mobileBreak:					$break-medium !default;
-
 
 // Nav Breakpoints
 $nav-break-1: 					$break-medium !default;
@@ -244,14 +256,12 @@ $use-standard-breakpoints: 		true !default;
 
 // Grid configuration
 $grids: 						2 3 4 5 6 7 8 !default;	// number of columns required
-$gutter: 						3em !default;	 // gutter between each column in em's
 
-// Include "push-" and "pull-" classes for source reordering?
-$bGridPushClasses:				false !default;
-$bGridPullClasses:				false !default;
-
-// We loop thorugh this string to produce our written grid classes (TODO: remove this)
-$cols_as_string: 				one two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen sixteen seventeen eighteen nineteen twenty !default;
+// Gutters
+$gutter_width: 					3em !default; // alias
+$gutter: 						$gutter_width;	 // gutter between each column in em's
+$double_gutter_width: 			($gutter_width*2) !default;
+$half_gutter_width: 			($gutter_width/2) !default;
 
 
 // ==========================================================================

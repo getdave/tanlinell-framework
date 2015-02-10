@@ -1,0 +1,11 @@
+---
+layout: pattern-list
+title: Compounds
+---
+
+<div class="patterns">
+	{% for pattern in site.compounds %}
+		{% include pattern.html pattern=pattern %}
+	{% endfor %}
+</div>
+

@@ -41,7 +41,7 @@
 
 
 @if ($use-standard-breakpoints == true) {
-	
+
 	// Handheld Grids
 	@include respond-to($break-tiny) {
 		@include griddle-build($grids,'h');

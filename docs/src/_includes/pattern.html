@@ -1,0 +1,26 @@
+<div id="pattern-{{forloop.index}}" class="pattern">
+	<h2 class="pattern-title">{{ pattern.title }}</h2>
+	{% if pattern.summary %}
+	<p>{{ pattern.summary | markdownify }}</p>
+	{% endif %}
+
+	<div class="display">
+		<h5>Example(s)</h5>
+		{{ pattern.content }}
+	</div>
+
+	<div class="source">
+		<h5>Source</h5>
+		
+		<textarea rows="6" cols="30">{{ pattern.content | xml_escape }}</textarea>
+		<p><a href="{{ pattern.url }}">{{ pattern.title }}</a></p>
+	</div>
+	
+	{% comment %}
+	<div class="clear">
+		{% highlight html %}
+		{{ pattern.content }}
+		{% endhighlight %}
+	</div>
+	{% endcomment %}
+</div>

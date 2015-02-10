@@ -101,19 +101,50 @@
 // RESPONSIVE
 // ==========================================================================
 
-// Deprecated - prefer "min-screen()"
-@mixin respond-to($res) {
-  @if ($is-oldie == true or $isFixed == true) {
-      // Check if we're IE. If so then just return the content sans-media query
-      @if $fix-mqs >= $res {
-          @content;
-      }
-  } @else {
-    @media screen and (min-width: $res)
-    {
-      @content;
-    }
+@mixin hdpi($ratio: 1.3)
+{
+  @media only screen and (-webkit-min-device-pixel-ratio: $ratio),
+  only screen and (min--moz-device-pixel-ratio: $ratio),
+  only screen and (-o-min-device-pixel-ratio: #{$ratio}/1),
+  only screen and (min-resolution: #{round($ratio*96)}dpi),
+  only screen and (min-resolution: #{$ratio}dppx)
+  {
+    @content;
   }
+}
+
+
+@mixin respond-to($viewport1, $viewport2: null, $constraint: min-width) {
+
+  @if $constraint == min-width {
+    @if ($isFixed == true) {
+        @content;
+    } @else { 
+        @media screen and (min-width: $viewport1) {
+            @content;
+        }
+    }
+
+  } @else if $constraint == max-width {
+    @if ($isFixed == true) {
+        @content;
+    } @else { 
+        @media screen and (max-width: $viewport1) {
+            @content;
+        }
+    }
+
+  } @else {
+    @if ($isFixed == true) {
+        @content;
+    } @else { 
+        @media screen and (min-width: $viewport1) and (max-width: $viewport2) {
+            @content;
+        }
+    }
+
+  }
+
 }
 
 
@@ -176,6 +207,7 @@
 
 // GCF
 // Find the greatest common factor of two integers
+// borrowed from https://raw.github.com/necolas/griddle/master/_griddle-build.scss
 // ==========================================================================
 @function gcf($a, $b) {
     @if $b == 0 { @return $a; }
@@ -184,11 +216,14 @@
 
 // CONTAINS
 // Check if a list contains a given value
+// borrowed from https://raw.github.com/necolas/griddle/master/_griddle-build.scss
 // ==========================================================================
 @function contains($list, $value) {
-    @if type-of($list) == list { @return not not index($list, $value); }
+    //@if type-of($list) == list { @return not not index($list, $value); }
+    @if length($list) != 1 { @return index($list, $value); }
     @else { @return $list == $value; }
 }
+
 
 
 
@@ -344,10 +379,6 @@
 // ==========================================================================
 
 @mixin opacity($trans) {
-    filter: alpha(opactiy=($trans * 100));
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=#{$trans * 100})";
-    -moz-opacity: $trans;
-    -khtml-opacity: $trans;
     opacity: $trans;
 }
 
@@ -356,11 +387,6 @@
 // borrowed and adapted from original source at
 // https://raw.github.com/necolas/griddle/master/_griddle-build.scss
 // =============================================================================
-
-$gutter_width: $gutter;
-$double_gutter_width: ($gutter*2);
-$half_gutter_width: ($gutter/2);
-
 
 // Fluid grid units
 // modified from original to remove "modifier" and replace

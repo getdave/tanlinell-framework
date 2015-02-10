@@ -1,29 +1,37 @@
-v01.1.5:
+v1.2.0:
+  date: "2015-02-10"
+  changes:
+    - utilise LibSass
+    - media query mixin now accepts upper and lower bounds
+    - refactor docs to take advantage of Jekyll Collections
+    - optimise perf of Gruntfile
+
+v1.1.5:
   date: "2014-08-27"
   changes:
     - fix missing grid extension inside Gallery molecule
 
-v01.1.4:
+v1.1.4:
   date: "2014-08-27"
   changes:
     - fix grid inheritence issues in Gallery molecule
 
-v01.1.3:
+v1.1.3:
   date: "2014-08-01"
   changes:
     - add silent selectors to block-list molecule
 
-v01.1.2:
+v1.1.2:
   date: "2014-07-30"
   changes:
     - ensure inline-definitions has silent selectors
 
-v01.1.1:
+v1.1.1:
   date: "2014-07-30"
   changes:
     - add more silent selectors to grid to improve flexibility
 
-v01.1.0:
+v1.1.0:
   date: "2014-07-30"
   changes:
     - improvements to JS flexibility
@@ -32,7 +40,7 @@ v01.1.0:
     - fix bugs in various molecules
     - update docs
 
-v0.1.0:
+v.1.0:
   date: "2013-12-06"
   changes:
     - initial alignment of branches and files

@@ -15,7 +15,7 @@
 
 .inline-list,
 %inline-list {
-	margin: 0 0 $baseLineHeight -#{$baseLineHeight};
+	margin: 0 0 $spacing-unit (-$spacing-unit);
 	@include clearfix;
 	zoom: 1;
 }
@@ -25,7 +25,7 @@
 .inline-list > li {
 	float: left;
     list-style: none;
-    margin-left: $baseLineHeight;
+    margin-left: $spacing-unit;
     display: block; 
 }
 
@@ -41,16 +41,15 @@
 
 .inline-list--divided,
 %inline-list--divided {
-	margin-left: -#{$baseLineHeight/2};
-
+	margin-left: (-$half-spacing-unit);
 	.inline-list__item,
 	%inline-list__item--divided,
 	> li {
-		margin-left: $baseLineHeight/2;
+		margin-left: $half-spacing-unit;
 		&:after {
 			content: "|";
 			@include inline-block;
-			margin-left: $baseLineHeight/2;
+			margin-left: $half-spacing-unit;
 		}
 	}
 }
@@ -77,8 +76,8 @@
         float: none;
         letter-spacing: normal;
         @include inline-block;
-        margin-left: $baseLineHeight/2;
-        margin-right: $baseLineHeight/2;
+        margin-left: $half-spacing-unit;
+        margin-right: $half-spacing-unit;
     }
 }
 
@@ -116,25 +115,31 @@
 */
 .inline-list--spaced,
 %inline-list--spaced {
-    margin-left: -#{$baseLineHeight*2};
+    margin-left: -#{$spacing-unit*2};
 
     .inline-list__item,
     %inline-list__item--spaced,
     > li {
-         margin-left: $baseLineHeight*2;
+         margin-left: $spacing-unit*2;
     }
 }
 
 
-.inline-list--reduced,
-%inline-list--reduced {
-    margin-left: -#{$baseLineHeight/2};
+
+.inline-list--contracted,
+%inline-list--contracted {
+    margin-left: -#{$half-spacing-unit};
 
     .inline-list__item,
     %inline-list__item--reduced,
     > li {
-         margin-left: $baseLineHeight/2;
+         margin-left: $half-spacing-unit;
     }
+}
+
+.inline-list--reduced,
+%inline-list--reduced {
+	@extend %inline-list--contracted;
 }
 
 }//endif
