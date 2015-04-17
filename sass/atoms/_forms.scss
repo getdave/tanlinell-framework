@@ -1,6 +1,8 @@
-/* #Forms */
-
-
+// ==========================================================================
+// TYPOGRAPHY
+//
+// Description: base forms styles to apply globally
+// ==========================================================================
 
 label {
 	display: block;
@@ -37,51 +39,6 @@ legend {
 	margin-top: 0;
 	margin-bottom: 0; 
 }
-
-// INPUT WIDTHS
-// ==========================================================================
-
-.input-tiny {
-	width: 50px; 
-}
-
-.input-small {
-	width: 100px; 
-}
-
-.input-medium {
-	width: 150px; 
-}
-
-.input-large {
-	width: 200px; 
-}
-
-.input-xlarge {
-	width: 250px; 
-}
-
-.input-xxlarge {
-	width: 300px; 
-}
-
-.input-xxxlarge {
-	width: 350px; 
-}
-
-.input-full {
-	width: 100%; 
-}
-
-// Added via JS to <textarea> and class="input-full".
-// Applies only to IE7. Other browsers don't need it.
-
-.input_full_wrap {
-	display: block;
-	padding-right: 8px; 
-}
-
-
 
 input[type="search"]::-webkit-search-decoration {
 	display: none; 
@@ -350,20 +307,6 @@ optgroup {
 
 
 
-
-/* ##Prepend/Append */
-
-/* 
-	<div class="input-append">
-		<input type="text">
-		<button class="btn" type="button">Go!</button>
-	</div>
-*/
-
-.input-append,
-.input-prepend {
-	white-space: nowrap;
-}
 
 
 

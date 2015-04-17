@@ -1,13 +1,12 @@
-/* #Containers */
+// ==========================================================================
+// CONTAINERS
+//
+// Description: standard structures for dividing pages into "sections"
+// ==========================================================================
 
-/* Standard structures for dividing pages into "sections" */
-
-/* ##Standard Container */
-/*
-	<div class="container">
-		<p>I'm a section on the layout/page which should be centered in the window</p>
-	</div>  
-*/
+// ==========================================================================
+// # BASE
+// ==========================================================================
 
 .container {
 	width: $containerWidth;
@@ -16,13 +15,9 @@
 	@include clearfix;
 }
 
-/* ## Reduced Container */
-/* Use to create a container half the default width of the standard container */
-/*
-	<div class="container container--reduced">
-		<!-- SOME STUFF -->
-	</div>
-*/
+// ==========================================================================
+// # REDUCED
+// ==========================================================================
 
 .container--reduced {
 	@include respond-to($mobileBreak) {
@@ -30,10 +25,9 @@
 	}
 }
 
-/* ##Padded Container */
-/* Use to create a container with top and bottom padding */
-/*
-*/
+// ==========================================================================
+// # PADDED
+// ==========================================================================
 
 .container--padded {
 	padding-top: $baseLineHeight*1.5;
@@ -45,16 +39,11 @@
 		}
 }
 
-/* ## Extended Container */
-/* Use to extend the content to be the full width of the window. Additional wrapping element around `.container`. */
-/*
-	<div class="container--extend" style="background: #f7f7f7f;">
-		<div class="container">
-			<p>A section of content where you need the background to extend to the full width of the browser whilst the content remains centered</p>
-		</div> 
-	</div>
-*/
+// ==========================================================================
+// # EXTENDED
+// ==========================================================================
 
+.container--extended,
 .container--extend {
 	width: auto;
 	@include clearfix;
