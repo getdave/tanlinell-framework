@@ -17,7 +17,7 @@
 @mixin headings($from: 1, $to: 6){
     @for $i from $from through $to{
       h#{$i}, .h#{$i}, %h#{$i} {
-        @content
+        @content;
       }
     }
 }
@@ -88,11 +88,11 @@
 // ==========================================================================
 
 @function black($opacity){
-    @return rgba(0,0,0,$opacity)
+    @return rgba(0,0,0,$opacity);
 }
 
 @function white($opacity){
-    @return rgba(255,255,255,$opacity)
+    @return rgba(255,255,255,$opacity);
 }
 
 
@@ -101,8 +101,7 @@
 // RESPONSIVE
 // ==========================================================================
 
-@mixin hdpi($ratio: 1.3)
-{
+@mixin hdpi($ratio: 1.3) {
   @media only screen and (-webkit-min-device-pixel-ratio: $ratio),
   only screen and (min--moz-device-pixel-ratio: $ratio),
   only screen and (-o-min-device-pixel-ratio: #{$ratio}/1),
@@ -210,8 +209,12 @@
 // borrowed from https://raw.github.com/necolas/griddle/master/_griddle-build.scss
 // ==========================================================================
 @function gcf($a, $b) {
-    @if $b == 0 { @return $a; }
-    @else { @return gcf($b, $a % $b) }
+    @if $b == 0 { 
+        @return $a; 
+    }
+    @else { 
+        @return gcf($b, $a % $b); 
+    }
 }
 
 // CONTAINS
@@ -219,7 +222,6 @@
 // borrowed from https://raw.github.com/necolas/griddle/master/_griddle-build.scss
 // ==========================================================================
 @function contains($list, $value) {
-    //@if type-of($list) == list { @return not not index($list, $value); }
     @if length($list) != 1 { @return index($list, $value); }
     @else { @return $list == $value; }
 }
