@@ -3,10 +3,9 @@
 //
 // BUTTONS
 //
-// Description: creates standard button
+// Description: UI styles to create button-like elements
 //
 // ==========================================================================
-
 
 .btn,
 %btn {
@@ -63,13 +62,15 @@ input.btn {
 // MODIFIER: FULL
 // ==========================================================================
 .btn--full,
+%btn--full,
 .btn-full {
 	display: block;
 }
 
 // MODIFIER: NAKED
 // ==========================================================================
-.btn--naked {
+.btn--naked,
+%btn--naked {
 	background: 0 !important;
 	border: 0 !important;
 	color: inherit;
@@ -125,10 +126,8 @@ input.btn {
 }
 
 // TEXT
-// ==========================================================================
-//
 // Buttons should be able to have content (typically icons) added before and after the text content
-//
+// ==========================================================================
 
 .btn__text {
     @include inline-block;
@@ -147,8 +146,6 @@ input.btn {
 .btn--prepend,
 .btn--append {
     position: relative;
-
-
 }
 
 // PREPEND
