@@ -106,15 +106,21 @@
 	@import "compounds/_site-credit.scss";
 	@import "compounds/_page-layouts.scss";
 	@import "compounds/_social-actions.scss";
-	@import "compounds/_gallery.scss";
-	@import "compounds/_flexslider.scss";
-	@import "compounds/_gravity-forms.scss";
-	@import "compounds/_magnific.scss";
 	@import "compounds/_site-colophon.scss";
 	@import "compounds/_search-form.scss";
 	@import "compounds/_social-icons-list.scss";
 	@import "compounds/_social-share-bar.scss";
 	@import "compounds/_social-widgets.scss";
+
+// ==========================================================================
+// ADDONS
+// extra styles desigened for use with 3rd party systems or tools
+// ==========================================================================
+
+	@import "addons/_gallery.scss";
+	@import "addons/_flexslider.scss";
+	@import "addons/_gravity-forms.scss";
+	@import "addons/_magnific.scss";
 
 // ==========================================================================
 // HELPERS

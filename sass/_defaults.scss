@@ -344,9 +344,7 @@ $use-sprite:					false !default;
 // Compounds
 // ==========================================================================
 
-// Default "on"
 $use-page-layouts: 				true !default;
-$use-gallery: 					true !default;
 $use-primary-nav: 				true !default;
 $use-site-logo: 				true !default;
 $use-site-credit: 				true !default;
@@ -357,10 +355,12 @@ $use-social-icons-list: 		true !default;
 $use-social-widgets:			true !default;
 $use-social-share-bar:			true !default;
 
-// Default "off"
+
+
+// Add Ons
+// ==========================================================================
+
 $use-magnific: 					false !default;
 $use-flexslider: 				false !default;
 $use-gravity-forms: 			false !default;
-
-
-
+$use-gallery: 					true !default;

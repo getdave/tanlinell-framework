@@ -1,10 +1,8 @@
 # Tanlinell Framework
 
-Tanlinell Framework is a design agnostic CSS & JavaScript framework designed from scratch to facilitate the rapid production of websites.
+Tanlinell Framework is a modular, design agnostic CSS framework designed from scratch to facilitate the rapid production of UI.
 
-It is by no means comprehensive but it aims to build upon best practice and draws inspiration from OOCSS, Bootstrap, Inuit CSS, Zurb Foundation, Bourbon Refills and (of course) the HTML5 Boilerplate.
-
-Tanlinell Framework works particularly well when paired with the [Tanlinell WordPress theme](https://github.com/getdave/Tanlinell).
+It is by no means comprehensive but it aims to build upon best practice and draws inspiration from OOCSS, Bootstrap, Inuit CSS, Zurb Foundation, Bourbon Refills and the HTML5 Boilerplate.
 
 
 ## Getting Started
@@ -18,8 +16,6 @@ We recommend using [Bower](http://bower.io/) to install Tanlinell. Simply define
 ```
 
 Next we advise you review the example usage of the framework in the Tanlinell Wordpress theme at https://github.com/getdave/Tanlinell/. Pay particular attention to `Gruntfile.js` which shows how the framework can be utilised.
-
-
 
 
 ## CSS Framework

@@ -73,16 +73,16 @@
 // ==========================================================================
 
 // BASE
-.tan-nav-menu {
+.nav-menu {
 	@include tan-nav-menu;
 }
 
 // STACKED
-.tan-nav-menu--stacked {
+.nav-menu--stacked {
 	@include tan-nav-menu--stacked;
 }
 
 // INLINE
-.tan-nav-menu--inline {
+.nav-menu--inline {
 	@include tan-nav-menu--inline;
 }
