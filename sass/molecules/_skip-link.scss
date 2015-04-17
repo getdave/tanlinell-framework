@@ -17,10 +17,10 @@
 
 .skip-link {
 	position: absolute;
-	@include rem(top,-100px);
+	top: rem(-100px);
 	left:0px;
     z-index: $zindex-tier-6;
-	@include rem(padding,6px);
+	padding: rem(6px);
 	border-right:1px solid white;
 	border-bottom:1px solid white;
 	border-bottom-right-radius:8px;
